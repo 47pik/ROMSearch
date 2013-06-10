@@ -1,19 +1,27 @@
 package ca.on.rom.romsearch;
 
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class DisplayExhibitActivity extends Activity {
+	
+	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -36,7 +44,12 @@ public class DisplayExhibitActivity extends Activity {
 			/*NOTE: this needs to change. Currently displays only a number, 
 			needs to display a pop-up screen*/
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-				Toast.makeText(DisplayExhibitActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+				//This is where the popup window is made, using the popup_view xml file
+				LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			    PopupWindow pw = new PopupWindow(inflater.inflate(R.layout.popup_view, null, false), 300, 300, true);
+			    pw.showAtLocation(findViewById(R.id.gridview), Gravity.CENTER, 0, 0);
+			    
+//				Toast.makeText(DisplayExhibitActivity.this, "BOO " + position, Toast.LENGTH_SHORT).show();
 			}
 		});
 		
@@ -51,7 +64,7 @@ public class DisplayExhibitActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.display_exhibit, menu);
 		return true;
-	}
+	}	
 	
 
 }
