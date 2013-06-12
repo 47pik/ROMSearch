@@ -6,9 +6,12 @@
     <string name="welcome">Welcome to the ROM.</string>
     <string name="choose_exhibit">Please choose your exhibit below</string>
     <string name="button_ok">OK</string>
-	<color name="white">#FFFFFF</color>
-	<string name="edit_message">Enter Your Guess!</string>
-	
+    <string name="button_cancel">Cancel</string>
+
+    <color name="white">#FFFFFF</color>
+
+    <string name="edit_message">Enter Your Guess!</string>
+
     <string-array name="exhibit_array">
         <item>Galleries of Africa: Egypt</item>
         <item>Galleries of Africa: Nubia</item>
@@ -18,5 +21,8 @@
     </string-array>
 
     <string name="title_activity_display_exhibit">Exhibit</string>
+    <string name="title_activity_input_name">InputNameActivity</string>
+    
+    <string name="item_name">What is this item?</string>
 
 </resources>

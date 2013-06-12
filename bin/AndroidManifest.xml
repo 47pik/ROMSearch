@@ -26,6 +26,10 @@
             android:name="ca.on.rom.romsearch.DisplayExhibitActivity"
             android:label="@string/title_activity_display_exhibit" >
         </activity>
+        <activity
+            android:name="ca.on.rom.romsearch.InputNameActivity"
+            android:label="@string/title_activity_input_name" >
+        </activity>
     </application>
 
 </manifest>

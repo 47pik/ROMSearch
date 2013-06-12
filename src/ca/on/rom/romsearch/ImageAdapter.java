@@ -11,9 +11,12 @@ import android.widget.ImageView;
 /*for implementing the exhibit grid display*/
 public class ImageAdapter extends BaseAdapter {
 	private Context mContext;
+	//references to image
+	private Integer[] mThumbIds;
 	
-	public ImageAdapter(Context c) {
+	public ImageAdapter(Context c, Integer[] a) {
 		mContext = c;
+		mThumbIds = a;
 	}
 	
 	public int getCount() {
@@ -42,14 +45,5 @@ public class ImageAdapter extends BaseAdapter {
 		imageView.setImageResource(mThumbIds[position]);
 		return imageView;
 	}
-	
-	//references to image
-	private Integer[] mThumbIds = {
-			R.drawable.placeholder, R.drawable.placeholder,
-			R.drawable.placeholder, R.drawable.placeholder,
-			R.drawable.placeholder, R.drawable.placeholder,
-			R.drawable.placeholder, R.drawable.placeholder,
-			R.drawable.placeholder
-	};
 			
 }

@@ -40,11 +40,12 @@ public final class R {
         public static final int sample_7=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0004;
-        public static final int edit_message=0x7f0a0003;
+        public static final int action_settings=0x7f0a0005;
+        public static final int edit_message=0x7f0a0004;
         public static final int exhibit_spinner=0x7f0a0002;
         public static final int exhibit_title=0x7f0a0000;
         public static final int gridview=0x7f0a0001;
+        public static final int selected_item=0x7f0a0003;
     }
     public static final class layout {
         public static final int activity_display_exhibit=0x7f030000;
@@ -54,15 +55,19 @@ public final class R {
     public static final class menu {
         public static final int display_choice=0x7f090000;
         public static final int display_exhibit=0x7f090001;
-        public static final int main=0x7f090002;
+        public static final int input_name=0x7f090002;
+        public static final int main=0x7f090003;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int button_cancel=0x7f050005;
         public static final int button_ok=0x7f050004;
         public static final int choose_exhibit=0x7f050003;
-        public static final int edit_message=0x7f050005;
-        public static final int title_activity_display_exhibit=0x7f050006;
+        public static final int edit_message=0x7f050006;
+        public static final int item_name=0x7f050009;
+        public static final int title_activity_display_exhibit=0x7f050007;
+        public static final int title_activity_input_name=0x7f050008;
         public static final int welcome=0x7f050002;
     }
     public static final class style {

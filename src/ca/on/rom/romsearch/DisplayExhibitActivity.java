@@ -2,26 +2,37 @@ package ca.on.rom.romsearch;
 
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.PopupWindow;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class DisplayExhibitActivity extends Activity {
+public class DisplayExhibitActivity extends FragmentActivity {
 	
 	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
+	
+	public static Integer[] image_ids = {
+			R.drawable.rom, R.drawable.placeholder,
+			R.drawable.placeholder, R.drawable.placeholder,
+			R.drawable.placeholder, R.drawable.placeholder,
+			R.drawable.placeholder, R.drawable.placeholder,
+			R.drawable.placeholder
+	};
+	
+	public static int pos = 0;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -37,19 +48,19 @@ public class DisplayExhibitActivity extends Activity {
 		}
 		//setup grid
 		GridView gridview = (GridView) findViewById(R.id.gridview);
-		gridview.setAdapter(new ImageAdapter(this));
+		gridview.setAdapter(new ImageAdapter(this, image_ids));
 		
 		//Listen for click on image
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			/*NOTE: this needs to change. Currently displays only a number, 
 			needs to display a pop-up screen*/
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-				//This is where the popup window is made, using the popup_view xml file
-				LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			    PopupWindow pw = new PopupWindow(inflater.inflate(R.layout.popup_view, null, false), 300, 300, true);
-			    pw.showAtLocation(findViewById(R.id.gridview), Gravity.CENTER, 0, 0);
-			    
-//				Toast.makeText(DisplayExhibitActivity.this, "BOO " + position, Toast.LENGTH_SHORT).show();
+				//get clicked on image, and set the dialog to contain it
+				pos = position;
+				DialogFragment dialog = new InputNameDialogFragment();	
+				FragmentManager fm = getSupportFragmentManager();
+				dialog.show(fm, "input_name");
+
 			}
 		});
 		
@@ -66,5 +77,39 @@ public class DisplayExhibitActivity extends Activity {
 		return true;
 	}	
 	
+	//for clicking on images
+	public static class InputNameDialogFragment extends DialogFragment {
+		
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			//use the builder class for convenient dialog construction
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			
+			//get layout inflater and set layout for dialog
+			LayoutInflater inflater = getActivity().getLayoutInflater();
+			View v = inflater.inflate(R.layout.popup_view, null);
+			builder.setView(v)
+					//add action buttons
+					.setPositiveButton(R.string.button_ok, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							//User pressed OK
+						}
+					})
+					.setNegativeButton(R.string.button_cancel, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							//User cancelled the dialog
+						}
+						
+					});
+			
+			ImageView iv = (ImageView) v.findViewById(R.id.selected_item);
+			iv.setImageResource(image_ids[pos]);
+			
+			//Create the AlertDialog object and return it
+			return builder.create();
+
+		}
+		
+	}
 
 }
