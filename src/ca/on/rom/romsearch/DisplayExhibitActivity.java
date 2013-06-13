@@ -24,9 +24,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
 	
 	public static Integer[] image_ids;
-	
+	public static Integer[] image_thumbs;
 	public static String[] image_names;
-	
 	public static int pos = 0;
 	
 	@SuppressLint("NewApi")
@@ -43,6 +42,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		//get image names and ids
 		image_names = GridData.getNames().get(exhibit);
 		image_ids = GridData.getImages().get(exhibit);
+		image_thumbs = GridData.getThumbs().get(exhibit);
 		
 		//ensure Honeycomb or higher to use ActionBar APIs
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -51,7 +51,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		}
 		//setup grid
 		GridView gridview = (GridView) findViewById(R.id.gridview);
-		gridview.setAdapter(new ImageAdapter(this, image_ids));
+		gridview.setAdapter(new ImageAdapter(this, image_thumbs));
 		
 		//Listen for click on image
 		gridview.setOnItemClickListener(new OnItemClickListener() {
