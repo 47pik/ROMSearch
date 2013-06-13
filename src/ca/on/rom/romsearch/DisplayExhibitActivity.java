@@ -9,6 +9,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -88,6 +89,12 @@ public class DisplayExhibitActivity extends FragmentActivity
 	@Override
 	public void onDialogNegativeClick(DialogFragment dialog) {
 		
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item){
+	    Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+	    startActivityForResult(myIntent, 0);
+	    return true;
 	}
 	
 
