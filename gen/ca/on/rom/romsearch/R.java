@@ -63,11 +63,16 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int button_cancel=0x7f050005;
         public static final int button_ok=0x7f050004;
+        public static final int chinese_architecture=0x7f050009;
         public static final int choose_exhibit=0x7f050003;
         public static final int edit_message=0x7f050006;
-        public static final int item_name=0x7f050009;
-        public static final int title_activity_display_exhibit=0x7f050007;
-        public static final int title_activity_input_name=0x7f050008;
+        public static final int egypt=0x7f050007;
+        public static final int greece=0x7f05000a;
+        public static final int item_name=0x7f05000e;
+        public static final int korea=0x7f05000b;
+        public static final int nubia=0x7f050008;
+        public static final int title_activity_display_exhibit=0x7f05000c;
+        public static final int title_activity_input_name=0x7f05000d;
         public static final int welcome=0x7f050002;
     }
     public static final class style {

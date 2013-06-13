@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		GridData.setupTables(getApplicationContext());
 		setContentView(R.layout.activity_main);
 		onCreateSpinner();
 	}

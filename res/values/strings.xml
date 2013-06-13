@@ -13,16 +13,23 @@
     <string name="edit_message">Enter Your Guess!</string>
 
     <string-array name="exhibit_array">
-        <item>Galleries of Africa: Egypt</item>
-        <item>Galleries of Africa: Nubia</item>
-        <item>Gallery of Chinese Architecture</item>
-        <item>Gallery of Greece</item>
-        <item>Gallery of Korea</item>
+        <item>@string/egypt</item>
+        <item>@string/nubia</item>
+        <item>@string/chinese_architecture</item>
+        <item>@string/greece</item>
+        <item>@string/korea</item>
     </string-array>
+    
+    <string name="egypt">Galleries of Africa: Egypt</string>
+    <string name="nubia">Galleries of Africa: Nubia</string>
+    <string name="chinese_architecture">Gallery of Chinese Architecture</string>
+    <string name="greece">Gallery of Greece</string>
+    <string name="korea">Gallery of Korea</string>
+    
 
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>
     
     <string name="item_name">What is this item?</string>
-
+    
 </resources>
