@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		GridData.setupTables(getApplicationContext());
 		setContentView(R.layout.activity_main);
-		onCreateSpinner();
+//		onCreateSpinner();
 	}
 
 	@Override
@@ -27,24 +27,37 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	public void onCreateSpinner() {
-		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-		//Create an ArrayAdapter using the string array and a default spinner layout
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-				R.array.exhibit_array, android.R.layout.simple_spinner_dropdown_item);
-		//Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		//Apply the adapter to the spinner
-		spinner.setAdapter(adapter);
-	}
+//	public void onCreateSpinner() {
+//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+//		//Create an ArrayAdapter using the string array and a default spinner layout
+//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//				R.array.exhibit_array, android.R.layout.simple_spinner_dropdown_item);
+//		//Specify the layout to use when the list of choices appears
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		//Apply the adapter to the spinner
+//		spinner.setAdapter(adapter);
+//	}
+//	
+//	public void chooseExhibit(View view) {
+//		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+//		String exhibit = spinner.getSelectedItem().toString();
+//		intent.putExtra(EXTRA_MESSAGE, exhibit);
+//		startActivity(intent);
+//	}
 	
-	public void chooseExhibit(View view) {
+	public void gotoEgypt(View view) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-		String exhibit = spinner.getSelectedItem().toString();
+		String exhibit = "Galleries of Africa: Egypt";
 		intent.putExtra(EXTRA_MESSAGE, exhibit);
 		startActivity(intent);
-		
+	}
+	
+	public void gotoGreece(View view) {
+		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+		String exhibit = "Gallery of Greece";
+		intent.putExtra(EXTRA_MESSAGE, exhibit);
+		startActivity(intent);
 	}
 
 }
