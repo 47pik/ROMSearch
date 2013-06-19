@@ -1,0 +1,25 @@
+----LIST OF THINGS NEEDING TO BE DONE----
+
+- Implement save data
+
+- Implement a visual representation of save data
+	- check mark overlays on images
+	- completion ratings for each exhibit
+	- overall completion ratings
+
+- Improve text matching
+	- remove case sensitivity
+	- accept similar or mispelled names
+
+- Ensure rotation of device still allows app to function correctly, or block rotation functionality
+
+- Improve the activity_display_exhibit.xml and popup_view.xml layouts
+	- add backgrounds
+	- add texture
+	- make grid stand out more
+	- make clearer what users are supposed to do
+
+- Improve the activity_main.xml layout
+	- make clearer what users are supposed to do
+
+- Fix program-wide memory leak

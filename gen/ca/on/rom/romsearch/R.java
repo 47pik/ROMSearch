@@ -27,17 +27,45 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int placeholder=0x7f020001;
-        public static final int rom=0x7f020002;
-        public static final int sample_0=0x7f020003;
-        public static final int sample_1=0x7f020004;
-        public static final int sample_2=0x7f020005;
-        public static final int sample_3=0x7f020006;
-        public static final int sample_4=0x7f020007;
-        public static final int sample_5=0x7f020008;
-        public static final int sample_6=0x7f020009;
-        public static final int sample_7=0x7f02000a;
+        public static final int egypt1=0x7f020000;
+        public static final int egypt1s=0x7f020001;
+        public static final int egypt2=0x7f020002;
+        public static final int egypt2s=0x7f020003;
+        public static final int egypt3=0x7f020004;
+        public static final int egypt3s=0x7f020005;
+        public static final int egypt4=0x7f020006;
+        public static final int egypt4s=0x7f020007;
+        public static final int egypt5=0x7f020008;
+        public static final int egypt5s=0x7f020009;
+        public static final int egypt6=0x7f02000a;
+        public static final int egypt6s=0x7f02000b;
+        public static final int egypt7=0x7f02000c;
+        public static final int egypt7s=0x7f02000d;
+        public static final int egypt8=0x7f02000e;
+        public static final int egypt8s=0x7f02000f;
+        public static final int egypt9=0x7f020010;
+        public static final int egypt9s=0x7f020011;
+        public static final int greece1=0x7f020012;
+        public static final int greece1s=0x7f020013;
+        public static final int greece2=0x7f020014;
+        public static final int greece2s=0x7f020015;
+        public static final int greece3=0x7f020016;
+        public static final int greece3s=0x7f020017;
+        public static final int greece4=0x7f020018;
+        public static final int greece4s=0x7f020019;
+        public static final int greece5=0x7f02001a;
+        public static final int greece5s=0x7f02001b;
+        public static final int greece6=0x7f02001c;
+        public static final int greece6s=0x7f02001d;
+        public static final int greece7=0x7f02001e;
+        public static final int greece7s=0x7f02001f;
+        public static final int greece8=0x7f020020;
+        public static final int greece8s=0x7f020021;
+        public static final int greece9=0x7f020022;
+        public static final int greece9s=0x7f020023;
+        public static final int ic_launcher=0x7f020024;
+        public static final int placeholder=0x7f020025;
+        public static final int rom=0x7f020026;
     }
     public static final class id {
         public static final int action_settings=0x7f0a0005;
