@@ -2,7 +2,9 @@ package ca.on.rom.romsearch;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -23,10 +25,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 	
 	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
 	
+	public static String exhibit;
 	public static Integer[] image_ids;
 	public static Integer[] image_thumbs;
 	public static String[] image_names;
 	public static int pos = 0;
+	
+	public static ExhibitData savedata;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -36,13 +41,16 @@ public class DisplayExhibitActivity extends FragmentActivity
 		setContentView(R.layout.activity_display_exhibit);
 		
 		//get exhibit title
-		String exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		TextView textview = (TextView) findViewById(R.id.exhibit_title);
 		textview.setText(exhibit);
 		//get image names and ids
 		image_names = GridData.getNames().get(exhibit);
 		image_ids = GridData.getImages().get(exhibit);
 		image_thumbs = GridData.getThumbs().get(exhibit);
+		//get savedata
+		String data = intent.getStringExtra(MainActivity.EXTRA_SAVEFILE);
+		savedata = new ExhibitData(data);
 		
 		//ensure Honeycomb or higher to use ActionBar APIs
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -81,6 +89,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 		String correct = image_names[pos];
 		if (input.equals(correct)) {
 			Toast.makeText(DisplayExhibitActivity.this, "Correct! It's " + correct + "!", Toast.LENGTH_SHORT).show();
+			//Mark as correct in savedata
+			savedata.Progress(pos);
+			//save the data
+			SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+			SharedPreferences.Editor editor = sharedPref.edit();
+			editor.putString(exhibit, savedata.getRaw());
+			editor.commit();
 		} else {
 			Toast.makeText(DisplayExhibitActivity.this, "Sorry, try again", Toast.LENGTH_SHORT).show();
 		}
