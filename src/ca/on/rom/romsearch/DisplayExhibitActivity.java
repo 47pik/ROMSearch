@@ -1,6 +1,8 @@
 package ca.on.rom.romsearch;
 
 
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -87,7 +89,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog, String input) {
 		String correct = image_names[pos];
-		if (input.equals(correct)) {
+		if (TextMatch(input, correct)) {
 			Toast.makeText(DisplayExhibitActivity.this, "Correct! It's " + correct + "!", Toast.LENGTH_SHORT).show();
 			//Mark as correct in savedata
 			savedata.Progress(pos);
@@ -112,5 +114,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 	    return true;
 	}
 	
-
+	public boolean TextMatch(String input, String master) {
+		input = input.toLowerCase(Locale.getDefault());
+		return input.equals(master);
+	}
 }
