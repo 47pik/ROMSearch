@@ -1,12 +1,10 @@
 ----LIST OF THINGS NEEDING TO BE DONE----
 
 - Implement a visual representation of save data
-	- check mark overlays on images
 	- completion ratings for each exhibit
 	- overall completion ratings
 
 - Improve text matching
-	- remove case sensitivity
 	- accept similar or mispelled names
 
 - Ensure rotation of device still allows app to function correctly, or block rotation functionality

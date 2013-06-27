@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class ExhibitData {
 	
-	private String rawdata;
-	private Boolean[] listdata;
-	private int completed;
-	private double completion;
+	private String rawdata; //string represenation of savedata
+	private Boolean[] listdata; //boolean values for items 0-8 related to completion
+	private Integer[] completion_overlay; //images to be displayed on overlay
+	private int completed; //# of items completed from exhibit
+	private double completion; //completion % of exhibit
 	
 	public ExhibitData(String rawdata) {
 		this.rawdata = rawdata;
@@ -29,6 +30,10 @@ public class ExhibitData {
 	
 	public String getRaw() {
 		return this.rawdata;
+	}
+	
+	public Integer[] getOverlay() {
+		return this.completion_overlay;
 	}
 	
 	/*Create the boolean array listdata based on the raw string
@@ -53,14 +58,19 @@ public class ExhibitData {
 	 * Update values based on the listdata
 	 */
 	private void Update() {
+		Integer[] overlay = new Integer[9];
 		int completed = 0;
 		for (int i = 0; i < this.listdata.length; i++) {
 			if (this.listdata[i]) {
 				completed++;
+				overlay[i] = R.drawable.check;
+			} else {
+				overlay[i] = R.drawable.blank;
 			}
 		}
 		this.completed = completed;
 		this.completion = ((double) completed) / 9;
+		this.completion_overlay = overlay;
 	}
 	
 	/*

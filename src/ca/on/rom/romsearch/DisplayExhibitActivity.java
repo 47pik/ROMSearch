@@ -59,12 +59,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 			//show the up button in the action bar
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
-		//setup grid
-		GridView gridview = (GridView) findViewById(R.id.gridview);
+		//setup grids
+		GridView gridview = (GridView) findViewById(R.id.gridview); //for images
 		gridview.setAdapter(new ImageAdapter(this, image_thumbs));
-		
-		//Listen for click on image
-		gridview.setOnItemClickListener(new OnItemClickListener() {
+		GridView overlay = (GridView) findViewById(R.id.overlay); //for completion image
+		overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
+		//Listen for click on overlay
+		overlay.setOnItemClickListener(new OnItemClickListener() {
 			/*NOTE: this needs to change. Currently displays only a number, 
 			needs to display a pop-up screen*/
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -98,6 +99,9 @@ public class DisplayExhibitActivity extends FragmentActivity
 			SharedPreferences.Editor editor = sharedPref.edit();
 			editor.putString(exhibit, savedata.getRaw());
 			editor.commit();
+			//update grid display
+			GridView overlay = (GridView) findViewById(R.id.overlay);
+			overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
 		} else {
 			Toast.makeText(DisplayExhibitActivity.this, "Sorry, try again", Toast.LENGTH_SHORT).show();
 		}
