@@ -66,15 +66,20 @@ public class DisplayExhibitActivity extends FragmentActivity
 		overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
 		//Listen for click on overlay
 		overlay.setOnItemClickListener(new OnItemClickListener() {
-			/*NOTE: this needs to change. Currently displays only a number, 
-			needs to display a pop-up screen*/
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 				//get clicked on image, and set the dialog to contain it
 				pos = position;
-				DialogFragment dialog = InputNameDialogFragment.newInstance(image_ids[pos]);	
-				FragmentManager fm = getSupportFragmentManager();
-				dialog.show(fm, "input_name");
-
+				if (savedata.getArr()[pos]) {
+					//if item already completed display info
+					DialogFragment dialog = DisplayItemDialogFragment.newInstance(image_ids[pos]);
+					FragmentManager fm = getSupportFragmentManager();
+					dialog.show(fm, "display_item");
+				} else {
+					//if item has not been completed, ask for input
+					DialogFragment dialog = InputNameDialogFragment.newInstance(image_ids[pos]);	
+					FragmentManager fm = getSupportFragmentManager();
+					dialog.show(fm, "input_name");
+				}
 			}
 		});
 		
