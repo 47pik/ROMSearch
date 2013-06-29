@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		GridData.setupTables(getApplicationContext());
 		setContentView(R.layout.activity_main);
 		loadSave();
-		onCreateSpinner();
+//		onCreateSpinner();
 	}
 
 	@Override
@@ -36,35 +36,35 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	public void onCreateSpinner() {
-		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-		//Create an ArrayAdapter using the string array and a default spinner layout
-		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-			//	R.array.exhibit_array, android.R.layout.simple_spinner_dropdown_item);
-		//Specify the layout to use when the list of choices appears
-		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		String spinnerArray[] = makeSpinnerArray();
-		SpinnerArrayAdapter adapter = new SpinnerArrayAdapter (this, 
-				android.R.layout.simple_spinner_dropdown_item, spinnerArray);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		//Apply the adapter to the spinner
-		spinner.setAdapter(adapter);
-	}
-	
-	public void chooseExhibit(View view) {
-		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-		//get name
-		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-		String exhibit = spinner.getSelectedItem().toString().split(" - ")[0]; //get name only
-		//get save data
-		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
-		String savedata = sharedPref.getString(exhibit, "000000000");
-		//send name and save data
-		intent.putExtra(EXTRA_MESSAGE, exhibit);
-		intent.putExtra(EXTRA_SAVEFILE, savedata);
-		startActivity(intent);
-		
-	}
+//	public void onCreateSpinner() {
+//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+//		//Create an ArrayAdapter using the string array and a default spinner layout
+//		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//			//	R.array.exhibit_array, android.R.layout.simple_spinner_dropdown_item);
+//		//Specify the layout to use when the list of choices appears
+//		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		String spinnerArray[] = makeSpinnerArray();
+//		SpinnerArrayAdapter adapter = new SpinnerArrayAdapter (this, 
+//				android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		//Apply the adapter to the spinner
+//		spinner.setAdapter(adapter);
+//	}
+//	
+//	public void chooseExhibit(View view) {
+//		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+//		//get name
+//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+//		String exhibit = spinner.getSelectedItem().toString().split(" - ")[0]; //get name only
+//		//get save data
+//		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+//		String savedata = sharedPref.getString(exhibit, "000000000");
+//		//send name and save data
+//		intent.putExtra(EXTRA_MESSAGE, exhibit);
+//		intent.putExtra(EXTRA_SAVEFILE, savedata);
+//		startActivity(intent);
+//		
+//	}
 	
 	public void loadSave() {
 		ExhibitData eData; //exhibit data structure
@@ -100,5 +100,26 @@ public class MainActivity extends Activity {
 			spinnerArray[i] = exhibit + " - " + completion + "%";
 		}
 		return spinnerArray;
+	}
+	
+	public void gotoEgypt(View view) {
+		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+		String exhibit = "Galleries of Africa: Egypt";
+		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+		String savedata = sharedPref.getString(exhibit, "000000000");
+		intent.putExtra(EXTRA_SAVEFILE, savedata);
+		intent.putExtra(EXTRA_MESSAGE, exhibit);
+		startActivity(intent);
+	}
+
+	public void gotoGreece(View view) {
+		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+		String exhibit = "Gallery of Greece";
+		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+		String savedata = sharedPref.getString(exhibit, "000000000");
+		intent.putExtra(EXTRA_SAVEFILE, savedata);
+		intent.putExtra(EXTRA_MESSAGE, exhibit);
+		
+		startActivity(intent);
 	}
 }
