@@ -1,6 +1,8 @@
 package ca.on.rom.romsearch;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 import android.annotation.SuppressLint;
@@ -124,7 +126,46 @@ public class DisplayExhibitActivity extends FragmentActivity
 	}
 	
 	public boolean TextMatch(String input, String master) {
-		input = input.toLowerCase(Locale.getDefault());
-		return input.equals(master);
+		//tokenize input and master
+		ArrayList<String> itokens = new ArrayList<String>(Arrays.asList(input.toLowerCase(Locale.getDefault()).split(" ")));
+		ArrayList<String> mtokens = new ArrayList<String>(Arrays.asList(master.toLowerCase(Locale.getDefault()).split(" ")));
+		//return false if input is longer than master (allowing for a 1 margin of error (e.g. rogue "a"))
+		if (itokens.size() > mtokens.size() + 1) {
+			return false;
+		}
+		//remove connector words (e.g. "a", "the", "of", etc.)
+		String[] connectors = {"a", "an", "as", "of", "the", "for"};
+		removeBanned(mtokens, connectors);
+		removeBanned(itokens, connectors);
+		//check to see if all key words are shared
+		for (int i = 0; i < mtokens.size(); i++) {
+			String item = mtokens.get(i);
+			if (itokens.contains(item)) {
+				itokens.remove(item);
+			} else {
+				return false;
+			}
+		}
+		if (itokens.size() > 0) {
+			return false;
+		}
+		return true;
 	}
+	
+	/*
+	 * Remove words from String[] banned from ArrayList<String> tokens
+	 */
+	public void removeBanned(ArrayList<String> tokens, String[] banned) {
+		for (int i = 0; i < tokens.size(); i++) {
+			String t = tokens.get(i);
+			//remove tokens if in banned
+			for (int j = 0; j < banned.length; j++) {
+				if (t.equals(banned[j])) {
+					tokens.remove(t);
+					break;
+				}
+			}
+		}
+	}
+	
 }

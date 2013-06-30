@@ -3,9 +3,6 @@
 - Implement a visual representation of save data
 	- overall completion ratings
 
-- Improve text matching
-	- accept similar or mispelled names
-
 - Ensure rotation of device still allows app to function correctly, or block rotation functionality
 
 - Improve the activity_display_exhibit.xml, popup_view.xml and item_info_view.xml layouts
@@ -21,3 +18,4 @@
 	- Pressing back button at bottom of screen doesn't update 	savedata upon return to MainActivity
 	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images
 	- ROMSearch has stopped working error after running in 		background for too long
+	- Text matching doesn't hanlde hyphenated words well
