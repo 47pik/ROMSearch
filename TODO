@@ -17,4 +17,7 @@
 - Improve the activity_main.xml layout
 	- make clearer what users are supposed to do
 
-- Fix program-wide memory leak
+- Fix bugs
+	- Pressing back button at bottom of screen doesn't update 	savedata upon return to MainActivity
+	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images
+	- ROMSearch has stopped working error after running in 		background for too long
