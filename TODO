@@ -18,4 +18,3 @@
 	- Pressing back button at bottom of screen doesn't update 	savedata upon return to MainActivity
 	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images
 	- ROMSearch has stopped working error after running in 		background for too long
-	- Text matching doesn't hanlde hyphenated words well

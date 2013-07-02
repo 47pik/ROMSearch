@@ -128,8 +128,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 	
 	public boolean TextMatch(String input, String master) {
 		//tokenize input and master
-		ArrayList<String> itokens = new ArrayList<String>(Arrays.asList(input.toLowerCase(Locale.getDefault()).split(" ")));
-		ArrayList<String> mtokens = new ArrayList<String>(Arrays.asList(master.toLowerCase(Locale.getDefault()).split(" ")));
+		ArrayList<String> itokens = new ArrayList<String>(Arrays.asList(input.toLowerCase(Locale.getDefault()).split(" |\\-")));
+		ArrayList<String> mtokens = new ArrayList<String>(Arrays.asList(master.toLowerCase(Locale.getDefault()).split(" |\\-")));
 		//return false if input is longer than master (allowing for a 1 margin of error (e.g. rogue "a"))
 		if (itokens.size() > mtokens.size() + 1) {
 			return false;
