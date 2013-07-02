@@ -8,15 +8,18 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DisplayItemDialogFragment extends DialogFragment {
 	
 	public static int img;
+	public static String name;
 	
 	
-	public static DisplayItemDialogFragment newInstance(int id) {
+	public static DisplayItemDialogFragment newInstance(int id, String item) {
 		DisplayItemDialogFragment frag = new DisplayItemDialogFragment();
 		img = id;
+		name = item;
 		return frag;
 		
 	}
@@ -39,6 +42,8 @@ public class DisplayItemDialogFragment extends DialogFragment {
 		
 		ImageView iv = (ImageView) v.findViewById(R.id.selected_item);
 		iv.setImageResource(img);
+		TextView tv = (TextView) v.findViewById(R.id.item_name);
+		tv.setText(name);
 		
 		//Create the AlertDialog object and return it
 		return builder.create();

@@ -31,6 +31,5 @@
     <string name="title_activity_input_name">InputNameActivity</string>
     
     <string name="item_name">What is this item?</string>
-    <string name="item_text">Item information goes here</string>
     
 </resources>

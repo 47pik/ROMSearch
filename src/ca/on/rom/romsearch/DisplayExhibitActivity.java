@@ -73,7 +73,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 				pos = position;
 				if (savedata.getArr()[pos]) {
 					//if item already completed display info
-					DialogFragment dialog = DisplayItemDialogFragment.newInstance(image_ids[pos]);
+					DialogFragment dialog = DisplayItemDialogFragment.newInstance(image_ids[pos]
+							, image_names[pos]);
 					FragmentManager fm = getSupportFragmentManager();
 					dialog.show(fm, "display_item");
 				} else {

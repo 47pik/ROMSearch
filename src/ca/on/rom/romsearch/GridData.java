@@ -80,15 +80,15 @@ public class GridData {
 		thumbs.put(c.getString(R.string.korea), korea_t);
 		
 		//set up names for exhibits
-		String[] egypt_n = {"game board for senet", "offering table", "mummy-case of pedikhonsu",
-				"temple relief of senwosret i", "statue of the goddess sakhmet", "queen hatshepsut as a sphinx",
-				"hunting scene", "broad collar", "royal scribe bokennenife"
+		String[] egypt_n = {"Game Board for Senet", "Offering Table", "Mummy-case of Pedikhonsu",
+				"Temple Relief of Senwosret I", "Statue of the Goddess Sakhmet", "Queen Hatshepsut as a Sphinx",
+				"Hunting Scene", "Broad Collar", "Royal Scribe Bokennenife"
 				};
 		String[] nubia_n = {"name", "name", "name", "name", "name", "name", "name", "name", "name"};
 		String[] chinese_architecture_n = {"name", "name", "name", "name", "name", "name", "name", "name", "name"};
-		String[] greece_n = {"head of silenos", "greek-style leg armour", "etrusco-corinthian neck-amphora",
-				"youthful dionysos", "kylix", "torso of aphrodite", "gold wreaths", "the athena parthenos",
-				"head of young herakles"};
+		String[] greece_n = {"Head of Silenos", "Greek-style leg Armour", "Etrusco-corinthian Neck-amphora",
+				"Youthful Dionysos", "Kylix", "Torso of Aphrodite", "Gold Wreaths", "The Athena Parthenos",
+				"Head of Young Herakles"};
 		String[] korea_n = {"name", "name", "name", "name", "name", "name", "name", "name", "name"};
 		
 		names.put(c.getString(R.string.egypt), egypt_n);
