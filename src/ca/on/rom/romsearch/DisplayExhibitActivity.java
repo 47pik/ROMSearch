@@ -1,6 +1,7 @@
 package ca.on.rom.romsearch;
 
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -55,6 +56,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		//get savedata
 		String data = intent.getStringExtra(MainActivity.EXTRA_SAVEFILE);
 		savedata = new ExhibitData(data);
+		updateCompletionDisplay();
 		
 		//ensure Honeycomb or higher to use ActionBar APIs
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -107,8 +109,9 @@ public class DisplayExhibitActivity extends FragmentActivity
 			SharedPreferences.Editor editor = sharedPref.edit();
 			editor.putString(exhibit, savedata.getRaw());
 			editor.commit();
-			//update grid display
+			//update grid display and text display
 			GridView overlay = (GridView) findViewById(R.id.overlay);
+			updateCompletionDisplay();
 			overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
 		} else {
 			Toast.makeText(DisplayExhibitActivity.this, "Sorry, try again", Toast.LENGTH_SHORT).show();
@@ -167,6 +170,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 				}
 			}
 		}
+	}
+	
+	public void updateCompletionDisplay() {
+		DecimalFormat df2 = new DecimalFormat("###.##");
+		String completion = Double.toString(Double.valueOf(df2.format(savedata.getCompletion() * 100)));
+		TextView tv = (TextView) findViewById(R.id.completion_display);
+		tv.setText(completion + "% Complete");
 	}
 	
 }

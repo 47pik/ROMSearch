@@ -17,12 +17,12 @@
      
      <FrameLayout 
          android:layout_width="fill_parent"
-         android:layout_height="fill_parent">
+         android:layout_height="wrap_content">
          
          	<GridView
             android:id="@+id/gridview"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:columnWidth="90dp"
             android:gravity="center"
             android:horizontalSpacing="10dp"
@@ -33,7 +33,7 @@
          	<GridView
             android:id="@+id/overlay"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:columnWidth="90dp"
             android:gravity="center"
             android:horizontalSpacing="10dp"
@@ -43,5 +43,12 @@
          	
     </FrameLayout>
     
-
+    <TextView
+        android:id="@+id/completion_display"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/big_margin"/>
+    
  </LinearLayout>
