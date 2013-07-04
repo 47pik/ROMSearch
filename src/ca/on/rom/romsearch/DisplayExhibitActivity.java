@@ -10,14 +10,18 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -63,11 +67,16 @@ public class DisplayExhibitActivity extends FragmentActivity
 			//show the up button in the action bar
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
+		
+		// Get screen resolution
+		int[] display = getThisDisplay();
+		int screenHeight = display[0];
+		int screenWidth = display[1];
 		//setup grids
 		GridView gridview = (GridView) findViewById(R.id.gridview); //for images
-		gridview.setAdapter(new ImageAdapter(this, image_thumbs));
+		gridview.setAdapter(new ImageAdapter(this, image_thumbs, screenHeight, screenWidth));
 		GridView overlay = (GridView) findViewById(R.id.overlay); //for completion image
-		overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
+		overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay(), screenHeight, screenWidth));
 		//Listen for click on overlay
 		overlay.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -112,7 +121,10 @@ public class DisplayExhibitActivity extends FragmentActivity
 			//update grid display and text display
 			GridView overlay = (GridView) findViewById(R.id.overlay);
 			updateCompletionDisplay();
-			overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay()));
+			int[] display = getThisDisplay();
+			int screenHeight = display[0];
+			int screenWidth = display[1];
+			overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay(), screenHeight, screenWidth));
 		} else {
 			Toast.makeText(DisplayExhibitActivity.this, "Sorry, try again", Toast.LENGTH_SHORT).show();
 		}
@@ -127,6 +139,16 @@ public class DisplayExhibitActivity extends FragmentActivity
 	    Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
 	    startActivityForResult(myIntent, 0);
 	    return true;
+	}
+	
+	public int[] getThisDisplay(){
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		int[] returnval = {height, width};
+		return returnval;
 	}
 	
 	public boolean TextMatch(String input, String master) {
