@@ -40,13 +40,17 @@ public class ImageAdapter extends BaseAdapter {
 		ImageView imageView;
 		if (convertView == null) {
 			imageView = new ImageView(mContext);
-			// Get Screen Resolution
-//			DisplayMetrics displaymetrics = new DisplayMetrics();
-//			((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displaymetrics);
-//			int height = displaymetrics.heightPixels;
-//			int width = displaymetrics.widthPixels;
-			if (swidth == 0 && sheight == 0){
-				imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
+			// Nexus 4
+			if (swidth == 768 && sheight == 1280){
+				int imageh = (int) (sheight/8.0);
+				int imagew = (int) (swidth/4.8);
+				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
+			}
+			// Nexus 1
+			else if (swidth == 480 && sheight == 800){
+				int imageh = (int) (sheight/8.0);
+				int imagew = (int) (swidth/4.8);
+				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			else {
 				int imageh = (int) (sheight/8.0);
