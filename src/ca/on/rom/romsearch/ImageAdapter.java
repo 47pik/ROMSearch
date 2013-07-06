@@ -42,19 +42,19 @@ public class ImageAdapter extends BaseAdapter {
 			imageView = new ImageView(mContext);
 			// Nexus 4
 			if (swidth == 768 && sheight == 1280){
-				int imageh = (int) (sheight/8.0);
-				int imagew = (int) (swidth/4.8);
+				int imageh = (int) (sheight/6.8085106382978723404255319148936);
+				int imagew = (int) (swidth/5.12);
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			// Nexus 1
 			else if (swidth == 480 && sheight == 800){
-				int imageh = (int) (sheight/8.0);
-				int imagew = (int) (swidth/4.8);
+				int imageh = (int) (sheight/4.2105263157894736842105263157895);
+				int imagew = (int) (swidth/3.2);
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			else {
-				int imageh = (int) (sheight/8.0);
-				int imagew = (int) (swidth/4.8);
+				int imageh = (int) (sheight/6.8085106382978723404255319148936);
+				int imagew = (int) (swidth/5.12);
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			
