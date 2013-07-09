@@ -15,7 +15,6 @@
 	- make clearer what users are supposed to do
 
 - Fix bugs
-	- Rotating the screen and then rotating back removes current 		new additions to display of completed exhibits
+	- Savedata error when recreating an activity
 	- Pressing back button at bottom of screen doesn't update 		savedata upon return to MainActivity
 	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images
-	- ROMSearch has stopped working error after running in 		background for too long
