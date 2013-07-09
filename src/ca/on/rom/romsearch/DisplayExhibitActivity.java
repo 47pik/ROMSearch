@@ -53,10 +53,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		TextView textview = (TextView) findViewById(R.id.exhibit_title);
 		textview.setText(exhibit);
+		
 		//get image names and ids
+		GridData.setupTables(getApplicationContext());
 		image_names = GridData.getNames().get(exhibit);
 		image_ids = GridData.getImages().get(exhibit);
 		image_thumbs = GridData.getThumbs().get(exhibit);
+
 		//get savedata
 		String data = intent.getStringExtra(MainActivity.EXTRA_SAVEFILE);
 		savedata = new ExhibitData(data);
@@ -98,7 +101,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		});
 		
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
