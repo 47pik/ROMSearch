@@ -3,18 +3,14 @@
 - Implement a visual representation of save data
 	- overall completion ratings
 
-- Ensure rotation of device still allows app to function correctly, or block rotation functionality
 
 - Improve the activity_display_exhibit.xml, popup_view.xml and item_info_view.xml layouts
-	- add backgrounds
-	- add texture
-	- make grid stand out more
 	- make clearer what users are supposed to do
+	- ensure function when rotating, or block rotation
 
 - Improve the activity_main.xml layout
 	- make clearer what users are supposed to do
 
 - Fix bugs
-	- Savedata error when recreating an activity
 	- Pressing back button at bottom of screen doesn't update 		savedata upon return to MainActivity
 	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images

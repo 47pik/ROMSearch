@@ -105,9 +105,6 @@ public class MainActivity extends Activity {
 	public void gotoEgypt(View view) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
 		String exhibit = "Galleries of Africa: Egypt";
-		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
-		String savedata = sharedPref.getString(exhibit, "000000000");
-		intent.putExtra(EXTRA_SAVEFILE, savedata);
 		intent.putExtra(EXTRA_MESSAGE, exhibit);
 		startActivity(intent);
 	}
@@ -115,9 +112,6 @@ public class MainActivity extends Activity {
 	public void gotoGreece(View view) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
 		String exhibit = "Gallery of Greece";
-		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
-		String savedata = sharedPref.getString(exhibit, "000000000");
-		intent.putExtra(EXTRA_SAVEFILE, savedata);
 		intent.putExtra(EXTRA_MESSAGE, exhibit);
 		
 		startActivity(intent);

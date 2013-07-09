@@ -61,7 +61,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 		image_thumbs = GridData.getThumbs().get(exhibit);
 
 		//get savedata
-		String data = intent.getStringExtra(MainActivity.EXTRA_SAVEFILE);
+		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+		String data = sharedPref.getString(exhibit, "000000000");
 		savedata = new ExhibitData(data);
 		updateCompletionDisplay();
 		
