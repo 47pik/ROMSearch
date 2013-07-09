@@ -40,7 +40,6 @@ public class ImageAdapter extends BaseAdapter {
 		ImageView imageView;
 		if (convertView == null) {
 			imageView = new ImageView(mContext);
-<<<<<<< HEAD
 			// Really need to figure out a function to do this instead...
 			// Nexus 4 / Extra-High Density Phones
 			if (swidth > 700 && swidth < 800 && sheight > 1200 && sheight < 1300){
@@ -52,18 +51,6 @@ public class ImageAdapter extends BaseAdapter {
 			else if (swidth > 400 && swidth < 500 && sheight > 750 && sheight < 850){
 				int imageh = (int) (sheight/6.7226890756302521008403361344538); // ~117 Px
 				int imagew = (int) (swidth/5.0526315789473684210526315789474); // ~95 Px
-=======
-			// Nexus 4
-			if (swidth == 768 && sheight == 1280){
-				int imageh = (int) (sheight/6.8085106382978723404255319148936);
-				int imagew = (int) (swidth/5.12);
-				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
-			}
-			// Nexus 1
-			else if (swidth == 480 && sheight == 800){
-				int imageh = (int) (sheight/4.2105263157894736842105263157895);
-				int imagew = (int) (swidth/3.2);
->>>>>>> ee834fdc4f9df6f6eda27577db69d46b8d8a4eef
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			else {
