@@ -60,6 +60,7 @@
 		        android:layout_height="wrap_content"
 		        android:adjustViewBounds="true"
 		        android:src="@drawable/placeholder"
+		        android:onClick="gotoSouthAsia"
 		        />
             
             <ImageView
@@ -67,7 +68,9 @@
 		        android:layout_height="wrap_content"
 		        android:adjustViewBounds="true"
 		        android:src="@drawable/placeholder"
+		        android:onClick="gotoMiddleEast"
 		        />
+            
         </LinearLayout>
     </HorizontalScrollView>
 

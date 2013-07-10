@@ -10,21 +10,22 @@
 
     <color name="white">#FFFFFF</color>
 
-    <string name="edit_message">Enter Your Guess!</string>
+    <string name="edit_message">Find this item and enter its name!</string>
 
     <string-array name="exhibit_array">
         <item>@string/egypt</item>
-        <item>@string/nubia</item>
-        <item>@string/chinese_architecture</item>
+        <item>@string/south_asia</item>
         <item>@string/greece</item>
-        <item>@string/korea</item>
+        <item>@string/middle_east</item>
     </string-array>
     
     <string name="egypt">Galleries of Africa: Egypt</string>
+    <string name="south_asia">Sir Christopher Ondaatje Gallery of South Asia</string>
+    <string name="greece">Gallery of Greece</string>
+    <string name="middle_east">Wirth Gallery of the Middle East</string>
+    <string name="korea">Gallery of Korea</string>
     <string name="nubia">Galleries of Africa: Nubia</string>
     <string name="chinese_architecture">Gallery of Chinese Architecture</string>
-    <string name="greece">Gallery of Greece</string>
-    <string name="korea">Gallery of Korea</string>
     
 
     <string name="title_activity_display_exhibit">Exhibit</string>

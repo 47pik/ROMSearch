@@ -101,19 +101,25 @@ public class MainActivity extends Activity {
 		}
 		return spinnerArray;
 	}
-	
-	public void gotoEgypt(View view) {
+	private void goTo(String exhibit) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-		String exhibit = "Galleries of Africa: Egypt";
 		intent.putExtra(EXTRA_MESSAGE, exhibit);
 		startActivity(intent);
 	}
+	
+	public void gotoEgypt(View view) {
+		goTo(getString(R.string.egypt));
+	}
+	
+	public void gotoSouthAsia(View view) {
+		goTo(getString(R.string.south_asia));
+	}
 
 	public void gotoGreece(View view) {
-		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-		String exhibit = "Gallery of Greece";
-		intent.putExtra(EXTRA_MESSAGE, exhibit);
-		
-		startActivity(intent);
+		goTo(getString(R.string.greece));
+	}
+	
+	public void gotoMiddleEast(View view) {
+		goTo(getString(R.string.middle_east));
 	}
 }
