@@ -16,12 +16,11 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -53,6 +52,19 @@ public class DisplayExhibitActivity extends FragmentActivity
 		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		TextView textview = (TextView) findViewById(R.id.exhibit_title);
 		textview.setText(exhibit);
+		
+		//this is really rough code. Replace ASAP, just here to get working for demo
+		if (exhibit.length() > 30) {
+			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 22);
+			float scale = getResources().getDisplayMetrics().density;
+			textview.setPadding(0, (int)(8 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
+		}
+		if (exhibit.length() > 40) {
+			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 14);
+			float scale = getResources().getDisplayMetrics().density;
+			textview.setPadding(0, (int)(17 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
+		}
+		//end of really really terrible code
 		
 		//get image names and ids
 		GridData.setupTables(getApplicationContext());
