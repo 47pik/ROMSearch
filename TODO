@@ -2,17 +2,16 @@
 
 - Implement a visual representation of save data
 	- overall completion ratings
-
-
-- Improve the activity_display_exhibit.xml, popup_view.xml and item_info_view.xml layouts
-	- make clearer what users are supposed to do
-	- ensure function when rotating, or block rotation
+	- add more achievements (with names and images)
+	- add achievement unlocked popup
+	- add display for achievements
 
 - Improve the activity_main.xml layout
 	- make clearer what users are supposed to do
+	- create a spinner/display image hybrid
+	- change to the correct ROM logo
 
 - Fix bugs
 	- Find a more practical solution for the exhibit title display
 	(current one is hard coded nonsense thrown together for demo)
 	- Pressing back button at bottom of screen doesn't update 		savedata upon return to MainActivity
-	- Rotated exhibit activity scrolls only the savedata overlay, 		not the background images

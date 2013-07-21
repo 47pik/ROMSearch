@@ -32,6 +32,9 @@ public class DisplayExhibitActivity extends FragmentActivity
 	
 	
 	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
+	public final static String ACHIEVEMENT = "achievement";
+	public final static String EXHIBITS_COMPLETE = "exhibits_complete";
+	public final static String ITEMS_COMPLETE = "items_complete";
 	
 	public static String exhibit;
 	public static Integer[] image_ids;
@@ -40,6 +43,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	public static int pos = 0;
 	
 	public static ExhibitData savedata;
+	public static AchievementData achievementData;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -72,11 +76,18 @@ public class DisplayExhibitActivity extends FragmentActivity
 		image_ids = GridData.getImages().get(exhibit);
 		image_thumbs = GridData.getThumbs().get(exhibit);
 
-		//get savedata
+		//get exhibit savedata
 		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
 		String data = sharedPref.getString(exhibit, "000000000");
 		savedata = new ExhibitData(data);
 		updateCompletionDisplay();
+		
+		//get achievements
+		achievementData = new AchievementData();
+		SharedPreferences countPref = this.getSharedPreferences(ACHIEVEMENT, Context.MODE_PRIVATE);
+		int item_total = countPref.getInt(ITEMS_COMPLETE, 0);
+		int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
+		achievementData.getNextAchievements(item_total, exhibit_total);
 		
 		//ensure Honeycomb or higher to use ActionBar APIs
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -134,6 +145,19 @@ public class DisplayExhibitActivity extends FragmentActivity
 			SharedPreferences.Editor editor = sharedPref.edit();
 			editor.putString(exhibit, savedata.getRaw());
 			editor.commit();
+			//update achievement counters
+			SharedPreferences countPref = this.getSharedPreferences(ACHIEVEMENT, Context.MODE_PRIVATE);
+			int item_total = countPref.getInt(ITEMS_COMPLETE, 0);
+			int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
+			SharedPreferences.Editor count_editor = countPref.edit();
+			count_editor.putInt(ITEMS_COMPLETE, item_total + 1);
+			if (savedata.getCompletion() >= 1) {
+				count_editor.putInt(EXHIBITS_COMPLETE, exhibit_total + 1);
+				//display achievement unlocked popup for completing THIS exhibit (exhibit type)
+			}
+			count_editor.commit();
+			//check if achievements unlocked
+			checkAchievements();
 			//update grid display and text display
 			GridView overlay = (GridView) findViewById(R.id.overlay);
 			updateCompletionDisplay();
@@ -215,6 +239,25 @@ public class DisplayExhibitActivity extends FragmentActivity
 		String completion = Double.toString(Double.valueOf(df2.format(savedata.getCompletion() * 100)));
 		TextView tv = (TextView) findViewById(R.id.completion_display);
 		tv.setText(completion + "% Complete");
+	}
+	
+	public void checkAchievements() {
+		Achievement nextItem = achievementData.getNextItem();
+		Achievement nextExhibitTotal = achievementData.getNextExhibitTotal();
+		//get current completion
+		SharedPreferences countPref = this.getSharedPreferences(ACHIEVEMENT, Context.MODE_PRIVATE);
+		int item_total = countPref.getInt(ITEMS_COMPLETE, 0);
+		int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
+		//check if achievement has been unlocked
+		if (nextItem != null && nextItem.checkCompletion(item_total)) {
+			//display popup
+			Toast.makeText(DisplayExhibitActivity.this, "Achievement unlocked", Toast.LENGTH_SHORT).show();
+		}
+		if (nextExhibitTotal != null && nextExhibitTotal.checkCompletion(exhibit_total)) {
+			//display popup
+			Toast.makeText(DisplayExhibitActivity.this, "Achievement unlocked", Toast.LENGTH_SHORT).show();
+		}
+		achievementData.getNextAchievements(item_total, exhibit_total);
 	}
 	
 }
