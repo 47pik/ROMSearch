@@ -35,6 +35,14 @@ public class Achievement {
 		return this.requirement;
 	}
 	
+	public String getType() {
+		return this.type;
+	}
+	
+	public String getExhibit() {
+		return this.exhibit;
+	}
+	
 	public boolean checkCompletion(int val) {
 		return val >= this.requirement;
 	}

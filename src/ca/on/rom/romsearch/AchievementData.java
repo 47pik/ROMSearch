@@ -1,10 +1,14 @@
 package ca.on.rom.romsearch;
 
+import java.util.HashMap;
+
+import android.content.Context;
+
 public class AchievementData {
 	
 	private static Achievement[] item_achievements;
-	private static Achievement[] exhibit_achievements;
 	private static Achievement[] exhibittotal_achievements;
+	HashMap<String, Achievement> exhibit_achievements = new HashMap<String, Achievement>();
 	
 	private static Achievement next_item;
 	private static Achievement next_exhibittotal;
@@ -17,15 +21,20 @@ public class AchievementData {
 		return next_exhibittotal;
 	}
 	
-	public AchievementData() {
-		Achievement[] item_achievements = {new Achievement("First", R.drawable.placeholder, "i", 1)};
+	public Achievement getExhibitAchievement(String exhibit) {
+		return exhibit_achievements.get(exhibit);
+	}
+	
+	public void setupAchievements(Context c) {
+		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.placeholder, "i", 1),
+				};
 		AchievementData.item_achievements = item_achievements;
 		
-		Achievement[] exhibit_achievements = {new Achievement("Egypt", R.drawable.placeholder, "e", R.string.egypt)};
-		AchievementData.exhibit_achievements = exhibit_achievements;
-		
-		Achievement[] exhibittotal_achievements = {new Achievement("First Exhibit", R.drawable.placeholder, "ne", 1)};
+		Achievement[] exhibittotal_achievements = {new Achievement("Tourist", R.drawable.placeholder, "ne", 1)
+				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
+		
+		exhibit_achievements.put(c.getString(R.string.egypt), new Achievement("Riddle of the Sphinx", R.drawable.placeholder, "e", c.getString(R.string.egypt)));
 	}
 	
 	/*

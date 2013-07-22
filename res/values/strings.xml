@@ -33,4 +33,6 @@
     
     <string name="item_name">What is this item?</string>
     
+    <string name="achievement_unlocked">Achievement Unlocked!</string>
+    
 </resources>

@@ -44,6 +44,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	
 	public static ExhibitData savedata;
 	public static AchievementData achievementData;
+
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -84,6 +85,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		
 		//get achievements
 		achievementData = new AchievementData();
+		achievementData.setupAchievements(getApplicationContext());
 		SharedPreferences countPref = this.getSharedPreferences(ACHIEVEMENT, Context.MODE_PRIVATE);
 		int item_total = countPref.getInt(ITEMS_COMPLETE, 0);
 		int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
@@ -125,6 +127,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		});
 		
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -153,9 +156,15 @@ public class DisplayExhibitActivity extends FragmentActivity
 			count_editor.putInt(ITEMS_COMPLETE, item_total + 1);
 			if (savedata.getCompletion() >= 1) {
 				count_editor.putInt(EXHIBITS_COMPLETE, exhibit_total + 1);
-				//display achievement unlocked popup for completing THIS exhibit (exhibit type)
+				count_editor.commit();
+				//display achievement unlocked popup for completing THIS exhibit (exhibit-type achievement)
+				Achievement exhibit_achievement = achievementData.getExhibitAchievement(exhibit);
+				DialogFragment unlocked = AchievementUnlockedDialogFragment.newInstance(exhibit_achievement);
+				FragmentManager fm = getSupportFragmentManager();
+				unlocked.show(fm, "achievement");
+			} else {
+				count_editor.commit();
 			}
-			count_editor.commit();
 			//check if achievements unlocked
 			checkAchievements();
 			//update grid display and text display
@@ -250,12 +259,17 @@ public class DisplayExhibitActivity extends FragmentActivity
 		int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
 		//check if achievement has been unlocked
 		if (nextItem != null && nextItem.checkCompletion(item_total)) {
-			//display popup
-			Toast.makeText(DisplayExhibitActivity.this, "Achievement unlocked", Toast.LENGTH_SHORT).show();
+			DialogFragment dialog = AchievementUnlockedDialogFragment.newInstance(nextItem);
+			//dialogs_pending.add(dialog);
+			FragmentManager fm = getSupportFragmentManager();
+			dialog.show(fm, "achievement");
 		}
 		if (nextExhibitTotal != null && nextExhibitTotal.checkCompletion(exhibit_total)) {
 			//display popup
-			Toast.makeText(DisplayExhibitActivity.this, "Achievement unlocked", Toast.LENGTH_SHORT).show();
+			DialogFragment dialog = AchievementUnlockedDialogFragment.newInstance(nextExhibitTotal);
+			//dialogs_pending.add(dialog);
+			FragmentManager fm = getSupportFragmentManager();
+			dialog.show(fm, "achievement");
 		}
 		achievementData.getNextAchievements(item_total, exhibit_total);
 	}

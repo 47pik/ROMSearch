@@ -3,7 +3,7 @@
 - Implement a visual representation of save data
 	- overall completion ratings
 	- add more achievements (with names and images)
-	- add achievement unlocked popup
+	- improve achievement unlocked dialog notifications
 	- add display for achievements
 
 - Improve the activity_main.xml layout
