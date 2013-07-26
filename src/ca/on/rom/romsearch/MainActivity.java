@@ -101,6 +101,12 @@ public class MainActivity extends Activity {
 		}
 		return spinnerArray;
 	}
+	
+	public void goToAchievements(View view) {
+		startActivity(new Intent(this, AchievementListActivity.class));
+		
+	}
+	
 	private void goTo(String exhibit) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
 		intent.putExtra(EXTRA_MESSAGE, exhibit);

@@ -18,6 +18,13 @@
         android:textSize="25sp"
         android:paddingTop="225dp"/>
     
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_achievements"
+        android:onClick="goToAchievements"
+        />
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,5 +78,7 @@
             
         </LinearLayout>
     </HorizontalScrollView>
+    
+
 
 </LinearLayout>

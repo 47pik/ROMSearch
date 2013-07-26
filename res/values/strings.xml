@@ -7,6 +7,8 @@
     <string name="choose_exhibit">Please choose your exhibit below</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_achievements">Achievements</string>
+    <string name="achievements">Achievements</string>
 
     <color name="white">#FFFFFF</color>
 
@@ -18,7 +20,7 @@
         <item>@string/greece</item>
         <item>@string/middle_east</item>
     </string-array>
-    
+
     <string name="egypt">Galleries of Africa: Egypt</string>
     <string name="south_asia">Sir Christopher Ondaatje Gallery of South Asia</string>
     <string name="greece">Gallery of Greece</string>
@@ -27,12 +29,11 @@
     <string name="nubia">Galleries of Africa: Nubia</string>
     <string name="chinese_architecture">Gallery of Chinese Architecture</string>
     
-
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>
-    
     <string name="item_name">What is this item?</string>
-    
     <string name="achievement_unlocked">Achievement Unlocked!</string>
-    
+    <string name="title_activity_achievement_list">AchievementListActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

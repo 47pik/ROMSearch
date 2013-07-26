@@ -4,7 +4,11 @@
 	- overall completion ratings
 	- add more achievements (with names and images)
 	- improve achievement unlocked dialog notifications
-	- add display for achievements
+
+-Improve the activity_achievement_list.xml layout
+	- figure out why the title isn't appearing above the list
+	- add background
+	- add click functionality
 
 - Improve the activity_main.xml layout
 	- make clearer what users are supposed to do

@@ -1,5 +1,6 @@
 package ca.on.rom.romsearch;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.content.Context;
@@ -12,6 +13,25 @@ public class AchievementData {
 	
 	private static Achievement next_item;
 	private static Achievement next_exhibittotal;
+	
+	private Context c;
+	
+	public Achievement[] getAllAchievements(){
+		ArrayList<Achievement> achievements = new ArrayList<Achievement>();
+		for (int i = 0; i < item_achievements.length; i++) {
+			achievements.add(item_achievements[i]);
+		}
+		for (int i = 0; i < exhibittotal_achievements.length; i++) {
+			achievements.add(exhibittotal_achievements[i]);
+		}
+		String[] exhibits = c.getResources().getStringArray(R.array.exhibit_array);
+		for (int i = 0; i < exhibits.length; i++) {
+			achievements.add(getExhibitAchievement(exhibits[i]));
+		}
+		Achievement[] achievementArr = new Achievement[achievements.size()];
+		achievementArr = achievements.toArray(achievementArr);
+		return achievementArr;
+	}
 	
 	public Achievement getNextItem() {
 		return next_item;
@@ -26,15 +46,23 @@ public class AchievementData {
 	}
 	
 	public void setupAchievements(Context c) {
-		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.placeholder, "i", 1),
+		this.c = c;
+		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.placeholder_s, "i", 1),
 				};
 		AchievementData.item_achievements = item_achievements;
 		
-		Achievement[] exhibittotal_achievements = {new Achievement("Tourist", R.drawable.placeholder, "ne", 1)
+		Achievement[] exhibittotal_achievements = {new Achievement("Tourist", R.drawable.placeholder_s, "ne", 1)
 				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
-		exhibit_achievements.put(c.getString(R.string.egypt), new Achievement("Riddle of the Sphinx", R.drawable.placeholder, "e", c.getString(R.string.egypt)));
+		exhibit_achievements.put(c.getString(R.string.egypt), 
+				new Achievement("Riddle of the Sphinx", R.drawable.placeholder_s, "e", c.getString(R.string.egypt)));
+		exhibit_achievements.put(c.getString(R.string.greece),
+				new Achievement("Greece is the Word", R.drawable.placeholder_s, "e", c.getString(R.string.greece)));
+		exhibit_achievements.put(c.getString(R.string.south_asia),
+				new Achievement("placeholder name", R.drawable.placeholder_s, "e", c.getString(R.string.south_asia)));
+		exhibit_achievements.put(c.getString(R.string.middle_east),
+				new Achievement("placeholder name", R.drawable.placeholder_s, "e", c.getString(R.string.middle_east)));
 	}
 	
 	/*
