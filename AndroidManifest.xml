@@ -32,7 +32,8 @@
         </activity>
         <activity
             android:name="ca.on.rom.romsearch.AchievementListActivity"
-            android:label="@string/title_activity_achievement_list" >
+            android:label="@string/title_activity_achievement_list"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
