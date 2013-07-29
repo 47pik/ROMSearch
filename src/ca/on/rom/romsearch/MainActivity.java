@@ -96,13 +96,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 		String exhibit;
 		String completion;
 		double val;
-		DecimalFormat df2 = new DecimalFormat("###.##");
 		for (int i = 0; i < exhibitArray.length; i++) {
 			exhibit = exhibitArray[i];
 			val = completionArray[i] * 100;
-			//format double to 2 decimal places
-			val = Double.valueOf(df2.format(val));
-			completion = Double.toString(val);
+			completion = Integer.toString((int) Math.round(val));
 			spinnerArray[i] = exhibit + " - " + completion + "%";
 		}
 		return spinnerArray;

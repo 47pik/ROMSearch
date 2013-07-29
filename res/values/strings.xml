@@ -33,7 +33,7 @@
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>
     <string name="item_name">What is this item?</string>
-    <string name="achievement_unlocked">Achievement Unlocked!</string>
+    <string name="achievement_unlocked"><u>Achievement Unlocked!</u></string>
     <string name="title_activity_achievement_list">AchievementListActivity</string>
     <string name="hello_world">Hello world!</string>
 

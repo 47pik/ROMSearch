@@ -1,20 +1,18 @@
 ----LIST OF THINGS NEEDING TO BE DONE----
 
 - Implement a visual representation of save data
-	- overall completion ratings
 	- add more achievements (with names and images)
-	- improve achievement unlocked dialog notifications
+	- add background to achievement_unlocked.xml
 
 -Improve the activity_achievement_list.xml layout
 	- add background
-	- add click functionality
 
 - Improve the activity_main.xml layout
 	- make clearer what users are supposed to do
 	- create a spinner/display image hybrid
 	- change to the correct ROM logo
 
+- Add words to dictionary to help users type them in
+
 - Fix bugs
-	- Find a more practical solution for the exhibit title display
-	(current one is hard coded nonsense thrown together for demo)
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". This needs to be fixed.

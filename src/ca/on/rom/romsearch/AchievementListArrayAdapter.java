@@ -48,4 +48,9 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		
 		return rowView;
 	}
+	
+	@Override
+	public boolean isEnabled(int position) {
+	    return false;
+	}
 }

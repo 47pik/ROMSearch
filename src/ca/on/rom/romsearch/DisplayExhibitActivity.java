@@ -247,8 +247,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	}
 	
 	public void updateCompletionDisplay() {
-		DecimalFormat df2 = new DecimalFormat("###.##");
-		String completion = Double.toString(Double.valueOf(df2.format(savedata.getCompletion() * 100)));
+		String completion = Integer.toString((int) Math.round(Double.valueOf(savedata.getCompletion() * 100)));
 		TextView tv = (TextView) findViewById(R.id.completion_display);
 		tv.setText(completion + "% Complete");
 	}
