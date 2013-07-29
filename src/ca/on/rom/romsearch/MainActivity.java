@@ -10,9 +10,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnItemSelectedListener{
 	
 	public static final String EXTRA_MESSAGE = "ca.on.rom.ROMSEARCH.MESSAGE";
 	public static final String EXTRA_SAVEFILE = "ca.on.rom.ROMSEARCH.SAVEFILE";
@@ -23,10 +26,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//GridData.setupTables(getApplicationContext());
+		GridData.setupTables(getApplicationContext());
 		setContentView(R.layout.activity_main);
 		loadSave();
-//		onCreateSpinner();
+		onCreateSpinner();
 	}
 
 	@Override
@@ -36,36 +39,38 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-//	public void onCreateSpinner() {
-//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-//		//Create an ArrayAdapter using the string array and a default spinner layout
-//		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//			//	R.array.exhibit_array, android.R.layout.simple_spinner_dropdown_item);
-//		//Specify the layout to use when the list of choices appears
-//		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//		String spinnerArray[] = makeSpinnerArray();
-//		SpinnerArrayAdapter adapter = new SpinnerArrayAdapter (this, 
-//				android.R.layout.simple_spinner_dropdown_item, spinnerArray);
-//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//		//Apply the adapter to the spinner
-//		spinner.setAdapter(adapter);
-//	}
-//	
-//	public void chooseExhibit(View view) {
-//		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-//		//get name
-//		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
-//		String exhibit = spinner.getSelectedItem().toString().split(" - ")[0]; //get name only
-//		//get save data
-//		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
-//		String savedata = sharedPref.getString(exhibit, "000000000");
-//		//send name and save data
-//		intent.putExtra(EXTRA_MESSAGE, exhibit);
-//		intent.putExtra(EXTRA_SAVEFILE, savedata);
-//		startActivity(intent);
-//		
-//	}
+	public void onCreateSpinner() {
+		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+		String spinnerArray[] = makeSpinnerArray();
+		SpinnerArrayAdapter adapter = new SpinnerArrayAdapter (this, 
+				android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+		//Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		//Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
+		//set an onClickListener
+		spinner.setOnItemSelectedListener(this);
+		//get the displayed item and display it's thumbnail
+		String exhibit = ((String) spinner.getSelectedItem()).split(" - ")[0];
+		updateImage(exhibit);
+	}
 	
+	public void chooseExhibit(View view) {
+		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+		//get name
+		Spinner spinner = (Spinner) findViewById(R.id.exhibit_spinner);
+		String exhibit = spinner.getSelectedItem().toString().split(" - ")[0]; //get name only
+		//get save data
+		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
+		String savedata = sharedPref.getString(exhibit, "000000000");
+		//send name and save data
+		intent.putExtra(EXTRA_MESSAGE, exhibit);
+		intent.putExtra(EXTRA_SAVEFILE, savedata);
+		startActivity(intent);
+		
+	}
+
+
 	public void loadSave() {
 		ExhibitData eData; //exhibit data structure
 		SharedPreferences sData; //exhibit save data string from sharedpref
@@ -102,30 +107,48 @@ public class MainActivity extends Activity {
 		return spinnerArray;
 	}
 	
+	private void updateImage(String spinnerEntry) {
+		//Get just the name of the exhibit
+		String exhibit = spinnerEntry.split(" - ")[0];
+		//use the middle item of the 3x3 exhibit display
+		int img = GridData.getThumbs().get(exhibit)[4];
+		//ImageView display = (ImageView) findViewById(R.id.exhibit_image);
+		//display.setImageResource(img);
+	}
+	
 	public void goToAchievements(View view) {
 		startActivity(new Intent(this, AchievementListActivity.class));
 		
 	}
 	
-	private void goTo(String exhibit) {
-		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-		intent.putExtra(EXTRA_MESSAGE, exhibit);
-		startActivity(intent);
+//OnItemSelectedListener methods
+
+	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+		updateImage((String) parent.getItemAtPosition(pos));
 	}
 	
-	public void gotoEgypt(View view) {
-		goTo(getString(R.string.egypt));
-	}
-	
-	public void gotoSouthAsia(View view) {
-		goTo(getString(R.string.south_asia));
+	public void onNothingSelected(AdapterView<?> parent) {
 	}
 
-	public void gotoGreece(View view) {
-		goTo(getString(R.string.greece));
-	}
-	
-	public void gotoMiddleEast(View view) {
-		goTo(getString(R.string.middle_east));
-	}
+//	private void goTo(String exhibit) {
+//		Intent intent = new Intent(this, DisplayExhibitActivity.class);
+//		intent.putExtra(EXTRA_MESSAGE, exhibit);
+//		startActivity(intent);
+//	}
+//	
+//	public void gotoEgypt(View view) {
+//		goTo(getString(R.string.egypt));
+//	}
+//	
+//	public void gotoSouthAsia(View view) {
+//		goTo(getString(R.string.south_asia));
+//	}
+//
+//	public void gotoGreece(View view) {
+//		goTo(getString(R.string.greece));
+//	}
+//	
+//	public void gotoMiddleEast(View view) {
+//		goTo(getString(R.string.middle_east));
+//	}
 }

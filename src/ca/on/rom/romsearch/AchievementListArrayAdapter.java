@@ -23,12 +23,25 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.achievement_row_layout, parent, false);
-		TextView textview = (TextView) rowView.findViewById(R.id.achievement_name);
+		TextView nameview = (TextView) rowView.findViewById(R.id.achievement_name);
+		TextView descview = (TextView) rowView.findViewById(R.id.achievement_description);
 		ImageView imageview = (ImageView) rowView.findViewById(R.id.achievement_image);
 		//set the views to have the correct values
-		String name = achievements[position].getName();
-		textview.setText(name);
-		imageview.setImageResource(achievements[position].getImage());
+		Achievement achievement = achievements[position];
+		String name = achievement.getName();
+		nameview.setText(name);
+		imageview.setImageResource(achievement.getImage());
+		//set the description of the achievement
+		String desc;
+		if (achievement.getType().equals("i")) {
+			desc = "Find " + Integer.toString(achievement.getRequirement()) + " items";
+		} else if (achievement.getType().equals("ne")) {
+			desc = "Complete " + Integer.toString(achievement.getRequirement()) + " exhibits";
+		} else {
+			desc = "Complete the " + achievement.getExhibit() + " exhibit";
+		}
+		descview.setText(desc);
+		
 		return rowView;
 	}
 }
