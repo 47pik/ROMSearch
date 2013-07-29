@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	public static Integer[] image_thumbs;
 	public static String[] image_names;
 	public static int pos = 0;
+	public String[] exhibitArray;
 	
 	public static ExhibitData savedata;
 	public static AchievementData achievementData;
@@ -54,22 +56,35 @@ public class DisplayExhibitActivity extends FragmentActivity
 		setContentView(R.layout.activity_display_exhibit);
 		
 		//get exhibit title
+		//Basic testing code follows.
 		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		TextView textview = (TextView) findViewById(R.id.exhibit_title);
-		textview.setText(exhibit);
+		exhibitArray = getResources().getStringArray(R.array.exhibit_array);
+		ImageView imageview2 = (ImageView) findViewById(R.id.exhibit_title);
+		if (exhibit.contains("Greece")){
+			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlegreece));
+		}
+		else if (exhibit.contains("Chinese")){
+			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlechina));
+		}
+		else if (exhibit.contains("Asia")){
+			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlesouthasia));
+		}
+		else {
+			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlemiddleeast));
+		}
 		
-		//this is really rough code. Replace ASAP, just here to get working for demo
-		if (exhibit.length() > 30) {
-			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 22);
-			float scale = getResources().getDisplayMetrics().density;
-			textview.setPadding(0, (int)(8 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
-		}
-		if (exhibit.length() > 40) {
-			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 14);
-			float scale = getResources().getDisplayMetrics().density;
-			textview.setPadding(0, (int)(17 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
-		}
-		//end of really really terrible code
+//		//this is really rough code. Replace ASAP, just here to get working for demo
+//		if (exhibit.length() > 30) {
+//			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 22);
+//			float scale = getResources().getDisplayMetrics().density;
+//			textview.setPadding(0, (int)(8 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
+//		}
+//		if (exhibit.length() > 40) {
+//			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 14);
+//			float scale = getResources().getDisplayMetrics().density;
+//			textview.setPadding(0, (int)(17 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
+//		}
+//		//end of really really terrible code
 		
 		//get image names and ids
 		GridData.setupTables(getApplicationContext());
@@ -101,11 +116,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 		int[] display = getThisDisplay();
 		int screenHeight = display[0];
 		int screenWidth = display[1];
+		
 		//setup grids
 		GridView gridview = (GridView) findViewById(R.id.gridview); //for images
 		gridview.setAdapter(new ImageAdapter(this, image_thumbs, screenHeight, screenWidth));
 		GridView overlay = (GridView) findViewById(R.id.overlay); //for completion image
 		overlay.setAdapter(new ImageAdapter(this, savedata.getOverlay(), screenHeight, screenWidth));
+		
 		//Listen for click on overlay
 		overlay.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -148,6 +165,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 			SharedPreferences.Editor editor = sharedPref.edit();
 			editor.putString(exhibit, savedata.getRaw());
 			editor.commit();
+			
 			//update achievement counters
 			SharedPreferences countPref = this.getSharedPreferences(ACHIEVEMENT, Context.MODE_PRIVATE);
 			int item_total = countPref.getInt(ITEMS_COMPLETE, 0);
