@@ -9,14 +9,13 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:background="@drawable/newbkground3" >
 
-     <TextView
+     <ImageView
          android:id="@+id/exhibit_title"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_gravity="center_horizontal"
-         android:paddingBottom="44dp"
-         android:textColor="@color/white"
-         android:textSize="20sp" />
+         android:src="@drawable/title_greece6"
+         />
      
      <FrameLayout 
          android:layout_width="fill_parent"
