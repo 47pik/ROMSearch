@@ -6,7 +6,6 @@
 	- improve achievement unlocked dialog notifications
 
 -Improve the activity_achievement_list.xml layout
-	- figure out why the title isn't appearing above the list
 	- add background
 	- add click functionality
 
@@ -18,4 +17,3 @@
 - Fix bugs
 	- Find a more practical solution for the exhibit title display
 	(current one is hard coded nonsense thrown together for demo)
-	- Pressing back button at bottom of screen doesn't update 		savedata upon return to MainActivity

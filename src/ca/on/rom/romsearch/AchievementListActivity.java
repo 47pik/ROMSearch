@@ -1,14 +1,16 @@
 package ca.on.rom.romsearch;
 
-import java.util.ArrayList;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class AchievementListActivity extends Activity {
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,13 +25,16 @@ public class AchievementListActivity extends Activity {
 				achievements);
 		listview.setAdapter(adapter);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		//ensure Honeycomb or higher to use ActionBar APIs
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			//show the up button in the action bar
+			getActionBar().setDisplayHomeAsUpEnabled(true);
+		}
 	}
-
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.achievement_list, menu);
+	public boolean onOptionsItemSelected(MenuItem item) {
+		startActivity(new Intent(this, MainActivity.class));
 		return true;
 	}
-
 }

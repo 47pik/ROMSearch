@@ -9,6 +9,7 @@
     <string name="button_cancel">Cancel</string>
     <string name="button_achievements">Achievements</string>
     <string name="achievements">Achievements</string>
+    <string name="help">Help</string>
 
     <color name="white">#FFFFFF</color>
 

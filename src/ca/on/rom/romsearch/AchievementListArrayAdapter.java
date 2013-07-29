@@ -40,6 +40,10 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		} else {
 			desc = "Complete the " + achievement.getExhibit() + " exhibit";
 		}
+		//drop "exhibit" from the end if too long
+		if (desc.length() > 50) {
+			desc = desc.split(" exhibit")[0];
+		}
 		descview.setText(desc);
 		
 		return rowView;

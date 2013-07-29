@@ -134,7 +134,23 @@ public class DisplayExhibitActivity extends FragmentActivity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.display_exhibit, menu);
 		return true;
-	}	
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.action_help:
+	            return true;
+	        case R.id.action_achievements:
+	        	startActivity(new Intent(this, AchievementListActivity.class));
+	        	return true;
+	        default:
+	            //return super.onOptionsItemSelected(item);
+	        	startActivity(new Intent(this, MainActivity.class));
+	        	return true;
+	    }
+	}
 	
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog, String input) {
@@ -182,12 +198,6 @@ public class DisplayExhibitActivity extends FragmentActivity
 	@Override
 	public void onDialogNegativeClick(DialogFragment dialog) {
 		
-	}
-	
-	public boolean onOptionsItemSelected(MenuItem item){
-	    Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-	    startActivityForResult(myIntent, 0);
-	    return true;
 	}
 	
 	public int[] getThisDisplay(){
