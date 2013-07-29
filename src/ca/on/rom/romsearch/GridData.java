@@ -9,6 +9,7 @@ public class GridData {
 	public static HashMap<String, Integer[]> images = new HashMap<String, Integer[]>();
 	public static HashMap<String, Integer[]> thumbs = new HashMap<String, Integer[]>();
 	public static HashMap<String, String[]> names = new HashMap<String, String[]>();
+	public static HashMap<String, Integer> titles = new HashMap<String, Integer>();
 	
 	public static HashMap<String, Integer[]> getImages() {
 		return images;
@@ -22,7 +23,17 @@ public class GridData {
 		return names;
 	}
 	
+	public static int getTitle(String exhibit) {
+		return titles.get(exhibit);
+	}
+	
 	public static void setupTables(Context c) {
+		//set up titles for exhibits
+		titles.put(c.getString(R.string.egypt), R.drawable.titleegypt);
+		titles.put(c.getString(R.string.south_asia), R.drawable.titlesouthasia);
+		titles.put(c.getString(R.string.greece), R.drawable.titlegreece);
+		titles.put(c.getString(R.string.middle_east), R.drawable.titlemiddleeast);
+		
 		//set up images for exhibits
 		Integer[] egypt_i = {R.drawable.egypt1, R.drawable.egypt2, R.drawable.egypt3, 
 				R.drawable.egypt4, R.drawable.egypt5, R.drawable.egypt6,

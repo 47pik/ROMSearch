@@ -17,3 +17,4 @@
 - Fix bugs
 	- Find a more practical solution for the exhibit title display
 	(current one is hard coded nonsense thrown together for demo)
+	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". This needs to be fixed.

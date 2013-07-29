@@ -55,36 +55,11 @@ public class DisplayExhibitActivity extends FragmentActivity
 		Intent intent = getIntent();
 		setContentView(R.layout.activity_display_exhibit);
 		
-		//get exhibit title
-		//Basic testing code follows.
+		//get exhibit title and display corresponding image
 		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		exhibitArray = getResources().getStringArray(R.array.exhibit_array);
-		ImageView imageview2 = (ImageView) findViewById(R.id.exhibit_title);
-		if (exhibit.contains("Greece")){
-			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlegreece));
-		}
-		else if (exhibit.contains("Chinese")){
-			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlechina));
-		}
-		else if (exhibit.contains("Asia")){
-			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlesouthasia));
-		}
-		else {
-			imageview2.setImageDrawable(getResources().getDrawable(R.drawable.titlemiddleeast));
-		}
-		
-//		//this is really rough code. Replace ASAP, just here to get working for demo
-//		if (exhibit.length() > 30) {
-//			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 22);
-//			float scale = getResources().getDisplayMetrics().density;
-//			textview.setPadding(0, (int)(8 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
-//		}
-//		if (exhibit.length() > 40) {
-//			textview.setTextSize(TypedValue.COMPLEX_UNIT_SP, (float) 14);
-//			float scale = getResources().getDisplayMetrics().density;
-//			textview.setPadding(0, (int)(17 * scale + 0.5f), 0, (int)(46 * scale + 0.5f));
-//		}
-//		//end of really really terrible code
+		ImageView title = (ImageView) findViewById(R.id.exhibit_title);
+		title.setImageResource(GridData.getTitle(exhibit));
 		
 		//get image names and ids
 		GridData.setupTables(getApplicationContext());
