@@ -10,6 +10,7 @@ public class GridData {
 	public static HashMap<String, Integer[]> thumbs = new HashMap<String, Integer[]>();
 	public static HashMap<String, String[]> names = new HashMap<String, String[]>();
 	public static HashMap<String, Integer> titles = new HashMap<String, Integer>();
+	public static HashMap<String, String[]> words = new HashMap<String, String[]>(); //for dict
 	
 	public static HashMap<String, Integer[]> getImages() {
 		return images;
@@ -25,6 +26,10 @@ public class GridData {
 	
 	public static int getTitle(String exhibit) {
 		return titles.get(exhibit);
+	}
+	
+	public static String[] getDictWords(String exhibit) {
+		return words.get(exhibit);
 	}
 	
 	public static void setupTables(Context c) {
@@ -102,6 +107,22 @@ public class GridData {
 		names.put(c.getString(R.string.south_asia), south_asia_n);
 		names.put(c.getString(R.string.greece), greece_n);
 		names.put(c.getString(R.string.middle_east), middle_east_n);
+		
+		//set up dictionary words for each exhibit
+		String[] egypt_w = {"Pedikhonsu", "Senwosret", "Sakhmet", "Hatshepsut", "Bokennenife"
+				};
+		String[] south_asia_w = {"bhuj", "Yamantaka", "Vajrabhairava"
+				};
+		String[] greece_w = {"etrusco", "etrusco-corinthian", "neck-amphora", "amphora", "kylix", 
+				"Dionysos", "Herakles", "parthenos", "Silenos"
+				};
+		String[] middle_east_w = {"amlash", "axe-adze", "adze", "Qur'ran"
+				};
+		
+		words.put(c.getString(R.string.egypt), egypt_w);
+		words.put(c.getString(R.string.south_asia), south_asia_w);
+		words.put(c.getString(R.string.greece), greece_w);
+		words.put(c.getString(R.string.middle_east), middle_east_w);
+		
 	}
-
 }

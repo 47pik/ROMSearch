@@ -1,18 +1,17 @@
 package ca.on.rom.romsearch;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
+import android.provider.UserDictionary;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ImageView;
 import android.widget.Spinner;
 
 public class MainActivity extends Activity implements OnItemSelectedListener{
@@ -30,6 +29,12 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 		setContentView(R.layout.activity_main);
 		loadSave();
 		onCreateSpinner();
+		//if the first time running, display the help and add words to dictionary
+		boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
+		if (firstrun) {
+			addDictionaryWords();
+			//showHelp()
+		}
 	}
 	
 	@Override
@@ -118,6 +123,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 		startActivity(new Intent(this, AchievementListActivity.class));	
 	}
 	
+	
 //OnItemSelectedListener methods
 
 	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -126,7 +132,19 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 	
 	public void onNothingSelected(AdapterView<?> parent) {
 	}
-
+	
+//First run UserDictionary related methods
+	
+	public void addDictionaryWords() {
+		for (String exhibit : exhibitArray) {
+			String[] words = GridData.getDictWords(exhibit);
+			for (String word : words) {
+				Locale current = getResources().getConfiguration().locale;
+				UserDictionary.Words.addWord(getApplicationContext(), word, 1, null, current);
+			}
+		}
+	}
+	
 //	private void goTo(String exhibit) {
 //		Intent intent = new Intent(this, DisplayExhibitActivity.class);
 //		intent.putExtra(EXTRA_MESSAGE, exhibit);
