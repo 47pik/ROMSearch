@@ -1,11 +1,9 @@
 package ca.on.rom.romsearch;
 
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +14,6 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,7 +53,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		setContentView(R.layout.activity_display_exhibit);
 		
 		//get exhibit title and display corresponding image
-		exhibit = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+		exhibit = intent.getStringExtra(ChooseExhibitActivity.EXTRA_MESSAGE);
 		exhibitArray = getResources().getStringArray(R.array.exhibit_array);
 		ImageView title = (ImageView) findViewById(R.id.exhibit_title);
 		title.setImageResource(GridData.getTitle(exhibit));
@@ -139,7 +136,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	        	return true;
 	        default:
 	            //return super.onOptionsItemSelected(item);
-	        	startActivity(new Intent(this, MainActivity.class));
+	        	startActivity(new Intent(this, ChooseExhibitActivity.class));
 	        	return true;
 	    }
 	}

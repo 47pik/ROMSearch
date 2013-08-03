@@ -18,6 +18,22 @@
         android:textSize="25sp"
         android:paddingTop="225dp"/>
     
+   	<Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_achievements"
+        android:onClick="goToAchievements"
+        />
+   	
+   	<Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_exhibits"
+        android:onClick="goToExhibits"
+        />
+    
+    
+ <!--   
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,14 +99,6 @@
         	android:onClick="chooseExhibit" />
      
     </RelativeLayout>
-    
-    <!--   
-    <Button 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_achievements"
-        android:onClick="goToAchievements"
-        />
-        -->
 
+	-->  
 </LinearLayout>

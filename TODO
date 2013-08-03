@@ -2,18 +2,24 @@
 
 - Implement a visual representation of save data
 	- add more achievements (with names and images)
-	- add background to achievement_unlocked.xml
+	- add a background to achievement_unlocked.xml
 
 -Improve the activity_achievement_list.xml layout
-	- add background
+	- add a better background
 	- add lock image for achievements that are still locked
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
-	- make clearer what users are supposed to do
-	- finalize design
 	- change to the correct ROM logo
 	- ensure works on all devices
 
+- Improve the activity_choose_exhibit.xml layout
+	- add a background
+	- add instructions
+- Misc.
+	- Add a logo for the app
+	- Add a help menu for DisplayExhibitActivity
+
 - Fix bugs
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". This needs to be fixed.
+	- Replicate and fix the crashing bug

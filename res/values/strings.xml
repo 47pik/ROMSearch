@@ -8,6 +8,7 @@
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_achievements">Achievements</string>
+    <string name="button_exhibits">Choose Exhibit</string>
     <string name="achievements">Achievements</string>
     <string name="help">Help</string>
 
@@ -29,12 +30,12 @@
     <string name="korea">Gallery of Korea</string>
     <string name="nubia">Galleries of Africa: Nubia</string>
     <string name="chinese_architecture">Gallery of Chinese Architecture</string>
-    
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>
     <string name="item_name">What is this item?</string>
     <string name="achievement_unlocked"><u>Achievement Unlocked!</u></string>
     <string name="title_activity_achievement_list">AchievementListActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_choose_exhibit">ChooseExhibitActivity</string>
 
 </resources>

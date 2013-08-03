@@ -7,8 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-    
-     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" >
+    </uses-permission>
 
     <application
         android:allowBackup="true"
@@ -33,6 +34,11 @@
         <activity
             android:name="ca.on.rom.romsearch.AchievementListActivity"
             android:label="@string/title_activity_achievement_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="ca.on.rom.romsearch.ChooseExhibitActivity"
+            android:label="@string/title_activity_choose_exhibit"
             android:screenOrientation="portrait" >
         </activity>
     </application>
