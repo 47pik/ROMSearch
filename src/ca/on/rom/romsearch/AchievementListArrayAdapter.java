@@ -11,13 +11,13 @@ import android.widget.TextView;
 public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 	private final Context context;
 	private final Achievement[] achievements;
-	private final boolean[] completion;
+	private final int completed;
 	
-	public AchievementListArrayAdapter(Context context, Achievement[] achievements, boolean[] completion) {
+	public AchievementListArrayAdapter(Context context, Achievement[] achievements, int completed) {
 		super(context, R.layout.achievement_row_layout, achievements);
 		this.context = context;
 		this.achievements = achievements;
-		this.completion = completion;
+		this.completed = completed; //number of completed items
 	}
 	
 	@Override
@@ -32,7 +32,8 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		Achievement achievement = achievements[position];
 		String name = achievement.getName();
 		nameview.setText(name);
-		if (completion[position]) {
+		//Since completed items are at head of list, completed if position < completed
+		if (position < completed) {
 			imageview.setImageResource(achievement.getImage());
 		} else {
 			imageview.setImageResource(R.drawable.achievement_locked);
