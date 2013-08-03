@@ -141,7 +141,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 	public void onNothingSelected(AdapterView<?> parent) {
 	}
 	
-//First run UserDictionary related methods
+//First run methods
 	
 	public void addDictionaryWords() {
 		for (String exhibit : exhibitArray) {
@@ -152,26 +152,4 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
 			}
 		}
 	}
-	
-//	private void goTo(String exhibit) {
-//		Intent intent = new Intent(this, DisplayExhibitActivity.class);
-//		intent.putExtra(EXTRA_MESSAGE, exhibit);
-//		startActivity(intent);
-//	}
-//	
-//	public void gotoEgypt(View view) {
-//		goTo(getString(R.string.egypt));
-//	}
-//	
-//	public void gotoSouthAsia(View view) {
-//		goTo(getString(R.string.south_asia));
-//	}
-//
-//	public void gotoGreece(View view) {
-//		goTo(getString(R.string.greece));
-//	}
-//	
-//	public void gotoMiddleEast(View view) {
-//		goTo(getString(R.string.middle_east));
-//	}
 }

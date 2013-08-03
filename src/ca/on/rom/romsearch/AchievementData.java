@@ -48,10 +48,24 @@ public class AchievementData {
 	public void setupAchievements(Context c) {
 		this.c = c;
 		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.placeholder_s, "i", 1),
+				new Achievement("First Five", R.drawable.placeholder_s, "i", 5),
+				new Achievement("Top Ten", R.drawable.placeholder_s, "i", 10),
+				new Achievement("Hobbyist", R.drawable.placeholder_s, "i", 20),
+				new Achievement("Enthusiast", R.drawable.placeholder_s, "i", 30),
+				new Achievement("Collector", R.drawable.placeholder_s, "i", 50),
+				new Achievement("Historian", R.drawable.placeholder_s, "i", 75),
+				new Achievement("The Big 100", R.drawable.placeholder_s, "i", 100),
+				new Achievement("Curator", R.drawable.placeholder_s, "i", 200),
 				};
 		AchievementData.item_achievements = item_achievements;
 		
-		Achievement[] exhibittotal_achievements = {new Achievement("Tourist", R.drawable.placeholder_s, "ne", 1)
+		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.placeholder_s, "ne", 1),
+				new Achievement("Tourist", R.drawable.placeholder_s, "ne", 2), 
+				new Achievement("Traveler", R.drawable.placeholder_s, "ne", 4),
+				new Achievement("Scholar", R.drawable.placeholder_s, "ne", 7),
+				new Achievement("Explorer", R.drawable.placeholder_s, "ne", 10),
+				new Achievement("World Traveller", R.drawable.placeholder_s, "ne", 15),
+				new Achievement("Master Explorer", R.drawable.placeholder_s, "ne", 20)
 				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
@@ -60,9 +74,9 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.greece),
 				new Achievement("Greece is the Word", R.drawable.placeholder_s, "e", c.getString(R.string.greece)));
 		exhibit_achievements.put(c.getString(R.string.south_asia),
-				new Achievement("placeholder name", R.drawable.placeholder_s, "e", c.getString(R.string.south_asia)));
+				new Achievement("Due South", R.drawable.placeholder_s, "e", c.getString(R.string.south_asia)));
 		exhibit_achievements.put(c.getString(R.string.middle_east),
-				new Achievement("placeholder name", R.drawable.placeholder_s, "e", c.getString(R.string.middle_east)));
+				new Achievement("Caught in the Middle", R.drawable.placeholder_s, "e", c.getString(R.string.middle_east)));
 	}
 	
 	/*
