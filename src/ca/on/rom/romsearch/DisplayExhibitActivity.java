@@ -162,6 +162,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 			count_editor.putInt(ITEMS_COMPLETE, item_total + 1);
 			if (savedata.getCompletion() >= 1) {
 				count_editor.putInt(EXHIBITS_COMPLETE, exhibit_total + 1);
+				count_editor.putBoolean(exhibit, true);
 				count_editor.commit();
 				//display achievement unlocked popup for completing THIS exhibit (exhibit-type achievement)
 				Achievement exhibit_achievement = achievementData.getExhibitAchievement(exhibit);

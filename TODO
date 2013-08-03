@@ -6,11 +6,10 @@
 
 -Improve the activity_achievement_list.xml layout
 	- add a better background
-	- add lock image for achievements that are still locked
+	- sort achievements so unlocked ones are on top
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
-	- change to the correct ROM logo
 	- ensure works on all devices
 
 - Improve the activity_choose_exhibit.xml layout
