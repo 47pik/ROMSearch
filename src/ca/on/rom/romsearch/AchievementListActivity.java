@@ -65,7 +65,7 @@ public class AchievementListActivity extends Activity {
 		
 		Achievement[] sorted = sortedList.toArray(new Achievement[sortedList.size()]);
 		final AchievementListArrayAdapter adapter = new AchievementListArrayAdapter(getApplicationContext(),
-				sorted, completeList.size());
+				sorted, completeList.size(), item_total, exhibit_total);
 		listview.setAdapter(adapter);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);

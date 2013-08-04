@@ -54,7 +54,7 @@ public class AchievementData {
 				new Achievement("Enthusiast", R.drawable.placeholder_s, "i", 30),
 				new Achievement("Collector", R.drawable.placeholder_s, "i", 50),
 				new Achievement("Historian", R.drawable.placeholder_s, "i", 75),
-				new Achievement("The Big 100", R.drawable.placeholder_s, "i", 100),
+				new Achievement("The Big 100", R.drawable.achievement_item_100, "i", 100),
 				new Achievement("Curator", R.drawable.placeholder_s, "i", 200),
 				};
 		AchievementData.item_achievements = item_achievements;

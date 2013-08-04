@@ -18,6 +18,8 @@
 - Misc.
 	- Add a logo for the app
 	- Add a help menu for DisplayExhibitActivity
+	- Consider popup for finding an item.
+	- Make progress bars green?
 
 - Fix bugs
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". This needs to be fixed.
