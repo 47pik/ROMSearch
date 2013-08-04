@@ -5,19 +5,19 @@
 	- add a background to achievement_unlocked.xml
 
 -Improve the activity_achievement_list.xml layout
-	- add a better background
-	- sort achievements so unlocked ones are on top
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
+	- improve button layout
 	- ensure works on all devices
 
 - Improve the activity_choose_exhibit.xml layout
-	- add a background
 	- add instructions
+	- ensure works on all devices
+
 - Misc.
 	- Add a logo for the app
-	- Add a help menu for DisplayExhibitActivity
+	- alter the tutorials so that the "OK" button is on the image
 	- Consider popup for finding an item.
 	- Make progress bars green?
 
