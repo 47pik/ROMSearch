@@ -17,8 +17,8 @@
 	- ensure works on all devices
 
 - Misc.
+	- Add "OK" on tutorial_okay image
 	- Add a logo for the app
-	- alter the tutorials so that the "OK" button is on the image
 	- Consider popup for finding an item.
 	- Improve performance app wide, and reduce any unnecessarily 		large files
 

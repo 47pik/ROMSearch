@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class DisplayTutorialDialogFragment extends DialogFragment {
@@ -40,7 +41,13 @@ public class DisplayTutorialDialogFragment extends DialogFragment {
 		layout.setBackgroundResource(img);
 		
 		//Create the AlertDialog object and return it
-		return builder.create();
+		AlertDialog alert = builder.create();
+		alert.show();
+		//Skin the button, and remove the text
+		Button button = (Button) alert.findViewById(android.R.id.button1);
+		button.setBackgroundResource(R.drawable.tutorial_okay);
+		button.setText(null);
+		return alert;
 
 	}
 	
