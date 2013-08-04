@@ -13,12 +13,14 @@
 
 - Improve the activity_choose_exhibit.xml layout
 	- add instructions
+	- vertically center the cover images for all exhibits
 	- ensure works on all devices
 
 - Misc.
 	- Add a logo for the app
 	- alter the tutorials so that the "OK" button is on the image
 	- Consider popup for finding an item.
+	- Improve performance app wide, and reduce any unnecessarily 		large files
 
 - Fix bugs
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". This needs to be fixed.
