@@ -2,12 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:background="@drawable/exhibit_back"
+    >
     
     <ImageView
+        android:paddingTop="10dp"
         android:id="@+id/exhibit_image"
         android:layout_width="75sp"
         android:layout_height="75sp"
+        android:paddingBottom="10dp"
         />
     
 	<LinearLayout
@@ -20,6 +24,7 @@
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
     		android:textSize="20sp"
+    		android:textColor="#FFFFFF"
     		/>
     	
     	<RelativeLayout	
@@ -33,7 +38,9 @@
     	    	android:layout_height="wrap_content"
     	    	android:layout_centerHorizontal="true"
     			android:layout_centerVertical="true"
+    			android:paddingRight="10dp"
     	    	style="@android:style/Widget.ProgressBar.Horizontal"
+    	    	android:paddingBottom="10dp"
     	 	  />
 	
    			<TextView 
@@ -43,6 +50,8 @@
     			android:layout_centerHorizontal="true"
     			android:layout_centerVertical="true"
     			android:textSize="20sp"
+    			android:textColor="#FFFFFF"
+    			android:paddingBottom="10dp"
     			/>
    			
     	</RelativeLayout>

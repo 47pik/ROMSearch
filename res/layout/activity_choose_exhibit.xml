@@ -7,17 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ChooseExhibitActivity" >
+    tools:context=".ChooseExhibitActivity"
+    android:background="@drawable/exhibits_bkground"
+    >
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:textSize="20sp"
-       android:layout_gravity="center_horizontal"
-       android:text="@string/choose_exhibit"
-       />
    
    <ListView
+        android:paddingTop="80dp"
         android:id="@+id/exhibit_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
