@@ -60,9 +60,9 @@ public class DisplayExhibitActivity extends FragmentActivity
 		
 		//get image names and ids
 		GridData.setupTables(getApplicationContext());
-		image_names = GridData.getNames().get(exhibit);
-		image_ids = GridData.getImages().get(exhibit);
-		image_thumbs = GridData.getThumbs().get(exhibit);
+		image_names = GridData.getNames(exhibit);
+		image_ids = GridData.getImages(exhibit);
+		image_thumbs = GridData.getThumbs(exhibit);
 
 		//get exhibit savedata
 		SharedPreferences sharedPref = this.getSharedPreferences(exhibit, Context.MODE_PRIVATE);
@@ -114,6 +114,16 @@ public class DisplayExhibitActivity extends FragmentActivity
 				}
 			}
 		});
+		
+		//if first time running show tutorial
+		SharedPreferences sharedPref2 = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+		boolean firstrun = sharedPref2.getBoolean("firstrun_display", true);
+		if (firstrun) {
+			showHelp();
+			SharedPreferences.Editor editor = sharedPref2.edit();
+			editor.putBoolean("firstrun_display", false);
+			editor.commit();
+		}
 		
 	}
 	

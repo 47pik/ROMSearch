@@ -31,8 +31,6 @@ public class ChooseExhibitActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_exhibit);
 		GridData.setupTables(getApplicationContext());
-		loadSave();
-		onCreateListView();
 		
 		//ensure Honeycomb or higher to use ActionBar APIs
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -40,21 +38,6 @@ public class ChooseExhibitActivity extends Activity {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 		
-		//if the first time running, display the help and add words to dictionary
-		boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
-		if (firstrun) {
-			addDictionaryWords();
-			//showHelp()
-		}
-		
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();
-		//reload the save in case new savedata has been written
-		loadSave();
-		onCreateListView();
 	}
 	
 	public void onCreateListView() {
@@ -73,6 +56,25 @@ public class ChooseExhibitActivity extends Activity {
 	}
 
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//reload the save in case new savedata has been written
+		loadSave();
+		onCreateListView();
+		
+		//if the first time running, display the help and add words to dictionary
+		SharedPreferences sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+		boolean firstrun = sharedPref.getBoolean("firstrun_choose", true);
+		if (firstrun) {
+			addDictionaryWords();
+			//showHelp()
+			SharedPreferences.Editor editor = sharedPref.edit();
+			editor.putBoolean("firstrun_choose", false);
+			editor.commit();
+		}
+	}
+
 	public void chooseExhibit(String exhibit) {
 		Intent intent = new Intent(this, DisplayExhibitActivity.class);
 		//get save data

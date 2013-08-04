@@ -13,16 +13,16 @@ public class GridData {
 	public static HashMap<String, Integer> covers = new HashMap<String, Integer>();
 	public static HashMap<String, String[]> words = new HashMap<String, String[]>(); //for dict
 	
-	public static HashMap<String, Integer[]> getImages() {
-		return images;
+	public static Integer[] getImages(String exhibit) {
+		return images.get(exhibit);
 	}
 	
-	public static HashMap<String, Integer[]> getThumbs() {
-		return thumbs;
+	public static Integer[] getThumbs(String exhibit) {
+		return thumbs.get(exhibit);
 	}
 	
-	public static HashMap<String, String[]> getNames() {
-		return names;
+	public static String[] getNames(String exhibit) {
+		return names.get(exhibit);
 	}
 	
 	public static int getTitle(String exhibit) {
