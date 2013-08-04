@@ -11,7 +11,7 @@
         />
     
 	<LinearLayout
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical" >
 	    
@@ -22,12 +22,30 @@
     		android:textSize="20sp"
     		/>
     	
-   		<TextView 
-        	android:id="@+id/exhibit_completion"
-    		android:layout_width="wrap_content"
-    		android:layout_height="wrap_content"
-    		android:textSize="20sp"
-    		/>
+    	<RelativeLayout	
+    	    android:layout_width="fill_parent"
+	   		android:layout_height="wrap_content"
+	   		>
+	   		
+    		<ProgressBar
+    	    	android:id="@+id/exhibit_progress"
+    	    	android:layout_width="fill_parent"
+    	    	android:layout_height="wrap_content"
+    	    	android:layout_centerHorizontal="true"
+    			android:layout_centerVertical="true"
+    	    	style="@android:style/Widget.ProgressBar.Horizontal"
+    	 	  />
+	
+   			<TextView 
+        		android:id="@+id/exhibit_completion"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:layout_centerHorizontal="true"
+    			android:layout_centerVertical="true"
+    			android:textSize="20sp"
+    			/>
+   			
+    	</RelativeLayout>
     	
     	</LinearLayout>
 

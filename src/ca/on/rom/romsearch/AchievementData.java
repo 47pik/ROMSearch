@@ -70,7 +70,7 @@ public class AchievementData {
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
 		exhibit_achievements.put(c.getString(R.string.egypt), 
-				new Achievement("Riddle of the Sphinx", R.drawable.placeholder_s, "e", c.getString(R.string.egypt)));
+				new Achievement("Riddle of the Sphinx", R.drawable.achievement_egypt, "e", c.getString(R.string.egypt)));
 		exhibit_achievements.put(c.getString(R.string.greece),
 				new Achievement("Greece is the Word", R.drawable.placeholder_s, "e", c.getString(R.string.greece)));
 		exhibit_achievements.put(c.getString(R.string.south_asia),
