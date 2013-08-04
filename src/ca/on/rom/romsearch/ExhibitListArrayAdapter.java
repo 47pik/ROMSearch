@@ -35,7 +35,7 @@ public class ExhibitListArrayAdapter extends ArrayAdapter<String> {
 		//Set the views to have the correct values
 		String exhibit = exhibitArray[position];
 		nameview.setText(exhibit);
-		imageview.setImageResource(GridData.getThumbs().get(exhibit)[3]);
+		imageview.setImageResource(GridData.getCover(exhibit));
 		int completion = (int) Math.round(completionArray[position] * 100);
 		compview.setText(Integer.toString(completion) + " %");
 		progress.setProgress(completion);

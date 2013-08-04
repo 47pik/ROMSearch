@@ -10,6 +10,7 @@ public class GridData {
 	public static HashMap<String, Integer[]> thumbs = new HashMap<String, Integer[]>();
 	public static HashMap<String, String[]> names = new HashMap<String, String[]>();
 	public static HashMap<String, Integer> titles = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> covers = new HashMap<String, Integer>();
 	public static HashMap<String, String[]> words = new HashMap<String, String[]>(); //for dict
 	
 	public static HashMap<String, Integer[]> getImages() {
@@ -26,6 +27,10 @@ public class GridData {
 	
 	public static int getTitle(String exhibit) {
 		return titles.get(exhibit);
+	}
+	
+	public static int getCover(String exhibit) {
+		return covers.get(exhibit);
 	}
 	
 	public static String[] getDictWords(String exhibit) {
@@ -107,6 +112,12 @@ public class GridData {
 		names.put(c.getString(R.string.south_asia), south_asia_n);
 		names.put(c.getString(R.string.greece), greece_n);
 		names.put(c.getString(R.string.middle_east), middle_east_n);
+		
+		//set up cover images for each exhibit
+		covers.put(c.getString(R.string.egypt), R.drawable.egypt3s);
+		covers.put(c.getString(R.string.south_asia), R.drawable.southasia2s);
+		covers.put(c.getString(R.string.greece), R.drawable.greece4s);
+		covers.put(c.getString(R.string.middle_east), R.drawable.mideast7s);
 		
 		//set up dictionary words for each exhibit
 		String[] egypt_w = {"Pedikhonsu", "Senwosret", "Sakhmet", "Hatshepsut", "Bokennenife"
