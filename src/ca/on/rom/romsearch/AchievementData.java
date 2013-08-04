@@ -47,20 +47,20 @@ public class AchievementData {
 	
 	public void setupAchievements(Context c) {
 		this.c = c;
-		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.placeholder_s, "i", 1),
-				new Achievement("First Five", R.drawable.placeholder_s, "i", 5),
-				new Achievement("Top Ten", R.drawable.placeholder_s, "i", 10),
-				new Achievement("Hobbyist", R.drawable.placeholder_s, "i", 20),
-				new Achievement("Enthusiast", R.drawable.placeholder_s, "i", 30),
-				new Achievement("Collector", R.drawable.placeholder_s, "i", 50),
-				new Achievement("Historian", R.drawable.placeholder_s, "i", 75),
+		Achievement[] item_achievements = {new Achievement("First Discovery", R.drawable.achievement_item_1, "i", 1),
+				new Achievement("First Five", R.drawable.achievement_item_5, "i", 5),
+				new Achievement("Top Ten", R.drawable.achievement_item_10, "i", 10),
+				new Achievement("Hobbyist", R.drawable.achievement_item_20, "i", 20),
+				new Achievement("Enthusiast", R.drawable.achievement_item_30, "i", 30),
+				new Achievement("Collector", R.drawable.achievement_item_50, "i", 50),
+				new Achievement("Historian", R.drawable.achievement_item_75, "i", 75),
 				new Achievement("The Big 100", R.drawable.achievement_item_100, "i", 100),
-				new Achievement("Curator", R.drawable.placeholder_s, "i", 200),
+				new Achievement("Curator", R.drawable.achievement_item_200, "i", 200),
 				};
 		AchievementData.item_achievements = item_achievements;
 		
 		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.placeholder_s, "ne", 1),
-				new Achievement("Tourist", R.drawable.placeholder_s, "ne", 2), 
+				new Achievement("Tourist", R.drawable.achievement_exhibit_2, "ne", 2), 
 				new Achievement("Traveler", R.drawable.placeholder_s, "ne", 4),
 				new Achievement("Scholar", R.drawable.placeholder_s, "ne", 7),
 				new Achievement("Explorer", R.drawable.placeholder_s, "ne", 10),
