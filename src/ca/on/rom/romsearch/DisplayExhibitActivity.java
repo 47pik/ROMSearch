@@ -130,12 +130,12 @@ public class DisplayExhibitActivity extends FragmentActivity
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.action_help:
+	        	showHelp();
 	            return true;
 	        case R.id.action_achievements:
 	        	startActivity(new Intent(this, AchievementListActivity.class));
 	        	return true;
 	        default:
-	            //return super.onOptionsItemSelected(item);
 	        	startActivity(new Intent(this, ChooseExhibitActivity.class));
 	        	return true;
 	    }
@@ -272,6 +272,12 @@ public class DisplayExhibitActivity extends FragmentActivity
 			dialog.show(fm, "achievement");
 		}
 		achievementData.getNextAchievements(item_total, exhibit_total);
+	}
+	
+	public void showHelp(){
+		DialogFragment dialog = DisplayTutorialDialogFragment.newInstance(R.drawable.tutorial_exhibit);
+		FragmentManager fm = getSupportFragmentManager();
+		dialog.show(fm, "tutorial");
 	}
 	
 }

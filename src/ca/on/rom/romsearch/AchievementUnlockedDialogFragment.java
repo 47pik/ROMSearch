@@ -10,12 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AchievementUnlockedDialogFragment extends DialogFragment {
-	
-	//public int img;
-	//public String name;
-	//public String desc;
-	
+public class AchievementUnlockedDialogFragment extends DialogFragment {	
 	
 	public static AchievementUnlockedDialogFragment newInstance(Achievement a) {
 		AchievementUnlockedDialogFragment frag = new AchievementUnlockedDialogFragment();
