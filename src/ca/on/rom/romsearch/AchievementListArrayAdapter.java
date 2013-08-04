@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -65,6 +67,10 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			//remove the progress bar and completion
 			progress.setVisibility(View.GONE);
 			completion.setVisibility(View.GONE);
+			//adjust margins
+			 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			 lp.setMargins(0, -3, 0, -2);
+			 descview.setLayoutParams(lp);
 		}
 		//drop "exhibit" from the end if too long
 		if (desc.length() > 50) {
