@@ -92,12 +92,12 @@ public class GridData {
 		
 		//set up names for exhibits
 		String[] egypt_n = {"Game Board for Senet", "Offering Table", "Mummy-case of Pedikhonsu",
-				"Temple Relief of Senwosret I", "Statue of the Goddess Sakhmet", "Queen Hatshepsut as a Sphinx",
+				"Temple Relief of Senwosret I ((?))", "Statue of the Goddess Sakhmet", "Queen Hatshepsut as a Sphinx",
 				"Hunting Scene", "Broad Collar", "Royal Scribe Bokennenife"
 				};
 		String[] south_asia_n = {"Untitled", "Seated Buddha", "Album Drawings of Life in the Punjab", 
-				"Model of a South Indian temple as an Address Casket", "Hanging (Palampore)", "Yamantaka Vajrabhairava",
-				"Scenes from the Life of Buddha", "Tea and Coffee Service", "Bhuj (elephant knife) and sheath"
+				"Model of a South Indian temple as an Address Casket", "Hanging/Palampore", "Yamantaka Vajrabhairava",
+				"Scenes from the Life of Buddha", "Tea and Coffee Service", "Bhuj/elephant_knife and sheath"
 				};
 		String[] greece_n = {"Head of Silenos", "Greek-style leg Armour", "Etrusco-corinthian Neck-amphora",
 				"Youthful Dionysos", "Kylix", "Torso of Aphrodite", "Gold Wreaths", "The Athena Parthenos",
@@ -122,7 +122,7 @@ public class GridData {
 		//set up dictionary words for each exhibit
 		String[] egypt_w = {"Pedikhonsu", "Senwosret", "Sakhmet", "Hatshepsut", "Bokennenife"
 				};
-		String[] south_asia_w = {"bhuj", "Yamantaka", "Vajrabhairava"
+		String[] south_asia_w = {"bhuj", "Yamantaka", "Vajrabhairava", "palampore"
 				};
 		String[] greece_w = {"etrusco", "etrusco-corinthian", "neck-amphora", "amphora", "kylix", 
 				"Dionysos", "Herakles", "parthenos", "Silenos"

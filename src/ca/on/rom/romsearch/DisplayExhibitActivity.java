@@ -1,9 +1,6 @@
 package ca.on.rom.romsearch;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -154,7 +151,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog, String input) {
 		String correct = image_names[pos];
-		if (TextMatch(input, correct)) {
+		if (TextMatcher.TextMatch(input, correct)) {
+			correct = TextMatcher.format(correct);
 			Toast.makeText(DisplayExhibitActivity.this, "Correct! It's " + correct + "!", Toast.LENGTH_SHORT).show();
 			//Mark as correct in savedata
 			savedata.Progress(pos);
@@ -211,48 +209,6 @@ public class DisplayExhibitActivity extends FragmentActivity
 		return returnval;
 	}
 	
-	public boolean TextMatch(String input, String master) {
-		//tokenize input and master
-		ArrayList<String> itokens = new ArrayList<String>(Arrays.asList(input.toLowerCase(Locale.getDefault()).split(" |\\-")));
-		ArrayList<String> mtokens = new ArrayList<String>(Arrays.asList(master.toLowerCase(Locale.getDefault()).split(" |\\-")));
-		//return false if input is longer than master (allowing for a 1 margin of error (e.g. rogue "a"))
-		if (itokens.size() > mtokens.size() + 1) {
-			return false;
-		}
-		//remove connector words (e.g. "a", "the", "of", etc.)
-		String[] connectors = {"a", "an", "as", "of", "the", "for"};
-		removeBanned(mtokens, connectors);
-		removeBanned(itokens, connectors);
-		//check to see if all key words are shared
-		for (int i = 0; i < mtokens.size(); i++) {
-			String item = mtokens.get(i);
-			if (itokens.contains(item)) {
-				itokens.remove(item);
-			} else {
-				return false;
-			}
-		}
-		if (itokens.size() > 0) {
-			return false;
-		}
-		return true;
-	}
-	
-	/*
-	 * Remove words from String[] banned from ArrayList<String> tokens
-	 */
-	public void removeBanned(ArrayList<String> tokens, String[] banned) {
-		for (int i = 0; i < tokens.size(); i++) {
-			String t = tokens.get(i);
-			//remove tokens if in banned
-			for (int j = 0; j < banned.length; j++) {
-				if (t.equals(banned[j])) {
-					tokens.remove(t);
-					break;
-				}
-			}
-		}
-	}
 	
 	public void updateCompletionDisplay() {
 		String completion = Integer.toString((int) Math.round(Double.valueOf(savedata.getCompletion() * 100)));
