@@ -16,22 +16,29 @@
         android:layout_width="match_parent"
     	android:layout_height="wrap_content"
     	android:gravity="center_horizontal"
-    	android:orientation="horizontal" >
+    	android:orientation="horizontal"
+    	android:paddingBottom="15dp">
     
-   		<Button 
-        	android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:text="@string/button_achievements"
-        	android:onClick="goToAchievements"
-        	/>
-   	
-   		<Button 
-        	android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:text="@string/button_exhibits"
-        	android:onClick="goToExhibits"
-        	/>
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_custom"
+        android:onClick="goToExhibits"
+        android:text="@string/button_exhibits"
+        android:textSize="20sp"
+        />
+   		
    		
    		</LinearLayout>
-   
+  	
+    <Button
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_custom"
+        android:onClick="goToAchievements"
+        android:text="@string/button_achievements"
+        android:textSize="15sp" />
+    
 </LinearLayout>

@@ -8,11 +8,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ChooseExhibitActivity"
-    android:background="@drawable/exhibits_bkground"
+    android:background="@drawable/exhibits_bkground2"
     >	
    
    <ListView
-        android:paddingTop="80dp"
+        android:paddingTop="110dp"
         android:id="@+id/exhibit_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
