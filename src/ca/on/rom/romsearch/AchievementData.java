@@ -61,7 +61,7 @@ public class AchievementData {
 		
 		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.placeholder_s, "ne", 1),
 				new Achievement("Tourist", R.drawable.achievement_exhibit_2, "ne", 2), 
-				new Achievement("Traveler", R.drawable.placeholder_s, "ne", 4),
+				new Achievement("Traveler", R.drawable.achievement_exhibit_4, "ne", 4),
 				new Achievement("Scholar", R.drawable.placeholder_s, "ne", 7),
 				new Achievement("Explorer", R.drawable.placeholder_s, "ne", 10),
 				new Achievement("World Traveller", R.drawable.placeholder_s, "ne", 15),
@@ -72,7 +72,7 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.egypt), 
 				new Achievement("Riddle of the Sphinx", R.drawable.achievement_egypt, "e", c.getString(R.string.egypt)));
 		exhibit_achievements.put(c.getString(R.string.greece),
-				new Achievement("Greece is the Word", R.drawable.placeholder_s, "e", c.getString(R.string.greece)));
+				new Achievement("Greece is the Word", R.drawable.achievement_greece, "e", c.getString(R.string.greece)));
 		exhibit_achievements.put(c.getString(R.string.south_asia),
 				new Achievement("One with the ROM", R.drawable.placeholder_s, "e", c.getString(R.string.south_asia)));
 		exhibit_achievements.put(c.getString(R.string.middle_east),
