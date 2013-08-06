@@ -74,9 +74,9 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.greece),
 				new Achievement("Greece is the Word", R.drawable.achievement_greece, "e", c.getString(R.string.greece)));
 		exhibit_achievements.put(c.getString(R.string.south_asia),
-				new Achievement("One with the ROM", R.drawable.placeholder_s, "e", c.getString(R.string.south_asia)));
+				new Achievement("One with the ROM", R.drawable.achievement_southasia, "e", c.getString(R.string.south_asia)));
 		exhibit_achievements.put(c.getString(R.string.middle_east),
-				new Achievement("1001 Nights", R.drawable.placeholder_s, "e", c.getString(R.string.middle_east)));
+				new Achievement("1001 Nights", R.drawable.achievement_mideast, "e", c.getString(R.string.middle_east)));
 	}
 	
 	/*

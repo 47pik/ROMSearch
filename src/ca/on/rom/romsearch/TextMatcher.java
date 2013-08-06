@@ -48,9 +48,10 @@ public class TextMatcher {
 	
 	private static ArrayList<ArrayList<String>> getAnswers(String master) {
 		ArrayList<ArrayList<String>> combinations = new ArrayList<ArrayList<String>>();
-		ArrayList<String> regular = new ArrayList<String>();
-		ArrayList<String> optional = new ArrayList<String>();
-		ArrayList<String> alternate = new ArrayList<String>();
+		ArrayList<String> regular = new ArrayList<String>(); //regular tokens
+		ArrayList<String> optional = new ArrayList<String>(); // tokens that are optional
+		ArrayList<String> alternate = new ArrayList<String>(); // tokens that could be one or another
+		ArrayList<String> inner_optional = new ArrayList<String>(); //substrings of tokens that are optional
 		String[] mtokens = master.toLowerCase(Locale.getDefault()).split("[ |\\-]");
 		//sort tokens
 		for (String token : mtokens) {
@@ -58,24 +59,30 @@ public class TextMatcher {
 				alternate.add(token);
 			} else if (token.contains("(")) {
 				optional.add(token);
+			} else if (token.contains("<")) {
+				inner_optional.add(token);
 			} else {
 				//regular
 				regular.add(token);
 			}
 		}
 		//create all possible combinations
-		if (alternate.isEmpty()) {
+		if (!optional.isEmpty()) {
 			combinations.add(regular);
 			for (int i = 0; i < optional.size(); i++) {
 				String token = optional.get(i);
 				//trim the leading and trailing brackets
-				token = token.substring(token.indexOf("(") + 1, token.lastIndexOf(")"));
+				if (token.contains("(")) {
+					token = token.replaceFirst("\\(", "");
+				} if (token.contains(")")) {
+					token = token.replaceFirst("\\)", "");
+				}
 				//split in the case of two words, and all them all the regular words
 				ArrayList<String> combo = new ArrayList<String>(Arrays.asList(token.split("_")));
 				combo.addAll(regular);
 				combinations.add(combo);
 			}
-		} else if (optional.isEmpty()) {
+		} else if (!alternate.isEmpty()) {
 			ArrayList<ArrayList<String>> combos = new ArrayList<ArrayList<String>>();
 			ArrayList<String> all = new ArrayList<String>();
 			combos.add(regular);
@@ -98,6 +105,32 @@ public class TextMatcher {
 			}
 			combinations.addAll(combos);
 			combinations.add(all);
+		} else if (!inner_optional.isEmpty()) {
+			ArrayList<ArrayList<String>> combos = new ArrayList<ArrayList<String>>();
+			combos.add(regular);
+			for (String token : inner_optional) {
+				combos.addAll(deepCopy(combos));
+				int openbracket = token.indexOf("<");
+				int closebracket = token.indexOf(">");
+				String pre = token.substring(0, openbracket);
+				String post;
+				if (closebracket == token.length() - 1) {
+					post = "";
+				} else {
+					post	= token.substring(closebracket + 1, token.length() - 1);
+				}
+				String inner = token.substring(openbracket + 1, closebracket);
+				String root = pre + post;
+				String full = pre + inner + post;
+				for (int j = 0; j < combos.size(); j++) {
+					if (j < combos.size()/2) {
+						combos.get(j).add(root);
+					} else {
+						combos.get(j).add(full);
+					}
+				}
+			}
+			combinations.addAll(combos);
 		}
 		return combinations;
 	}
@@ -131,12 +164,14 @@ public class TextMatcher {
 	private static void removePunctuation(ArrayList<String> tokens) {
 		for (int i = 0; i < tokens.size(); i++) {
 			String token = tokens.get(i);
-			//token.replaceFirst("^[^a-zA-Z]+", "");
-			//token.replaceAll("[^a-zA-Z]+$", "");
 			if (token.contains("(")) {
 				token = token.replaceFirst("\\(", "");
 			} if (token.contains(")")) {
 				token = token.replaceFirst("\\)", "");
+			} if (token.contains("<")) {
+				token = token.replaceFirst("\\<", "");
+			} if (token.contains(">")) {
+				token = token.replaceFirst("\\>", "");
 			}
 			tokens.set(i, token);
 		}

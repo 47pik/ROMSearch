@@ -95,16 +95,16 @@ public class GridData {
 				"Temple Relief of Senwosret I ((?))", "Statue of the Goddess Sakhmet", "Queen Hatshepsut as a Sphinx",
 				"Hunting Scene", "Broad Collar", "Royal Scribe Bokennenife"
 				};
-		String[] south_asia_n = {"Untitled", "Seated Buddha", "Album Drawings of Life in the Punjab", 
+		String[] south_asia_n = {"Untitled", "Seated Buddha", "Album Drawing<s> of Life in the Punjab", 
 				"Model of a South Indian temple as an Address Casket", "Hanging/Palampore", "Yamantaka Vajrabhairava",
-				"Scenes from the Life of Buddha", "Tea and Coffee Service", "Bhuj/elephant_knife and sheath"
+				"Scene<s> from the Life of Buddha", "Tea and Coffee Service", "Bhuj/elephant_knife and sheath"
 				};
 		String[] greece_n = {"Head of Silenos", "Greek-style leg Armour", "Etrusco-corinthian Neck-amphora",
-				"Youthful Dionysos", "Kylix", "Torso of Aphrodite", "Gold Wreaths", "The Athena Parthenos",
+				"Youthful Dionysos", "Kylix", "Torso of Aphrodite", "Gold Wreath<s>", "The Athena Parthenos",
 				"Head of Young Herakles"
 				};
-		String[] middle_east_n = {"Amlash-style Mother Goddesses", "Ceremonial Suit of Armour", "Qur'ran",
-				"Storage Vessel for Wine", "Vessel in the Form of a Bull", "Pair of Painted Cupboard Doors",
+		String[] middle_east_n = {"Amlash-style Mother Goddess<es>", "Ceremonial Suit of Armour", "Qur'ran",
+				"Storage Vessel for Wine", "Vessel in the Form of a Bull", "Pair of Painted Cupboard Door<s>",
 				"Torah Scroll and Case", "Axe-adze Combination Tool", "Parade Scene"
 				};
 		

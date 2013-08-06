@@ -8,16 +8,14 @@
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
-	- improve button layout
 	- ensure works on all devices
 
 - Improve the activity_choose_exhibit.xml layout
-	- add instructions
 	- vertically center the cover images for all exhibits
 	- ensure works on all devices
 
 - Misc.
-	- Add "OK" on tutorial_okay image
+	- Finish tutorial screen
 	- Add a logo for the app
 	- Consider popup for finding an item.
 	- Improve performance app wide, and reduce any unnecessarily 		large files
