@@ -141,16 +141,16 @@ public class GridData {
 				"Torah Scroll and Case", "Axe-adze Combination Tool", "Parade Scene"
 				};
 		String[] korea_n = {"Bronze Mirror<s>", "Memorial inscription for Yi Sim-Won",
-				"Printing block for Namjaego/\"Writings by Namjae\"", "Pedestalled globular jar",
+				"Printing block for Namjaego/\"Writings_by_Namjae\"", "Pedestalled globular jar",
 				"Kim Ki Moon ((artist name Baik Ha, 1906-1989))", "Standing Buddha on a lotus dais", "Jwagyeong/cosmetic_box",
 				"Jar and Cover, titled \"Happy Jump\"", "Faceted folk tradition jar"
 				};
-		String[] chinese_architecture_n = {"Five tiles from Xiuding Monastery, Anyang", "Tomb of Zuo Biao",
-				"Decorated ridge tile", "Military official", "House with three courtyards", "Procession of tomb figures",
+		String[] chinese_architecture_n = {"(Five) tiles from Xiuding Monastery, (Anyang)", "Tomb of Zuo Biao",
+				"Decorated ridge tile", "Military official", "House with three courtyards", "Procession of tomb figure<s>",
 				"Yanluo, King of Hell", "Carved panels of tomb gate", "Granary"
 				};
-		String[] nubia_n = {"Enigmatic Object", "Nubian Neolithic Culture artifacts", "Front Panel of a decorated Wooden Box",
-				"Faience Column Base", "Broken Stela inscribed in Meroitic", "Beer Jar", "Bead Necklace", "Religious symbols",
+		String[] nubia_n = {"Enigmatic Object", "Nubian Neolithic Culture artifact<s>", "Front Panel of a decorated Wooden Box",
+				"Faience Column Base", "Broken Stela inscribed in Meroitic", "Beer Jar", "Bead Necklace", "Religious symbol<s>",
 				"Statue of the god Nefertem"
 				};
 		
@@ -181,7 +181,7 @@ public class GridData {
 				};
 		String[] middle_east_w = {"amlash", "axe-adze", "adze", "Qur'ran"
 				};
-		String[] korea_w = {"Yi", "Sim-Won", "Namejaego", "Namejae", "dais", "Jwagyeong", "Ki", "Baik"
+		String[] korea_w = {"Yi", "Sim-Won", "Namjaego", "Namjae", "dais", "Jwagyeong", "Ki", "Baik"
 				};
 		String[] chinese_architecture_w = {"Xiuding", "Anyang", "Zuo", "Biao", "Yanluo",
 				};

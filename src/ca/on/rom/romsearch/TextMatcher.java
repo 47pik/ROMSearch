@@ -68,8 +68,10 @@ public class TextMatcher {
 		}
 		//create all possible combinations
 		if (!optional.isEmpty()) {
-			combinations.add(regular);
+			ArrayList<ArrayList<String>> combos = new ArrayList<ArrayList<String>>();
+			combos.add(regular);
 			for (int i = 0; i < optional.size(); i++) {
+				combos.addAll(deepCopy(combos));
 				String token = optional.get(i);
 				//trim the leading and trailing brackets
 				if (token.contains("(")) {
@@ -77,11 +79,17 @@ public class TextMatcher {
 				} if (token.contains(")")) {
 					token = token.replaceFirst("\\)", "");
 				}
-				//split in the case of two words, and all them all the regular words
-				ArrayList<String> combo = new ArrayList<String>(Arrays.asList(token.split("_")));
-				combo.addAll(regular);
-				combinations.add(combo);
+				for (int j = 0; j < combos.size(); j++) {
+					if (j < combos.size()/2) {
+						//split in the case of two words
+						combos.get(j).addAll(new ArrayList<String>(Arrays.asList(token.split("_"))));
+					} else {
+						continue;
+					}	
+				}
 			}
+			combinations.addAll(combos);
+			
 		} else if (!alternate.isEmpty()) {
 			ArrayList<ArrayList<String>> combos = new ArrayList<ArrayList<String>>();
 			ArrayList<String> all = new ArrayList<String>();
@@ -105,6 +113,7 @@ public class TextMatcher {
 			}
 			combinations.addAll(combos);
 			combinations.add(all);
+			
 		} else if (!inner_optional.isEmpty()) {
 			ArrayList<ArrayList<String>> combos = new ArrayList<ArrayList<String>>();
 			combos.add(regular);
@@ -131,6 +140,7 @@ public class TextMatcher {
 				}
 			}
 			combinations.addAll(combos);
+			
 		} else {
 			combinations.add(regular);
 		}
@@ -189,7 +199,7 @@ public class TextMatcher {
 		removePunctuation(tokens);
 		for (String token : tokens) {
 			if (token.contains("_")) {
-				token = token.replaceFirst("_", " ");
+				token = token.replaceAll("_", " ");
 			}
 			if (token.contains("/")) {
 				String[] alternate = token.split("/");

@@ -59,7 +59,7 @@ public class AchievementData {
 				};
 		AchievementData.item_achievements = item_achievements;
 		
-		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.placeholder_s, "ne", 1),
+		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.achievement_exhibit_1, "ne", 1),
 				new Achievement("Tourist", R.drawable.achievement_exhibit_2, "ne", 2), 
 				new Achievement("Traveler", R.drawable.achievement_exhibit_4, "ne", 4),
 				new Achievement("Scholar", R.drawable.placeholder_s, "ne", 7),

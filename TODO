@@ -5,6 +5,7 @@
 	- add a background to achievement_unlocked.xml
 
 -Improve the activity_achievement_list.xml layout
+	- change scrollbar colour on listview
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
@@ -12,6 +13,7 @@
 
 - Improve the activity_choose_exhibit.xml layout
 	- vertically center the cover images for all exhibits
+	- Change scrollbar colour on listview
 	- ensure works on all devices
 
 - Misc.
