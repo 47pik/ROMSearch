@@ -43,6 +43,9 @@ public class GridData {
 		titles.put(c.getString(R.string.south_asia), R.drawable.titlesouthasia);
 		titles.put(c.getString(R.string.greece), R.drawable.titlegreece);
 		titles.put(c.getString(R.string.middle_east), R.drawable.titlemiddleeast);
+		titles.put(c.getString(R.string.korea), R.drawable.titlekorea);
+		titles.put(c.getString(R.string.chinese_architecture), R.drawable.titlechinese_arch);
+		titles.put(c.getString(R.string.nubia), R.drawable.titlenubia);
 		
 		//set up images for exhibits
 		Integer[] egypt_i = {R.drawable.egypt1, R.drawable.egypt2, R.drawable.egypt3, 
@@ -61,11 +64,26 @@ public class GridData {
 				R.drawable.mideast4, R.drawable.mideast5, R.drawable.mideast6,
 				R.drawable.mideast7, R.drawable.mideast8, R.drawable.mideast9
 				};
+		Integer[] korea_i = {R.drawable.korea1, R.drawable.korea2, R.drawable.korea3,
+				R.drawable.korea4, R.drawable.korea5, R.drawable.korea6,
+				R.drawable.korea7, R.drawable.korea8, R.drawable.korea9
+				};
+		Integer[] chinese_architecture_i = {R.drawable.chinese_arch1, R.drawable.chinese_arch2, R.drawable.chinese_arch3,
+				R.drawable.chinese_arch4, R.drawable.chinese_arch5, R.drawable.chinese_arch6,
+				R.drawable.chinese_arch7, R.drawable.chinese_arch8, R.drawable.chinese_arch9
+				};
+		Integer[] nubia_i = {R.drawable.nubia1, R.drawable.nubia2, R.drawable.nubia3,
+				R.drawable.nubia4, R.drawable.nubia5, R.drawable.nubia6, 
+				R.drawable.nubia7, R.drawable.nubia8, R.drawable.nubia9
+				};
 		
 		images.put(c.getString(R.string.egypt), egypt_i);
 		images.put(c.getString(R.string.south_asia), south_asia_i);
 		images.put(c.getString(R.string.greece), greece_i);
 		images.put(c.getString(R.string.middle_east), middle_east_i);
+		images.put(c.getString(R.string.korea), korea_i);
+		images.put(c.getString(R.string.chinese_architecture), chinese_architecture_i);
+		images.put(c.getString(R.string.nubia), nubia_i);
 		
 		//set up thumbnails for exhibits
 		Integer[] egypt_t = {R.drawable.egypt1s, R.drawable.egypt2s, R.drawable.egypt3s, 
@@ -84,11 +102,26 @@ public class GridData {
 				R.drawable.mideast4s, R.drawable.mideast5s, R.drawable.mideast6s,
 				R.drawable.mideast7s, R.drawable.mideast8s, R.drawable.mideast9s
 				};
+		Integer[] korea_t = {R.drawable.korea1s, R.drawable.korea2s, R.drawable.korea3s,
+				R.drawable.korea4s, R.drawable.korea5s, R.drawable.korea6s,
+				R.drawable.korea7s, R.drawable.korea8s, R.drawable.korea9s
+				};
+		Integer[] chinese_architecture_t = {R.drawable.chinese_arch1s, R.drawable.chinese_arch2s, R.drawable.chinese_arch3s,
+				R.drawable.chinese_arch4s, R.drawable.chinese_arch5s, R.drawable.chinese_arch6s,
+				R.drawable.chinese_arch7s, R.drawable.chinese_arch8s, R.drawable.chinese_arch9s
+				};
+		Integer[] nubia_t = {R.drawable.nubia1s, R.drawable.nubia2s, R.drawable.nubia3s,
+				R.drawable.nubia4s, R.drawable.nubia5s, R.drawable.nubia6s, 
+				R.drawable.nubia7s, R.drawable.nubia8s, R.drawable.nubia9s
+				};
 		
 		thumbs.put(c.getString(R.string.egypt), egypt_t);
 		thumbs.put(c.getString(R.string.south_asia), south_asia_t);
 		thumbs.put(c.getString(R.string.greece), greece_t);
 		thumbs.put(c.getString(R.string.middle_east), middle_east_t);
+		thumbs.put(c.getString(R.string.korea), korea_t);
+		thumbs.put(c.getString(R.string.chinese_architecture), chinese_architecture_t);
+		thumbs.put(c.getString(R.string.nubia), nubia_t);
 		
 		//set up names for exhibits
 		String[] egypt_n = {"Game Board for Senet", "Offering Table", "Mummy-case of Pedikhonsu",
@@ -107,17 +140,36 @@ public class GridData {
 				"Storage Vessel for Wine", "Vessel in the Form of a Bull", "Pair of Painted Cupboard Door<s>",
 				"Torah Scroll and Case", "Axe-adze Combination Tool", "Parade Scene"
 				};
+		String[] korea_n = {"Bronze Mirror<s>", "Memorial inscription for Yi Sim-Won",
+				"Printing block for Namjaego/\"Writings by Namjae\"", "Pedestalled globular jar",
+				"Kim Ki Moon ((artist name Baik Ha, 1906-1989))", "Standing Buddha on a lotus dais", "Jwagyeong/cosmetic_box",
+				"Jar and Cover, titled \"Happy Jump\"", "Faceted folk tradition jar"
+				};
+		String[] chinese_architecture_n = {"Five tiles from Xiuding Monastery, Anyang", "Tomb of Zuo Biao",
+				"Decorated ridge tile", "Military official", "House with three courtyards", "Procession of tomb figures",
+				"Yanluo, King of Hell", "Carved panels of tomb gate", "Granary"
+				};
+		String[] nubia_n = {"Enigmatic Object", "Nubian Neolithic Culture artifacts", "Front Panel of a decorated Wooden Box",
+				"Faience Column Base", "Broken Stela inscribed in Meroitic", "Beer Jar", "Bead Necklace", "Religious symbols",
+				"Statue of the god Nefertem"
+				};
 		
 		names.put(c.getString(R.string.egypt), egypt_n);
 		names.put(c.getString(R.string.south_asia), south_asia_n);
 		names.put(c.getString(R.string.greece), greece_n);
 		names.put(c.getString(R.string.middle_east), middle_east_n);
+		names.put(c.getString(R.string.korea), korea_n);
+		names.put(c.getString(R.string.chinese_architecture), chinese_architecture_n);
+		names.put(c.getString(R.string.nubia), nubia_n);
 		
 		//set up cover images for each exhibit
 		covers.put(c.getString(R.string.egypt), R.drawable.egypt3s);
 		covers.put(c.getString(R.string.south_asia), R.drawable.southasia2s);
 		covers.put(c.getString(R.string.greece), R.drawable.greece4s);
 		covers.put(c.getString(R.string.middle_east), R.drawable.mideast7s);
+		covers.put(c.getString(R.string.korea), R.drawable.korea5s);
+		covers.put(c.getString(R.string.chinese_architecture), R.drawable.chinese_arch9s);
+		covers.put(c.getString(R.string.nubia), R.drawable.nubia3s);
 		
 		//set up dictionary words for each exhibit
 		String[] egypt_w = {"Pedikhonsu", "Senwosret", "Sakhmet", "Hatshepsut", "Bokennenife"
@@ -129,11 +181,19 @@ public class GridData {
 				};
 		String[] middle_east_w = {"amlash", "axe-adze", "adze", "Qur'ran"
 				};
+		String[] korea_w = {"Yi", "Sim-Won", "Namejaego", "Namejae", "dais", "Jwagyeong", "Ki", "Baik"
+				};
+		String[] chinese_architecture_w = {"Xiuding", "Anyang", "Zuo", "Biao", "Yanluo",
+				};
+		String[] nubia_w = {"Faience", "Stela", "Meroitic", "Nefertem"
+				};
 		
 		words.put(c.getString(R.string.egypt), egypt_w);
 		words.put(c.getString(R.string.south_asia), south_asia_w);
 		words.put(c.getString(R.string.greece), greece_w);
 		words.put(c.getString(R.string.middle_east), middle_east_w);
-		
+		words.put(c.getString(R.string.korea), korea_w);
+		words.put(c.getString(R.string.chinese_architecture), chinese_architecture_w);
+		words.put(c.getString(R.string.nubia), nubia_w);
 	}
 }

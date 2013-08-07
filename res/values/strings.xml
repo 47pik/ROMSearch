@@ -21,6 +21,9 @@
         <item>@string/south_asia</item>
         <item>@string/greece</item>
         <item>@string/middle_east</item>
+        <item>@string/korea</item>
+        <item>@string/chinese_architecture</item>
+        <item>@string/nubia</item>
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>

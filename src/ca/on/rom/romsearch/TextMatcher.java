@@ -131,6 +131,8 @@ public class TextMatcher {
 				}
 			}
 			combinations.addAll(combos);
+		} else {
+			combinations.add(regular);
 		}
 		return combinations;
 	}
@@ -172,6 +174,10 @@ public class TextMatcher {
 				token = token.replaceFirst("\\<", "");
 			} if (token.contains(">")) {
 				token = token.replaceFirst("\\>", "");
+			} if (token.contains(",")) {
+				token = token.replaceFirst(",", "");
+			} if (token.contains("\"")) {
+				token = token.replaceAll("\"", "");
 			}
 			tokens.set(i, token);
 		}
