@@ -5,7 +5,6 @@
 	- add a background to achievement_unlocked.xml
 
 -Improve the activity_achievement_list.xml layout
-	- change scrollbar colour on listview
 	- ensure works on all devices
 
 - Improve the activity_main.xml layout
@@ -13,14 +12,13 @@
 
 - Improve the activity_choose_exhibit.xml layout
 	- vertically center the cover images for all exhibits
-	- Change scrollbar colour on listview
 	- ensure works on all devices
 
 - Misc.
-	- Finish tutorial screen
-	- Add a logo for the app
+	- Make the "OKAY" button "press" on the tutorial
 	- Consider popup for finding an item.
 	- Improve performance app wide, and reduce any unnecessarily 		large files
+	- Determine if want to have AchievementList popups or not
 
 - Fix bugs
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". Same bug for Nubia. This needs to be fixed.

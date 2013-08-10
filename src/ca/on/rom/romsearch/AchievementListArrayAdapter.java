@@ -63,7 +63,13 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			completion.setText(exhibits_complete + "/" + achievement.getRequirement());
 			progress.setProgress(exhibits_complete);
 		} else {
-			desc = "Complete the " + achievement.getExhibit() + " exhibit";
+			String exhibit = achievement.getExhibit();
+			//format exhibits with really long names
+			if (exhibit.contains("Joey and Toby")) {
+				exhibit = exhibit.replace("Joey and Toby ", "");
+				
+			}
+			desc = "Complete the " + exhibit + " exhibit";
 			//remove the progress bar and completion
 			progress.setVisibility(View.GONE);
 			completion.setVisibility(View.GONE);
@@ -80,7 +86,8 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		
 		return rowView;
 	}
-	
+
+	//comment if want to enable click for achievements again
 	@Override
 	public boolean isEnabled(int position) {
 	    return false;

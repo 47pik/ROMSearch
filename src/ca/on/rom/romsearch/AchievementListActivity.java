@@ -3,27 +3,34 @@ package ca.on.rom.romsearch;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class AchievementListActivity extends Activity {
+public class AchievementListActivity extends FragmentActivity {
 	
 	public final static String ACHIEVEMENT = "achievement";
 	public final static String EXHIBITS_COMPLETE = "exhibits_complete";
 	public final static String ITEMS_COMPLETE = "items_complete";
+	
+//	public Achievement[] sorted_achievements;
+//	public int completed_achievements;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_achievement_list);
-		
 		final ListView listview = (ListView) findViewById(R.id.achievement_list);
 		AchievementData data = new AchievementData();
 		data.setupAchievements(getApplicationContext());
@@ -64,9 +71,22 @@ public class AchievementListActivity extends Activity {
 		sortedList.addAll(incompleteList);
 		
 		Achievement[] sorted = sortedList.toArray(new Achievement[sortedList.size()]);
+		//sorted_achievements = sorted;
+		//completed_achievements = completeList.size();
+		
 		final AchievementListArrayAdapter adapter = new AchievementListArrayAdapter(getApplicationContext(),
 				sorted, completeList.size(), item_total, exhibit_total);
 		listview.setAdapter(adapter);
+		
+//		//for displaying achievements on click
+//		listview.setOnItemClickListener(new OnItemClickListener() {
+//			public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+//				//on click, display achievement if unlocked
+//				if (position < completed_achievements) {
+//					displayAchievement(sorted_achievements[position], position);
+//				}
+//			}
+//		});
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		//ensure Honeycomb or higher to use ActionBar APIs
@@ -75,6 +95,15 @@ public class AchievementListActivity extends Activity {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 	}
+	
+	
+	//for displaying achievements on click
+	public void displayAchievement(Achievement a, int position) {
+		DialogFragment dialog = AchievementDialogFragment.newInstance(a, false);
+		FragmentManager fm = this.getSupportFragmentManager();
+		dialog.show(fm, "achievement");
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		startActivity(new Intent(this, MainActivity.class));

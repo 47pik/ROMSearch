@@ -24,6 +24,11 @@
         <item>@string/korea</item>
         <item>@string/chinese_architecture</item>
         <item>@string/nubia</item>
+        <item>@string/china</item>
+        <item>@string/japan</item>
+        <item>@string/chinese_sculpture</item>
+        <item>@string/rome</item>
+        <item>@string/rome_and_near_east</item>
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>
@@ -33,6 +38,12 @@
     <string name="korea">Gallery of Korea</string>
     <string name="nubia">Galleries of Africa: Nubia</string>
     <string name="chinese_architecture">Gallery of Chinese Architecture</string>
+    <string name="china">Joey and Toby Tanenbaum Gallery of China</string>
+    <string name="japan">Prince Takamado Gallery of Japan</string>
+    <string name="chinese_sculpture">Matthews Family Court of Chinese Sculpture</string>
+    <string name="rome">Eaton Gallery of Rome</string>
+    <string name="rome_and_near_east">Joey and Toby Tanenbaum Gallery of Rome and the Near East</string>
+    
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>
     <string name="item_name">What is this item?</string>

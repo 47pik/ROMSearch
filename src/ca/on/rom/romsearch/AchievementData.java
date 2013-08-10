@@ -62,7 +62,7 @@ public class AchievementData {
 		Achievement[] exhibittotal_achievements = {new Achievement("Visitor", R.drawable.achievement_exhibit_1, "ne", 1),
 				new Achievement("Tourist", R.drawable.achievement_exhibit_2, "ne", 2), 
 				new Achievement("Traveler", R.drawable.achievement_exhibit_4, "ne", 4),
-				new Achievement("Scholar", R.drawable.placeholder_s, "ne", 7),
+				new Achievement("Scholar", R.drawable.achievement_exhibit_7, "ne", 7),
 				new Achievement("Explorer", R.drawable.placeholder_s, "ne", 10),
 				new Achievement("World Traveller", R.drawable.placeholder_s, "ne", 15),
 				new Achievement("Master Explorer", R.drawable.placeholder_s, "ne", 20)
@@ -83,6 +83,16 @@ public class AchievementData {
 				new Achievement("If You Build it...", R.drawable.placeholder_s, "e", c.getString(R.string.chinese_architecture)));
 		exhibit_achievements.put(c.getString(R.string.nubia),
 				new Achievement("Along the Nile", R.drawable.placeholder_s, "e", c.getString(R.string.nubia)));
+		exhibit_achievements.put(c.getString(R.string.china),
+				new Achievement("The Middle Kingdom", R.drawable.placeholder_s, "e", c.getString(R.string.china)));
+		exhibit_achievements.put(c.getString(R.string.japan),
+				new Achievement("The Rising Sun", R.drawable.placeholder_s, "e", c.getString(R.string.japan)));
+		exhibit_achievements.put(c.getString(R.string.chinese_sculpture),
+				new Achievement("Statuesque", R.drawable.placeholder_s, "e", c.getString(R.string.chinese_sculpture)));
+		exhibit_achievements.put(c.getString(R.string.rome),
+				new Achievement("Not Built in a Day", R.drawable.placeholder_s, "e", c.getString(R.string.rome)));
+		exhibit_achievements.put(c.getString(R.string.rome_and_near_east),
+				new Achievement("East-Side", R.drawable.placeholder_s, "e", c.getString(R.string.rome_and_near_east)));
 	}
 	
 	/*

@@ -16,6 +16,7 @@
         android:id="@+id/achievement_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:drawSelectorOnTop="true"
         android:scrollbarStyle="outsideInset"
         android:scrollbarThumbVertical="@drawable/scrollbar_custom"
         />

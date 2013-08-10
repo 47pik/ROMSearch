@@ -174,7 +174,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 				count_editor.commit();
 				//display achievement unlocked popup for completing THIS exhibit (exhibit-type achievement)
 				Achievement exhibit_achievement = achievementData.getExhibitAchievement(exhibit);
-				DialogFragment unlocked = AchievementUnlockedDialogFragment.newInstance(exhibit_achievement);
+				DialogFragment unlocked = AchievementDialogFragment.newInstance(exhibit_achievement, true);
 				FragmentManager fm = getSupportFragmentManager();
 				unlocked.show(fm, "achievement");
 			} else {
@@ -225,14 +225,14 @@ public class DisplayExhibitActivity extends FragmentActivity
 		int exhibit_total = countPref.getInt(EXHIBITS_COMPLETE, 0);
 		//check if achievement has been unlocked
 		if (nextItem != null && nextItem.checkCompletion(item_total)) {
-			DialogFragment dialog = AchievementUnlockedDialogFragment.newInstance(nextItem);
+			DialogFragment dialog = AchievementDialogFragment.newInstance(nextItem, true);
 			//dialogs_pending.add(dialog);
 			FragmentManager fm = getSupportFragmentManager();
 			dialog.show(fm, "achievement");
 		}
 		if (nextExhibitTotal != null && nextExhibitTotal.checkCompletion(exhibit_total)) {
 			//display popup
-			DialogFragment dialog = AchievementUnlockedDialogFragment.newInstance(nextExhibitTotal);
+			DialogFragment dialog = AchievementDialogFragment.newInstance(nextExhibitTotal, true);
 			//dialogs_pending.add(dialog);
 			FragmentManager fm = getSupportFragmentManager();
 			dialog.show(fm, "achievement");

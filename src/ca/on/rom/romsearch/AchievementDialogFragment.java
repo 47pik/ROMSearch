@@ -10,14 +10,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AchievementUnlockedDialogFragment extends DialogFragment {	
+public class AchievementDialogFragment extends DialogFragment {	
 	
-	public static AchievementUnlockedDialogFragment newInstance(Achievement a) {
-		AchievementUnlockedDialogFragment frag = new AchievementUnlockedDialogFragment();
+	public static AchievementDialogFragment newInstance(Achievement a, Boolean unlock) {
+		AchievementDialogFragment frag = new AchievementDialogFragment();
 		
 		Bundle args = new Bundle();
 		args.putInt("img", a.getImage());
 		args.putString("name", a.getName());
+		args.putBoolean("unlock", unlock);
 		
 		String desc;
 		if (a.getType().equals("i")) {
@@ -41,8 +42,14 @@ public class AchievementUnlockedDialogFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		
 		//get layout inflater and set layout for dialog
+		boolean unlock = getArguments().getBoolean("unlock");
 		LayoutInflater inflater = getActivity().getLayoutInflater();
-		View v = inflater.inflate(R.layout.achievement_unlocked, null);
+		View v;
+		if (unlock) {
+			v = inflater.inflate(R.layout.achievement_unlocked, null);
+		} else {
+			v = inflater.inflate(R.layout.achievement_display, null);
+		}
 		builder.setView(v)
 				//add action buttons
 				.setPositiveButton(R.string.button_ok, new DialogInterface.OnClickListener() {
