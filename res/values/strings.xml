@@ -29,6 +29,9 @@
         <item>@string/chinese_sculpture</item>
         <item>@string/rome</item>
         <item>@string/rome_and_near_east</item>
+        <item>@string/aegean</item>
+        <item>@string/cyprus</item>
+        <item>@string/afamas</item>
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>
@@ -43,6 +46,9 @@
     <string name="chinese_sculpture">Matthews Family Court of Chinese Sculpture</string>
     <string name="rome">Eaton Gallery of Rome</string>
     <string name="rome_and_near_east">Joey and Toby Tanenbaum Gallery of Rome and the Near East</string>
+    <string name="aegean">Gallery of the Bronze Age Aegean</string>
+    <string name="cyprus">A.G. Leventis Foundation Gallery of Ancient Cyprus</string>
+    <string name="afamas">Shreyas and Mina Amjera Gallery of Africa, the Americas and Asia-Pacific</string>
     
     <string name="title_activity_display_exhibit">Exhibit</string>
     <string name="title_activity_input_name">InputNameActivity</string>

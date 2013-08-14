@@ -59,6 +59,9 @@ public class GridData {
 		titles.put(c.getString(R.string.chinese_sculpture), R.drawable.titlechinese_sculp);
 		titles.put(c.getString(R.string.rome), R.drawable.titlerome);
 		titles.put(c.getString(R.string.rome_and_near_east), R.drawable.titlerome_ne);
+		titles.put(c.getString(R.string.aegean), R.drawable.titleaegean);
+		titles.put(c.getString(R.string.cyprus), R.drawable.titlecyprus);
+		titles.put(c.getString(R.string.afamas), R.drawable.titleafamas);
 	}
 	
 	private static void setupImages(Context c) {
@@ -110,6 +113,18 @@ public class GridData {
 				R.drawable.rome_ne4, R.drawable.rome_ne5, R.drawable.rome_ne6, 
 				R.drawable.rome_ne7, R.drawable.rome_ne8, R.drawable.rome_ne9
 				};
+		Integer[] aegean = {R.drawable.aegean1, R.drawable.aegean2, R.drawable.aegean3,
+				R.drawable.aegean4, R.drawable.aegean5, R.drawable.aegean6,
+				R.drawable.aegean7, R.drawable.aegean8, R.drawable.aegean9
+				};
+		Integer[] cyprus = {R.drawable.cyprus1, R.drawable.cyprus2, R.drawable.cyprus3, 
+				R.drawable.cyprus4, R.drawable.cyprus5, R.drawable.cyprus6, 
+				R.drawable.cyprus7, R.drawable.cyprus8, R.drawable.cyprus9
+				};
+		Integer[] afamas = {R.drawable.afamas1, R.drawable.afamas2, R.drawable.afamas3,
+				R.drawable.afamas4, R.drawable.afamas5, R.drawable.afamas6,
+				R.drawable.afamas7, R.drawable.afamas8, R.drawable.afamas9
+				};
 		
 		images.put(c.getString(R.string.egypt), egypt);
 		images.put(c.getString(R.string.south_asia), south_asia);
@@ -123,7 +138,9 @@ public class GridData {
 		images.put(c.getString(R.string.chinese_sculpture), chinese_sculpture);
 		images.put(c.getString(R.string.rome), rome);
 		images.put(c.getString(R.string.rome_and_near_east), rome_and_near_east);
-		
+		images.put(c.getString(R.string.aegean), aegean);
+		images.put(c.getString(R.string.cyprus), cyprus);
+		images.put(c.getString(R.string.afamas), afamas);
 	}
 	
 	private static void setupThumbs(Context c) {
@@ -175,6 +192,18 @@ public class GridData {
 				R.drawable.rome_ne4s, R.drawable.rome_ne5s, R.drawable.rome_ne6s, 
 				R.drawable.rome_ne7s, R.drawable.rome_ne8s, R.drawable.rome_ne9s
 				};
+		Integer[] aegean = {R.drawable.aegean1s, R.drawable.aegean2s, R.drawable.aegean3s,
+				R.drawable.aegean4s, R.drawable.aegean5s, R.drawable.aegean6s,
+				R.drawable.aegean7s, R.drawable.aegean8s, R.drawable.aegean9s
+				};
+		Integer[] cyprus = {R.drawable.cyprus1s, R.drawable.cyprus2s, R.drawable.cyprus3s, 
+				R.drawable.cyprus4s, R.drawable.cyprus5s, R.drawable.cyprus6s, 
+				R.drawable.cyprus7s, R.drawable.cyprus8s, R.drawable.cyprus9s
+				};
+		Integer[] afamas = {R.drawable.afamas1s, R.drawable.afamas2s, R.drawable.afamas3s,
+				R.drawable.afamas4s, R.drawable.afamas5s, R.drawable.afamas6s,
+				R.drawable.afamas7s, R.drawable.afamas8s, R.drawable.afamas9s
+				};
 		
 		thumbs.put(c.getString(R.string.egypt), egypt);
 		thumbs.put(c.getString(R.string.south_asia), south_asia);
@@ -188,6 +217,9 @@ public class GridData {
 		thumbs.put(c.getString(R.string.chinese_sculpture), chinese_sculpture);
 		thumbs.put(c.getString(R.string.rome), rome);
 		thumbs.put(c.getString(R.string.rome_and_near_east), rome_and_near_east);
+		thumbs.put(c.getString(R.string.aegean), aegean);
+		thumbs.put(c.getString(R.string.cyprus), cyprus);
+		thumbs.put(c.getString(R.string.afamas), afamas);
 	}
 	
 	private static void setupNames(Context c) {
@@ -203,13 +235,13 @@ public class GridData {
 				"Youthful Dionysos", "Kylix", "Torso of Aphrodite", "Gold Wreath<s>", "The Athena Parthenos",
 				"Head of Young Herakles"
 				};
-		String[] middle_east = {"Amlash-style Mother Goddess<es>", "Ceremonial Suit of Armour", "Qur'ran",
+		String[] middle_east = {"Amlash-style Mother Goddess<es>", "Ceremonial Suit of Armour", "Qur(')an",
 				"Storage Vessel for Wine", "Vessel in the Form of a Bull", "Pair of Painted Cupboard Door<s>",
 				"Torah Scroll and Case", "Axe-adze Combination Tool", "Parade Scene"
 				};
 		String[] korea = {"Bronze Mirror<s>", "Memorial inscription for Yi Sim-Won",
 				"Printing block for Namjaego/\"Writings_by_Namjae\"", "Pedestalled globular jar",
-				"Kim Ki Moon ((artist name Baik Ha, 1906-1989))", "Standing Buddha on a lotus dais", "Jwagyeong/cosmetic_box",
+				"Kim Ki Moon ((artist_name_Baik_Ha,_1906^1989))", "Standing Buddha on a lotus dais", "Jwagyeong/cosmetic_box",
 				"Jar and Cover, titled \"Happy Jump\"", "Faceted folk tradition jar"
 				};
 		String[] chinese_architecture = {"(Five) tiles from Xiuding Monastery, (Anyang)", "Tomb of Zuo Biao",
@@ -241,6 +273,18 @@ public class GridData {
 				"Core-wound amphoriskos", "Steelyard Weight in the form of a bust of Athena", 
 				"Byzantine Processional Cross with Medallion of Christ"
 				};
+		String[] aegean = {"Head of a goddess wearing a polos", "Larnax/coffin from Minoan Crete", "Death Mask ((modern copy))",
+				"Funerary amphora by the Stathatou Painter", "Axe-hammer (-_Cycladic_type)", "Pedestal lamp",
+				"Bird pendant", "Reclining female figure", "Kylix"
+				};
+		String[] cyprus = {"Head of a beardless wreathed youth", "Large Jug (of a Red Polished III ware_",
+				"Bull-shaped rhyta of Base-ring ware II", "Statue of a male votary", "Wall Bracket",
+				"Limestone hand from a male votary statue", "Copper sword<s>", "Plank-shaped Female Figurine (of White Painted II ware)",
+				"\"Egyptian-style\" male votary"
+				};
+		String[] afamas = {"Shield", "Canoe model", "Showshoe<s>", "Shrunken_head/tsanta", "Gbetu helmet mask",
+				"Kachina doll", "Food dish", "Salacot/hat", "Headdress (worn_in_all_ceremonies_by_boys_and_men)"
+				};
 		
 		names.put(c.getString(R.string.egypt), egypt);
 		names.put(c.getString(R.string.south_asia), south_asia);
@@ -254,6 +298,9 @@ public class GridData {
 		names.put(c.getString(R.string.chinese_sculpture), chinese_sculpture);
 		names.put(c.getString(R.string.rome), rome);
 		names.put(c.getString(R.string.rome_and_near_east), rome_and_near_east);
+		names.put(c.getString(R.string.aegean), aegean);
+		names.put(c.getString(R.string.cyprus), cyprus);
+		names.put(c.getString(R.string.afamas), afamas);
 	}
 	
 	private static void setupCovers(Context c) {
@@ -269,6 +316,9 @@ public class GridData {
 		covers.put(c.getString(R.string.chinese_sculpture), R.drawable.chinese_sculp1s);
 		covers.put(c.getString(R.string.rome), R.drawable.rome2s);
 		covers.put(c.getString(R.string.rome_and_near_east), R.drawable.rome_ne1s);
+		covers.put(c.getString(R.string.aegean), R.drawable.aegean3s);
+		covers.put(c.getString(R.string.cyprus), R.drawable.cyprus1s);
+		covers.put(c.getString(R.string.afamas), R.drawable.afamas9s);
 	}
 	
 	private static void setupWords(Context c) {
@@ -279,7 +329,7 @@ public class GridData {
 		String[] greece = {"etrusco", "etrusco-corinthian", "neck-amphora", "amphora", "kylix", 
 				"Dionysos", "Herakles", "parthenos", "Silenos"
 				};
-		String[] middle_east = {"amlash", "axe-adze", "adze", "Qur'ran"
+		String[] middle_east = {"amlash", "axe-adze", "adze", "Qur'an"
 				};
 		String[] korea = {"Yi", "Sim-Won", "Namjaego", "Namjae", "dais", "Jwagyeong", "Ki", "Baik"
 				};
@@ -298,8 +348,13 @@ public class GridData {
 				};
 		String[] rome_and_near_east = {"Byzantine", "amphoriskos"
 				};
+		String[] aegean = {"Larnax", "Minoan", "Crete", "amphora", "Stathatou", "Cycladic", "Kylix",
+				};
+		String[] cyprus = {"rhyta" 
+				};
+		String[] afamas = {"tsanta", "Gbetu", "Kachina", "Salacot",
+				};
 		
-
 		words.put(c.getString(R.string.egypt), egypt);
 		words.put(c.getString(R.string.south_asia), south_asia);
 		words.put(c.getString(R.string.greece), greece);
@@ -312,5 +367,9 @@ public class GridData {
 		words.put(c.getString(R.string.chinese_sculpture), chinese_sculpture);
 		words.put(c.getString(R.string.rome), rome);
 		words.put(c.getString(R.string.rome_and_near_east), rome_and_near_east);
+		words.put(c.getString(R.string.aegean), aegean);
+		words.put(c.getString(R.string.cyprus), cyprus);
+		words.put(c.getString(R.string.afamas), afamas);
+
 	}
 }

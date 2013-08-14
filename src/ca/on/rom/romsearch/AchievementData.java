@@ -80,7 +80,7 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.korea),
 				new Achievement("The Morning Calm", R.drawable.placeholder_s, "e", c.getString(R.string.korea)));
 		exhibit_achievements.put(c.getString(R.string.chinese_architecture),
-				new Achievement("If You Build it...", R.drawable.placeholder_s, "e", c.getString(R.string.chinese_architecture)));
+				new Achievement("If You Build it...", R.drawable.achievement_chinese_arch, "e", c.getString(R.string.chinese_architecture)));
 		exhibit_achievements.put(c.getString(R.string.nubia),
 				new Achievement("Along the Nile", R.drawable.placeholder_s, "e", c.getString(R.string.nubia)));
 		exhibit_achievements.put(c.getString(R.string.china),
@@ -93,6 +93,13 @@ public class AchievementData {
 				new Achievement("Not Built in a Day", R.drawable.placeholder_s, "e", c.getString(R.string.rome)));
 		exhibit_achievements.put(c.getString(R.string.rome_and_near_east),
 				new Achievement("East-Side", R.drawable.placeholder_s, "e", c.getString(R.string.rome_and_near_east)));
+		exhibit_achievements.put(c.getString(R.string.aegean),
+				new Achievement("...", R.drawable.placeholder_s, "e", c.getString(R.string.aegean)));
+		exhibit_achievements.put(c.getString(R.string.cyprus),
+				new Achievement("...", R.drawable.placeholder_s, "e", c.getString(R.string.cyprus)));
+		exhibit_achievements.put(c.getString(R.string.afamas),
+				new Achievement("Celebration time", R.drawable.placeholder_s, "e", c.getString(R.string.afamas)));
+		
 	}
 	
 	/*

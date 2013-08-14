@@ -82,7 +82,7 @@ public class TextMatcher {
 				for (int j = 0; j < combos.size(); j++) {
 					if (j < combos.size()/2) {
 						//split in the case of two words
-						combos.get(j).addAll(new ArrayList<String>(Arrays.asList(token.split("_"))));
+						combos.get(j).addAll(new ArrayList<String>(Arrays.asList(token.split("[_|^]"))));
 					} else {
 						continue;
 					}	
@@ -100,14 +100,14 @@ public class TextMatcher {
 				combos.addAll(deepCopy(combos));
 				String token = alternate.get(i);
 				String[] alternates = token.split("/");
-				all.addAll(Arrays.asList(alternates[0].split("_")));
-				all.addAll(Arrays.asList(alternates[1].split("_")));
+				all.addAll(Arrays.asList(alternates[0].split("[_|^]")));
+				all.addAll(Arrays.asList(alternates[1].split("[_|^]")));
 				//alternate adding the tokens
 				for (int j = 0; j < combos.size(); j++) {
 					if (j < combos.size()/2) {
-						combos.get(j).addAll(Arrays.asList(alternates[0].split("_")));
+						combos.get(j).addAll(Arrays.asList(alternates[0].split("[_|^]")));
 					} else {
-						combos.get(j).addAll(Arrays.asList(alternates[1].split("_")));
+						combos.get(j).addAll(Arrays.asList(alternates[1].split("[_|^]")));
 					}
 				}
 			}
@@ -190,8 +190,8 @@ public class TextMatcher {
 				token = token.replaceAll("\"", "");
 			} if (token.contains(":")) {
 				token = token.replaceFirst(":", "");
-			} if (token.contains("'")) {
-				token = token.replaceFirst("'", "");
+			//} if (token.contains("'")) {
+				//token = token.replaceFirst("'", "");
 			}
 			tokens.set(i, token);
 		}
@@ -209,6 +209,9 @@ public class TextMatcher {
 				String[] alternate = token.split("/");
 				alternate[1] = "(" + alternate[1] + ")";
 				token = alternate[0] + " " + alternate[1];
+			}
+			if (token.contains("^")) {
+				token = token.replaceAll("\\^", "-");
 			}
 			formatted.append(token + " ");
 		}

@@ -66,8 +66,11 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			String exhibit = achievement.getExhibit();
 			//format exhibits with really long names
 			if (exhibit.contains("Joey and Toby")) {
-				exhibit = exhibit.replace("Joey and Toby ", "");
-				
+				exhibit = exhibit.replace("Joey and Toby ", "");	
+			} else if (exhibit.contains("A.G. Leventis Foundation")) {
+				exhibit = exhibit.replace("Foundation ", "");
+			} else if (exhibit.contains("Shreyas and Mina Amjera ")) {
+				exhibit = exhibit.replace("Shreyas and Mina Amjera ", "");
 			}
 			desc = "Complete the " + exhibit + " exhibit";
 			//remove the progress bar and completion
