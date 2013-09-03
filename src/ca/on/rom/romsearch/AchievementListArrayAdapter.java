@@ -59,7 +59,7 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			completion.setText(items_complete + "/" + achievement.getRequirement());
 			progress.setProgress(items_complete);
 		} else if (achievement.getType().equals("ne")) {
-			desc = "Complete " + Integer.toString(achievement.getRequirement()) + " exhibits";
+			desc = "Complete " + Integer.toString(achievement.getRequirement()) + " galleries";
 			completion.setText(exhibits_complete + "/" + achievement.getRequirement());
 			progress.setProgress(exhibits_complete);
 		} else {
@@ -71,8 +71,15 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 				exhibit = exhibit.replace("Foundation ", "");
 			} else if (exhibit.contains("Shreyas and Mina Amjera ")) {
 				exhibit = exhibit.replace("Shreyas and Mina Amjera ", "");
+			} else if (exhibit.contains("The Samuel European")) {
+				exhibit = exhibit.replace("The Samuel ", "");
 			}
-			desc = "Complete the " + exhibit + " exhibit";
+			//format description
+			if (exhibit.contains("gallery")) {
+				desc = "Complete the " + exhibit;
+			} else {
+				desc = "Complete the " + exhibit + " gallery";
+			}
 			//remove the progress bar and completion
 			progress.setVisibility(View.GONE);
 			completion.setVisibility(View.GONE);
@@ -83,7 +90,7 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 		}
 		//drop "exhibit" from the end if too long
 		if (desc.length() > 50) {
-			desc = desc.split(" exhibit")[0];
+			desc = desc.split(" gallery")[0];
 		}
 		descview.setText(desc);
 		

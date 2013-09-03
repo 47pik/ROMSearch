@@ -190,8 +190,8 @@ public class TextMatcher {
 				token = token.replaceAll("\"", "");
 			} if (token.contains(":")) {
 				token = token.replaceFirst(":", "");
-			//} if (token.contains("'")) {
-				//token = token.replaceFirst("'", "");
+			} if (token.contains("\'")) {
+				token = token.replaceFirst("\'", "");
 			}
 			tokens.set(i, token);
 		}

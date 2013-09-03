@@ -63,9 +63,9 @@ public class AchievementData {
 				new Achievement("Tourist", R.drawable.achievement_exhibit_2, "ne", 2), 
 				new Achievement("Traveler", R.drawable.achievement_exhibit_4, "ne", 4),
 				new Achievement("Scholar", R.drawable.achievement_exhibit_7, "ne", 7),
-				new Achievement("Explorer", R.drawable.placeholder_s, "ne", 10),
-				new Achievement("World Traveller", R.drawable.placeholder_s, "ne", 15),
-				new Achievement("Master Explorer", R.drawable.placeholder_s, "ne", 20)
+				new Achievement("Explorer", R.drawable.achievement_exhibit_10, "ne", 10),
+				new Achievement("World Traveller", R.drawable.achievement_exhibit_15, "ne", 15),
+				new Achievement("Master Explorer", R.drawable.achievement_exhibit_20, "ne", 20)
 				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
@@ -78,11 +78,11 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.middle_east),
 				new Achievement("1001 Nights", R.drawable.achievement_mideast, "e", c.getString(R.string.middle_east)));
 		exhibit_achievements.put(c.getString(R.string.korea),
-				new Achievement("The Morning Calm", R.drawable.placeholder_s, "e", c.getString(R.string.korea)));
+				new Achievement("The Morning Calm", R.drawable.achievement_korea, "e", c.getString(R.string.korea)));
 		exhibit_achievements.put(c.getString(R.string.chinese_architecture),
 				new Achievement("If You Build it...", R.drawable.achievement_chinese_arch, "e", c.getString(R.string.chinese_architecture)));
 		exhibit_achievements.put(c.getString(R.string.nubia),
-				new Achievement("Along the Nile", R.drawable.placeholder_s, "e", c.getString(R.string.nubia)));
+				new Achievement("Along the Nile", R.drawable.achievement_nubia, "e", c.getString(R.string.nubia)));
 		exhibit_achievements.put(c.getString(R.string.china),
 				new Achievement("The Middle Kingdom", R.drawable.placeholder_s, "e", c.getString(R.string.china)));
 		exhibit_achievements.put(c.getString(R.string.japan),
@@ -99,6 +99,10 @@ public class AchievementData {
 				new Achievement("...", R.drawable.placeholder_s, "e", c.getString(R.string.cyprus)));
 		exhibit_achievements.put(c.getString(R.string.afamas),
 				new Achievement("Celebration time", R.drawable.placeholder_s, "e", c.getString(R.string.afamas)));
+		exhibit_achievements.put(c.getString(R.string.euro_style),
+				new Achievement("...", R.drawable.placeholder_s, "e", c.getString(R.string.euro_style)));
+		exhibit_achievements.put(c.getString(R.string.euro_themes),
+				new Achievement("...", R.drawable.placeholder_s, "e", c.getString(R.string.euro_themes)));
 		
 	}
 	

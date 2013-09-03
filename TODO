@@ -19,6 +19,7 @@
 	- Consider popup for finding an item.
 	- Improve performance app wide, and reduce any unnecessarily 		large files
 	- Determine if want to have AchievementList popups or not
+	- replace all references to "exhibit" with "gallery"
 
 - Fix bugs
 	- The "Galleries of Africa: Egypt" title image says "Gallery 		of Africa: Egypt". Same bug for Nubia. This needs to be fixed.

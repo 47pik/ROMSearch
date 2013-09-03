@@ -62,6 +62,9 @@ public class GridData {
 		titles.put(c.getString(R.string.aegean), R.drawable.titleaegean);
 		titles.put(c.getString(R.string.cyprus), R.drawable.titlecyprus);
 		titles.put(c.getString(R.string.afamas), R.drawable.titleafamas);
+		titles.put(c.getString(R.string.euro_style), R.drawable.titleeuro_style);
+		titles.put(c.getString(R.string.euro_themes), R.drawable.titleeuro_themes);
+		
 	}
 	
 	private static void setupImages(Context c) {
@@ -125,6 +128,14 @@ public class GridData {
 				R.drawable.afamas4, R.drawable.afamas5, R.drawable.afamas6,
 				R.drawable.afamas7, R.drawable.afamas8, R.drawable.afamas9
 				};
+		Integer[] euro_style = {R.drawable.euro_style1, R.drawable.euro_style2, R.drawable.euro_style3,
+				R.drawable.euro_style4, R.drawable.euro_style5, R.drawable.euro_style6,
+				R.drawable.euro_style7, R.drawable.euro_style8, R.drawable.euro_style9
+				};
+		Integer[] euro_themes = {R.drawable.euro_themes1, R.drawable.euro_themes2, R.drawable.euro_themes3,
+				R.drawable.euro_themes4, R.drawable.euro_themes5, R.drawable.euro_themes6,
+				R.drawable.euro_themes7, R.drawable.euro_themes8, R.drawable.euro_themes9
+				};
 		
 		images.put(c.getString(R.string.egypt), egypt);
 		images.put(c.getString(R.string.south_asia), south_asia);
@@ -141,6 +152,8 @@ public class GridData {
 		images.put(c.getString(R.string.aegean), aegean);
 		images.put(c.getString(R.string.cyprus), cyprus);
 		images.put(c.getString(R.string.afamas), afamas);
+		images.put(c.getString(R.string.euro_style), euro_style);
+		images.put(c.getString(R.string.euro_themes), euro_themes);
 	}
 	
 	private static void setupThumbs(Context c) {
@@ -204,6 +217,14 @@ public class GridData {
 				R.drawable.afamas4s, R.drawable.afamas5s, R.drawable.afamas6s,
 				R.drawable.afamas7s, R.drawable.afamas8s, R.drawable.afamas9s
 				};
+		Integer[] euro_style = {R.drawable.euro_style1s, R.drawable.euro_style2s, R.drawable.euro_style3s,
+				R.drawable.euro_style4s, R.drawable.euro_style5s, R.drawable.euro_style6s,
+				R.drawable.euro_style7s, R.drawable.euro_style8s, R.drawable.euro_style9s
+				};
+		Integer[] euro_themes = {R.drawable.euro_themes1s, R.drawable.euro_themes2s, R.drawable.euro_themes3s,
+				R.drawable.euro_themes4s, R.drawable.euro_themes5s, R.drawable.euro_themes6s,
+				R.drawable.euro_themes7s, R.drawable.euro_themes8s, R.drawable.euro_themes9s
+				};
 		
 		thumbs.put(c.getString(R.string.egypt), egypt);
 		thumbs.put(c.getString(R.string.south_asia), south_asia);
@@ -220,6 +241,8 @@ public class GridData {
 		thumbs.put(c.getString(R.string.aegean), aegean);
 		thumbs.put(c.getString(R.string.cyprus), cyprus);
 		thumbs.put(c.getString(R.string.afamas), afamas);
+		thumbs.put(c.getString(R.string.euro_style), euro_style);
+		thumbs.put(c.getString(R.string.euro_themes), euro_themes);
 	}
 	
 	private static void setupNames(Context c) {
@@ -285,6 +308,12 @@ public class GridData {
 		String[] afamas = {"Shield", "Canoe model", "Showshoe<s>", "Shrunken_head/tsanta", "Gbetu helmet mask",
 				"Kachina doll", "Food dish", "Salacot/hat", "Headdress (worn_in_all_ceremonies_by_boys_and_men)"
 				};
+		String[] euro_style = {"Virgin and child", "Cabinet", "Writing table", "Whatnot", "Place setting",
+				"Wash-stand", "Window grille", "Clock", "Pitcher for Orange Drink"
+				};
+		String[] euro_themes = {"Centrepiece", "Lamp shade ((true opaline))", "Mars", "Floor lamp", "Torah shield",
+				"German three-quarter armour: (for battle)", "Cigarette case", "Lady's dressing case", "The Nizam on Horseback, (1890s)"
+				};
 		
 		names.put(c.getString(R.string.egypt), egypt);
 		names.put(c.getString(R.string.south_asia), south_asia);
@@ -301,6 +330,8 @@ public class GridData {
 		names.put(c.getString(R.string.aegean), aegean);
 		names.put(c.getString(R.string.cyprus), cyprus);
 		names.put(c.getString(R.string.afamas), afamas);
+		names.put(c.getString(R.string.euro_style), euro_style);
+		names.put(c.getString(R.string.euro_themes), euro_themes);
 	}
 	
 	private static void setupCovers(Context c) {
@@ -319,6 +350,9 @@ public class GridData {
 		covers.put(c.getString(R.string.aegean), R.drawable.aegean3s);
 		covers.put(c.getString(R.string.cyprus), R.drawable.cyprus1s);
 		covers.put(c.getString(R.string.afamas), R.drawable.afamas9s);
+		covers.put(c.getString(R.string.euro_style), R.drawable.euro_style2s);
+		covers.put(c.getString(R.string.euro_themes), R.drawable.euro_themes1s);
+
 	}
 	
 	private static void setupWords(Context c) {
@@ -352,7 +386,11 @@ public class GridData {
 				};
 		String[] cyprus = {"rhyta" 
 				};
-		String[] afamas = {"tsanta", "Gbetu", "Kachina", "Salacot",
+		String[] afamas = {"tsanta", "Gbetu", "Kachina", "Salacot"
+				};
+		String[] euro_style = {
+				};
+		String[] euro_themes = {"Nizam", "opaline"
 				};
 		
 		words.put(c.getString(R.string.egypt), egypt);
@@ -370,6 +408,8 @@ public class GridData {
 		words.put(c.getString(R.string.aegean), aegean);
 		words.put(c.getString(R.string.cyprus), cyprus);
 		words.put(c.getString(R.string.afamas), afamas);
+		words.put(c.getString(R.string.euro_style), euro_style);
+		words.put(c.getString(R.string.euro_themes), euro_themes);
 
 	}
 }

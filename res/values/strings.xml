@@ -4,11 +4,11 @@
     <string name="app_name">ROMSearch</string>
     <string name="action_settings">Settings</string>
     <string name="welcome">Welcome to the ROM.</string>
-    <string name="choose_exhibit">Please choose your exhibit below</string>
+    <string name="choose_exhibit">Please choose your gallery below</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_achievements">Achievements</string>
-    <string name="button_exhibits">Choose Exhibit</string>
+    <string name="button_exhibits">Choose Gallery</string>
     <string name="achievements">Achievements</string>
     <string name="help">Help</string>
 
@@ -32,6 +32,8 @@
         <item>@string/aegean</item>
         <item>@string/cyprus</item>
         <item>@string/afamas</item>
+        <item>@string/euro_style</item>
+        <item>@string/euro_themes</item>
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>
@@ -49,8 +51,10 @@
     <string name="aegean">Gallery of the Bronze Age Aegean</string>
     <string name="cyprus">A.G. Leventis Foundation Gallery of Ancient Cyprus</string>
     <string name="afamas">Shreyas and Mina Amjera Gallery of Africa, the Americas and Asia-Pacific</string>
+    <string name="euro_style">The Samuel European Galleries: Evolution of Style</string>
+    <string name="euro_themes">The Samuel European Galleries: Special Themes and Collections</string>
     
-    <string name="title_activity_display_exhibit">Exhibit</string>
+    <string name="title_activity_display_exhibit">Gallery</string>
     <string name="title_activity_input_name">InputNameActivity</string>
     <string name="item_name">What is this item?</string>
     <string name="achievement_unlocked"><u>Achievement Unlocked!</u></string>
