@@ -199,12 +199,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 		
 	}
 	
+	@SuppressLint("NewApi")
 	public int[] getThisDisplay(){
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
-		int width = size.x;
-		int height = size.y;
+		int width = size.y;
+		int height = size.x;
 		int[] returnval = {height, width};
 		return returnval;
 	}

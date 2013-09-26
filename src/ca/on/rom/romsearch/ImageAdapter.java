@@ -42,20 +42,26 @@ public class ImageAdapter extends BaseAdapter {
 			imageView = new ImageView(mContext);
 			// Really need to figure out a function to do this instead...
 			// Nexus 4 / Extra-High Density Phones
-			if (swidth > 700 && swidth < 800 && sheight > 1200 && sheight < 1300){
-				int imageh = (int) (sheight/6.8085106382978723404255319148936); // ~190 pixels
-				int imagew = (int) (swidth/5.12); // ~150 pixels
+			if (swidth > 1200 && swidth < 1300 && sheight > 700 && sheight < 800){
+				int imageh = (int) (swidth/6.8085106382978723404255319148936); // ~150 pixels
+				int imagew = (int) (sheight/5.12); // ~190 pixels
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			// Nexus 1 / High Density Phones
-			else if (swidth > 400 && swidth < 500 && sheight > 750 && sheight < 850){
-				int imageh = (int) (sheight/6.7226890756302521008403361344538); // ~117 Px
-				int imagew = (int) (swidth/5.0526315789473684210526315789474); // ~95 Px
+			else if (swidth > 750 && swidth < 850 && sheight > 400 && sheight < 500){
+				int imageh = (int) (swidth/6.7226890756302521008403361344538); // ~95 Px
+				int imagew = (int) (sheight/5.0526315789473684210526315789474); // ~117 Px
+				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
+			}
+			// HTC One / 1080p Phones / Extra-Extra High Density Phones
+			else if (swidth > 1900 && swidth < 2000 && sheight > 1000 && sheight < 1201){
+				int imageh = (int) (swidth/7.2) + 3; // ~190 pixels
+				int imagew = (int) (sheight/5.12); // ~150 pixels
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			else {
-				int imageh = (int) (sheight/6.8085106382978723404255319148936);
-				int imagew = (int) (swidth/5.12);
+				int imageh = (int) (swidth/6.8085106382978723404255319148936);
+				int imagew = (int) (sheight/5.12);
 				imageView.setLayoutParams(new GridView.LayoutParams(imagew, imageh));
 			}
 			
