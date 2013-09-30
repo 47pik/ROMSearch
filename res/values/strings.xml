@@ -34,6 +34,14 @@
         <item>@string/afamas</item>
         <item>@string/euro_style</item>
         <item>@string/euro_themes</item>
+        <item>@string/canada</item>
+        <item>@string/first_peoples</item>
+        <item>@string/earths_treasures</item>
+        <item>@string/biodiversity</item>
+        <item>@string/birds</item>
+        <item>@string/dinosaurs</item>
+        <item>@string/mammals</item>
+        <item>@string/textiles</item>
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>
@@ -53,6 +61,14 @@
     <string name="afamas">Shreyas and Mina Amjera Gallery of Africa, the Americas and Asia-Pacific</string>
     <string name="euro_style">The Samuel European Galleries: Evolution of Style</string>
     <string name="euro_themes">The Samuel European Galleries: Special Themes and Collections</string>
+    <string name="canada">Sigmund Samuel Gallery of Canada</string>
+    <string name="first_peoples">Daphne Cockwell Gallery of Canada: First Peoples</string>
+    <string name="earths_treasures">Teck Suite of Galleries: Earth\'s Treasures</string>
+    <string name="biodiversity">Life in Crisis: Schad Gallery of Biodiversity</string>
+    <string name="birds">Gallery of Birds</string>
+    <string name="dinosaurs">James and Louise Temerty Galleries: The Age of Dinosaurs</string>
+    <string name="mammals">Reed Gallery of the Age of Mammals</string>
+    <string name="textiles">"Patricia Harris Gallery of Textiles &amp; Costume"</string>
     
     <string name="title_activity_display_exhibit">Gallery</string>
     <string name="title_activity_input_name">InputNameActivity</string>
