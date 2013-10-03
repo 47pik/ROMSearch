@@ -73,9 +73,11 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 				exhibit = exhibit.replace("Shreyas and Mina Amjera ", "");
 			} else if (exhibit.contains("The Samuel European")) {
 				exhibit = exhibit.replace("The Samuel ", "");
+			} else if (exhibit.contains("James and Louise")) {
+				exhibit = exhibit.replace("James and Louise ", "");
 			}
 			//format description
-			if (exhibit.contains("gallery")) {
+			if (exhibit.contains("Gallery")) {
 				desc = "Complete the " + exhibit;
 			} else {
 				desc = "Complete the " + exhibit + " gallery";
@@ -89,7 +91,7 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			 descview.setLayoutParams(lp);
 		}
 		//drop "exhibit" from the end if too long
-		if (desc.length() > 50) {
+		if (desc.length() > 60) {
 			desc = desc.split(" gallery")[0];
 		}
 		descview.setText(desc);

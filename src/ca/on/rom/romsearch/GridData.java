@@ -64,6 +64,15 @@ public class GridData {
 		titles.put(c.getString(R.string.afamas), R.drawable.titleafamas);
 		titles.put(c.getString(R.string.euro_style), R.drawable.titleeuro_style);
 		titles.put(c.getString(R.string.euro_themes), R.drawable.titleeuro_themes);
+		titles.put(c.getString(R.string.canada), R.drawable.titlecanada);
+		titles.put(c.getString(R.string.first_peoples), R.drawable.titlefirst_peoples);
+		titles.put(c.getString(R.string.earths_treasures), R.drawable.titleearths_treasures);
+		titles.put(c.getString(R.string.biodiversity), R.drawable.titlebiodiversity);
+		titles.put(c.getString(R.string.birds), R.drawable.titlebirds);
+		titles.put(c.getString(R.string.dinosaurs), R.drawable.titledinosaurs);
+		titles.put(c.getString(R.string.mammals), R.drawable.titlemammals);
+		titles.put(c.getString(R.string.textiles), R.drawable.titletextiles);
+		
 		
 	}
 	
@@ -136,6 +145,39 @@ public class GridData {
 				R.drawable.euro_themes4, R.drawable.euro_themes5, R.drawable.euro_themes6,
 				R.drawable.euro_themes7, R.drawable.euro_themes8, R.drawable.euro_themes9
 				};
+		Integer[] canada = {R.drawable.canada1, R.drawable.canada2, R.drawable.canada3,
+				R.drawable.canada4, R.drawable.canada5, R.drawable.canada6,
+				R.drawable.canada7, R.drawable.canada8, R.drawable.canada9
+				};
+		Integer[] first_peoples = {R.drawable.first_peoples1, R.drawable.first_peoples2, R.drawable.first_peoples3,
+				R.drawable.first_peoples4, R.drawable.first_peoples5, R.drawable.first_peoples6,
+				R.drawable.first_peoples7, R.drawable.first_peoples8, R.drawable.first_peoples9
+				};
+		Integer[] earths_treasures = {R.drawable.earths_treasures1, R.drawable.earths_treasures2, R.drawable.earths_treasures3,
+				R.drawable.earths_treasures4, R.drawable.earths_treasures5, R.drawable.earths_treasures6,
+				R.drawable.earths_treasures7, R.drawable.earths_treasures8, R.drawable.earths_treasures9
+				};
+		Integer[] biodiversity = {R.drawable.biodiversity1, R.drawable.biodiversity2, R.drawable.biodiversity3,
+				R.drawable.biodiversity4, R.drawable.biodiversity5, R.drawable.biodiversity6,
+				R.drawable.biodiversity7, R.drawable.biodiversity8, R.drawable.biodiversity9
+				};
+		Integer[] birds = {R.drawable.birds1, R.drawable.birds2, R.drawable.birds3,
+				R.drawable.birds4, R.drawable.birds5, R.drawable.birds6,
+				R.drawable.birds7, R.drawable.birds8, R.drawable.birds9
+				};
+		Integer[] dinosaurs = {R.drawable.dinosaurs1, R.drawable.dinosaurs2, R.drawable.dinosaurs3,
+				R.drawable.dinosaurs4, R.drawable.dinosaurs5, R.drawable.dinosaurs6,
+				R.drawable.dinosaurs7, R.drawable.dinosaurs8, R.drawable.dinosaurs9
+				};
+		Integer[] mammals = {R.drawable.mammals1, R.drawable.mammals2, R.drawable.mammals3,
+				R.drawable.mammals4, R.drawable.mammals5, R.drawable.mammals6,
+				R.drawable.mammals7, R.drawable.mammals8, R.drawable.mammals9
+				};
+		Integer[] textiles = {R.drawable.textiles1, R.drawable.textiles2, R.drawable.textiles3,
+				R.drawable.textiles4, R.drawable.textiles5, R.drawable.textiles6,
+				R.drawable.textiles7, R.drawable.textiles8, R.drawable.textiles9
+				};
+		
 		
 		images.put(c.getString(R.string.egypt), egypt);
 		images.put(c.getString(R.string.south_asia), south_asia);
@@ -154,6 +196,14 @@ public class GridData {
 		images.put(c.getString(R.string.afamas), afamas);
 		images.put(c.getString(R.string.euro_style), euro_style);
 		images.put(c.getString(R.string.euro_themes), euro_themes);
+		images.put(c.getString(R.string.canada), canada);
+		images.put(c.getString(R.string.first_peoples), first_peoples);
+		images.put(c.getString(R.string.earths_treasures), earths_treasures);
+		images.put(c.getString(R.string.biodiversity), biodiversity);
+		images.put(c.getString(R.string.birds), birds);
+		images.put(c.getString(R.string.dinosaurs), dinosaurs);
+		images.put(c.getString(R.string.mammals), mammals);
+		images.put(c.getString(R.string.textiles), textiles);
 	}
 	
 	private static void setupThumbs(Context c) {
@@ -225,6 +275,38 @@ public class GridData {
 				R.drawable.euro_themes4s, R.drawable.euro_themes5s, R.drawable.euro_themes6s,
 				R.drawable.euro_themes7s, R.drawable.euro_themes8s, R.drawable.euro_themes9s
 				};
+		Integer[] canada = {R.drawable.canada1s, R.drawable.canada2s, R.drawable.canada3s,
+				R.drawable.canada4s, R.drawable.canada5s, R.drawable.canada6s,
+				R.drawable.canada7s, R.drawable.canada8s, R.drawable.canada9s
+				};
+		Integer[] first_peoples = {R.drawable.first_peoples1s, R.drawable.first_peoples2s, R.drawable.first_peoples3s,
+				R.drawable.first_peoples4s, R.drawable.first_peoples5s, R.drawable.first_peoples6s,
+				R.drawable.first_peoples7s, R.drawable.first_peoples8s, R.drawable.first_peoples9s
+				};
+		Integer[] earths_treasures = {R.drawable.earths_treasures1s, R.drawable.earths_treasures2s, R.drawable.earths_treasures3s,
+				R.drawable.earths_treasures4s, R.drawable.earths_treasures5s, R.drawable.earths_treasures6s,
+				R.drawable.earths_treasures7s, R.drawable.earths_treasures8s, R.drawable.earths_treasures9s
+				};
+		Integer[] biodiversity = {R.drawable.biodiversity1s, R.drawable.biodiversity2s, R.drawable.biodiversity3s,
+				R.drawable.biodiversity4s, R.drawable.biodiversity5s, R.drawable.biodiversity6s,
+				R.drawable.biodiversity7s, R.drawable.biodiversity8s, R.drawable.biodiversity9s
+				};
+		Integer[] birds = {R.drawable.birds1s, R.drawable.birds2s, R.drawable.birds3s,
+				R.drawable.birds4s, R.drawable.birds5s, R.drawable.birds6s,
+				R.drawable.birds7s, R.drawable.birds8s, R.drawable.birds9s
+				};
+		Integer[] dinosaurs = {R.drawable.dinosaurs1s, R.drawable.dinosaurs2s, R.drawable.dinosaurs3s,
+				R.drawable.dinosaurs4s, R.drawable.dinosaurs5s, R.drawable.dinosaurs6s,
+				R.drawable.dinosaurs7s, R.drawable.dinosaurs8s, R.drawable.dinosaurs9s
+				};
+		Integer[] mammals = {R.drawable.mammals1s, R.drawable.mammals2s, R.drawable.mammals3s,
+				R.drawable.mammals4s, R.drawable.mammals5s, R.drawable.mammals6s,
+				R.drawable.mammals7s, R.drawable.mammals8s, R.drawable.mammals9s
+				};
+		Integer[] textiles = {R.drawable.textiles1s, R.drawable.textiles2s, R.drawable.textiles3s,
+				R.drawable.textiles4s, R.drawable.textiles5s, R.drawable.textiles6s,
+				R.drawable.textiles7s, R.drawable.textiles8s, R.drawable.textiles9s
+				};
 		
 		thumbs.put(c.getString(R.string.egypt), egypt);
 		thumbs.put(c.getString(R.string.south_asia), south_asia);
@@ -243,6 +325,14 @@ public class GridData {
 		thumbs.put(c.getString(R.string.afamas), afamas);
 		thumbs.put(c.getString(R.string.euro_style), euro_style);
 		thumbs.put(c.getString(R.string.euro_themes), euro_themes);
+		thumbs.put(c.getString(R.string.canada), canada);
+		thumbs.put(c.getString(R.string.first_peoples), first_peoples);
+		thumbs.put(c.getString(R.string.earths_treasures), earths_treasures);
+		thumbs.put(c.getString(R.string.biodiversity), biodiversity);
+		thumbs.put(c.getString(R.string.birds), birds);
+		thumbs.put(c.getString(R.string.dinosaurs), dinosaurs);
+		thumbs.put(c.getString(R.string.mammals), mammals);
+		thumbs.put(c.getString(R.string.textiles), textiles);
 	}
 	
 	private static void setupNames(Context c) {
@@ -296,13 +386,13 @@ public class GridData {
 				"Core-wound amphoriskos", "Steelyard Weight in the form of a bust of Athena", 
 				"Byzantine Processional Cross with Medallion of Christ"
 				};
-		String[] aegean = {"Head of a goddess wearing a polos", "Larnax/coffin from Minoan Crete", "Death Mask ((modern copy))",
+		String[] aegean = {"Head of a goddess wearing a polos", "Larnax/coffin from Minoan Crete", "Death Mask ((modern_copy))",
 				"Funerary amphora by the Stathatou Painter", "Axe-hammer (-_Cycladic_type)", "Pedestal lamp",
 				"Bird pendant", "Reclining female figure", "Kylix"
 				};
-		String[] cyprus = {"Head of a beardless wreathed youth", "Large Jug (of a Red Polished III ware_",
+		String[] cyprus = {"Head of a beardless wreathed youth", "Large Jug (of_a_Red_Polished_III_ware)",
 				"Bull-shaped rhyta of Base-ring ware II", "Statue of a male votary", "Wall Bracket",
-				"Limestone hand from a male votary statue", "Copper sword<s>", "Plank-shaped Female Figurine (of White Painted II ware)",
+				"Limestone hand from a male votary statue", "Copper sword<s>", "Plank-shaped Female Figurine (of_White_Painted_II_ware)",
 				"\"Egyptian-style\" male votary"
 				};
 		String[] afamas = {"Shield", "Canoe model", "Showshoe<s>", "Shrunken_head/tsanta", "Gbetu helmet mask",
@@ -311,8 +401,40 @@ public class GridData {
 		String[] euro_style = {"Virgin and child", "Cabinet", "Writing table", "Whatnot", "Place setting",
 				"Wash-stand", "Window grille", "Clock", "Pitcher for Orange Drink"
 				};
-		String[] euro_themes = {"Centrepiece", "Lamp shade ((true opaline))", "Mars", "Floor lamp", "Torah shield",
-				"German three-quarter armour: (for battle)", "Cigarette case", "Lady's dressing case", "The Nizam on Horseback, (1890s)"
+		String[] euro_themes = {"Centrepiece", "Lamp shade ((true_opaline))", "Mars", "Floor lamp", "Torah shield",
+				"German three-quarter armour: (for_battle)", "Cigarette case", "Lady's dressing case", "The Nizam on Horseback, (1890s)"
+				};
+		String[] canada = {"The Caribou Hunter", "Beaver weathervane", "Maple sugar mould",
+				"HMS Vanguard", "(Pair_of) flintlock pistol<s>", "Hooded cradle", 
+				"View of King Street, Toronto", "Centrepiece", "Altar and tabernacle"
+				};
+		String[] first_peoples = {"American Bison ((Bison_bison))", "House post, (Oweekeno)", "Woman's outer parka, (Nunavimiut)",
+				"Watch pocket", "Beaded hide double saddlebag", "Snowshoe<s>, (Ojibway)", "Migration",
+				"Halibut hook, (Southern_Tlingit)", "Sitting Bull's war bonnet (and_case)"
+				};
+		String[] earths_treasures = {"(Quartz_variety:) amethyst", "Cerussite", "Rhodonite",
+				"NWA 3174-IMB", "Copper", "Cavansite", "Mine McIntyre", "(Tourmaline_variety:) schorl",
+				"\"Gogotte\" sandstone concretion"
+				};
+		String[] biodiversity = {"Ocean Sunfish", "Giant Japanese spider crab", "Dodo", "Spotted Owl",
+				"Red Fox", "Common Muskrat", "Arctic Fox", "Bat<s>", "Tree Pangolin"
+				};
+		String[] birds = {"Royal Albatross", "Superb Lyrebird", "Hoatzin", "Indian Roller",
+				"Tawny-throated Frogmouth", "Common Elder", "Superb Blue Wren", "American Kestrel",
+				"Cassowary"
+				};
+		String[] dinosaurs = {"Ornithomimus (edmontonicus)", "Archelon ischyodus/giant_sea_turtle",
+				"Junvenile (diplodocid) sauropod", "Cycas revoluta", "Ichthyosaurs", "Teudopsis subcosta",
+				"Deinonychus (antirrhopus)", "Rhamphorhynchus muensteri", "Parasaurolophus (walkeri)"
+				};
+		String[] mammals = {"Teloceras fossiger", "Onychonycteris finneyi", "Choloepus didactylus",
+				"Scorpion in resin ((not_amber))", "Odobenus rosmarus", "Armadillo<s>", "Gopherus laticuneus",
+				"Mammut americanum", "Notogoneus osculus"
+				};
+		String[] textiles = {"(Man's) embroidered robe", "Abstract Fiberglas", "(\"Water sleeve\"_evening_gown_by) Vivienne Tam",
+				"Feather tunic", "(Emperor's_12^sign_semiformal_silk) dragon robe", "(Women's_silk) shoes for bound feet",
+				"(Embroidery_and_lace) pattern book (vol._1_By_Margaretha_Helm)", "Pinewood (curtain_by_Ronald_Hansen_for_Grautex)",
+				"(Tapestry^covered) armchair"
 				};
 		
 		names.put(c.getString(R.string.egypt), egypt);
@@ -332,6 +454,14 @@ public class GridData {
 		names.put(c.getString(R.string.afamas), afamas);
 		names.put(c.getString(R.string.euro_style), euro_style);
 		names.put(c.getString(R.string.euro_themes), euro_themes);
+		names.put(c.getString(R.string.canada), canada);
+		names.put(c.getString(R.string.first_peoples), first_peoples);
+		names.put(c.getString(R.string.earths_treasures), earths_treasures);
+		names.put(c.getString(R.string.biodiversity), biodiversity);
+		names.put(c.getString(R.string.birds), birds);
+		names.put(c.getString(R.string.dinosaurs), dinosaurs);
+		names.put(c.getString(R.string.mammals), mammals);
+		names.put(c.getString(R.string.textiles), textiles);
 	}
 	
 	private static void setupCovers(Context c) {
@@ -352,6 +482,14 @@ public class GridData {
 		covers.put(c.getString(R.string.afamas), R.drawable.afamas9s);
 		covers.put(c.getString(R.string.euro_style), R.drawable.euro_style2s);
 		covers.put(c.getString(R.string.euro_themes), R.drawable.euro_themes1s);
+		covers.put(c.getString(R.string.canada), R.drawable.canada4s);
+		covers.put(c.getString(R.string.first_peoples), R.drawable.first_peoples9s);
+		covers.put(c.getString(R.string.earths_treasures), R.drawable.earths_treasures2s);
+		covers.put(c.getString(R.string.biodiversity), R.drawable.biodiversity5s);
+		covers.put(c.getString(R.string.birds), R.drawable.birds6s);
+		covers.put(c.getString(R.string.dinosaurs), R.drawable.dinosaurs7s);
+		covers.put(c.getString(R.string.mammals), R.drawable.mammals8s);
+		covers.put(c.getString(R.string.textiles), R.drawable.textiles1s);
 
 	}
 	
@@ -392,6 +530,27 @@ public class GridData {
 				};
 		String[] euro_themes = {"Nizam", "opaline"
 				};
+		String[] canada = {
+			};
+		String[] first_peoples = {"Oweekeno", "Nunavimiut", "Ojibway", "Tlingit"	
+			};
+		String[] earths_treasures = {"Gogotte", "schorl", "Cerussite", "Rhodonite",
+				"Cavansite", "Tourmaline"
+			};
+		String[] biodiversity = {
+			};
+		String[] birds = {"Hoatzin", "Frogmouth"
+			};
+		String[] dinosaurs = {"Ornithomimus", "edmontonicus", "Archelon", "ischyodus", "diplodocid",
+				"sauropod", "Cycas", "revoluta", "Ichthyosaurs", "Teudopsis subcosta", "Deinonychus",
+				"antirrhopus", "Rhamphorhynchus", "muensteri", "Parasaurolophus", "walkeri"
+			};
+		String[] mammals = {"Teloceras", "fossiger", "Onychonycteris", "finneyi", "Choloepus",
+				"didactylus", "Odobenus", "rosmarus", "Gopherus", "laticuneus", "Mammut", "americanum",
+				"Notogoneus", "osculus"
+			};
+		String[] textiles = {
+			};
 		
 		words.put(c.getString(R.string.egypt), egypt);
 		words.put(c.getString(R.string.south_asia), south_asia);
@@ -410,6 +569,13 @@ public class GridData {
 		words.put(c.getString(R.string.afamas), afamas);
 		words.put(c.getString(R.string.euro_style), euro_style);
 		words.put(c.getString(R.string.euro_themes), euro_themes);
-
+		words.put(c.getString(R.string.canada), canada);
+		words.put(c.getString(R.string.first_peoples), first_peoples);
+		words.put(c.getString(R.string.earths_treasures), earths_treasures);
+		words.put(c.getString(R.string.biodiversity), biodiversity);
+		words.put(c.getString(R.string.birds), birds);
+		words.put(c.getString(R.string.dinosaurs), dinosaurs);
+		words.put(c.getString(R.string.mammals), mammals);
+		words.put(c.getString(R.string.textiles), textiles);
 	}
 }

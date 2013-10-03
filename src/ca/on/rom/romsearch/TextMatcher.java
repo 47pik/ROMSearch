@@ -186,6 +186,8 @@ public class TextMatcher {
 				token = token.replaceFirst("\\>", "");
 			} if (token.contains(",")) {
 				token = token.replaceFirst(",", "");
+			} if (token.contains(".")) {
+				token = token.replaceAll(".", "");
 			} if (token.contains("\"")) {
 				token = token.replaceAll("\"", "");
 			} if (token.contains(":")) {

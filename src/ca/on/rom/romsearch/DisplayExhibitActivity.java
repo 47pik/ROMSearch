@@ -37,10 +37,18 @@ public class DisplayExhibitActivity extends FragmentActivity
 	public static String[] image_names;
 	public static int pos = 0;
 	public String[] exhibitArray;
+	public DialogFragment dialog;
 	
 	public static ExhibitData savedata;
 	public static AchievementData achievementData;
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		if (dialog != null) {
+			dialog.dismiss();
+		}
+	}
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -48,6 +56,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		setContentView(R.layout.activity_display_exhibit);
+		GridData.setupTables(getApplicationContext());
 		
 		//get exhibit title and display corresponding image
 		exhibit = intent.getStringExtra(ChooseExhibitActivity.EXTRA_MESSAGE);
@@ -56,7 +65,6 @@ public class DisplayExhibitActivity extends FragmentActivity
 		title.setImageResource(GridData.getTitle(exhibit));
 		
 		//get image names and ids
-		GridData.setupTables(getApplicationContext());
 		image_names = GridData.getNames(exhibit);
 		image_ids = GridData.getImages(exhibit);
 		image_thumbs = GridData.getThumbs(exhibit);
@@ -99,13 +107,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 				pos = position;
 				if (savedata.getArr()[pos]) {
 					//if item already completed display info
-					DialogFragment dialog = DisplayItemDialogFragment.newInstance(image_ids[pos]
+					dialog = DisplayItemDialogFragment.newInstance(image_ids[pos]
 							, image_names[pos]);
 					FragmentManager fm = getSupportFragmentManager();
 					dialog.show(fm, "display_item");
 				} else {
 					//if item has not been completed, ask for input
-					DialogFragment dialog = InputNameDialogFragment.newInstance(image_ids[pos]);	
+					dialog = InputNameDialogFragment.newInstance(image_ids[pos]);	
 					FragmentManager fm = getSupportFragmentManager();
 					dialog.show(fm, "input_name");
 				}
