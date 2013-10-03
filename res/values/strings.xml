@@ -41,7 +41,9 @@
         <item>@string/birds</item>
         <item>@string/dinosaurs</item>
         <item>@string/mammals</item>
+        <!-- removing from app
         <item>@string/textiles</item>
+        -->
     </string-array>
 
     <string name="egypt">Galleries of Africa: Egypt</string>
