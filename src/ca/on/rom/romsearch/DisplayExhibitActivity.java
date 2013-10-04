@@ -150,6 +150,9 @@ public class DisplayExhibitActivity extends FragmentActivity
 	        case R.id.action_achievements:
 	        	startActivity(new Intent(this, AchievementListActivity.class));
 	        	return true;
+	        case R.id.action_about:
+	        	showAbout();
+	        	return true;
 	        default:
 	        	startActivity(new Intent(this, ChooseExhibitActivity.class));
 	        	return true;
@@ -250,9 +253,15 @@ public class DisplayExhibitActivity extends FragmentActivity
 	}
 	
 	public void showHelp(){
-		DialogFragment dialog = DisplayTutorialDialogFragment.newInstance(R.drawable.tutorial_exhibit);
+		dialog = DisplayTutorialDialogFragment.newInstance(R.drawable.tutorial_exhibit);
 		FragmentManager fm = getSupportFragmentManager();
 		dialog.show(fm, "tutorial");
 	}
 	
+	public void showAbout() {
+		//show credits and app info
+		dialog = new DisplayAppInfoDialogFragment();
+		FragmentManager fm = getSupportFragmentManager();
+		dialog.show(fm, "app info");
+	}
 }

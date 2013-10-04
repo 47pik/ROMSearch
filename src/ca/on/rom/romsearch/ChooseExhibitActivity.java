@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.UserDictionary;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,12 +20,22 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class ChooseExhibitActivity extends Activity {
+public class ChooseExhibitActivity extends FragmentActivity {
 	public static final String EXTRA_MESSAGE = "ca.on.rom.ROMSEARCH.MESSAGE";
 	public static final String EXTRA_SAVEFILE = "ca.on.rom.ROMSEARCH.SAVEFILE";
 	
 	public String[] exhibitArray;
 	public Double[] completionArray;
+	
+	public DialogFragment dialog;
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		if (dialog != null) {
+			dialog.dismiss();
+		}
+	}
 
 	@SuppressLint("NewApi")
 	@Override
@@ -108,7 +120,7 @@ public class ChooseExhibitActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.display_exhibit, menu);
+		getMenuInflater().inflate(R.menu.choose_exhibit, menu);
 		return true;
 	}
 	
@@ -116,16 +128,24 @@ public class ChooseExhibitActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    switch (item.getItemId()) {
-	        case R.id.action_help:
-	            return true;
 	        case R.id.action_achievements:
 	        	startActivity(new Intent(this, AchievementListActivity.class));
+	        	return true;
+	        case R.id.action_about:
+	        	showAbout();
 	        	return true;
 	        default:
 	            //return super.onOptionsItemSelected(item);
 	        	startActivity(new Intent(this, MainActivity.class));
 	        	return true;
 	    }
+	}
+	
+	public void showAbout() {
+		dialog = new DisplayAppInfoDialogFragment();
+		FragmentManager fm = getSupportFragmentManager();
+		dialog.show(fm, "app info");
+		
 	}
 	
 	public void addDictionaryWords() {

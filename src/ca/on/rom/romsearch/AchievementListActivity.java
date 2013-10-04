@@ -11,10 +11,8 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class AchievementListActivity extends FragmentActivity {
@@ -23,9 +21,19 @@ public class AchievementListActivity extends FragmentActivity {
 	public final static String EXHIBITS_COMPLETE = "exhibits_complete";
 	public final static String ITEMS_COMPLETE = "items_complete";
 	
+	public DialogFragment dialog;
+	
 //	public Achievement[] sorted_achievements;
 //	public int completed_achievements;
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		if (dialog != null) {
+			dialog.dismiss();
+		}
+	}
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,10 +111,31 @@ public class AchievementListActivity extends FragmentActivity {
 		FragmentManager fm = this.getSupportFragmentManager();
 		dialog.show(fm, "achievement");
 	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.achievement_list, menu);
+		return true;
+	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		startActivity(new Intent(this, MainActivity.class));
-		return true;
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	    	case R.id.action_about:
+	    		showAbout();
+	    		return true;
+	        default:
+	            //return super.onOptionsItemSelected(item);
+	        	startActivity(new Intent(this, MainActivity.class));
+	        	return true;
+	    }
+	}
+	
+	public void showAbout() {
+		//show credits and app info
+		dialog = new DisplayAppInfoDialogFragment();
+		FragmentManager fm = getSupportFragmentManager();
+		dialog.show(fm, "app info");
 	}
 }
