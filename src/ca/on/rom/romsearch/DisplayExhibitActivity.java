@@ -11,21 +11,25 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class DisplayExhibitActivity extends FragmentActivity
 									implements InputNameDialogFragment.InputNameDialogListener{
 	
-	
+	private int initialPaddingBottom = -1;
+	private int initialVerticalSpacing = 0;
 	public final static String EXTRA_MESSAGE2 ="com.example.R.MESSAGE";
 	public final static String ACHIEVEMENT = "achievement";
 	public final static String EXHIBITS_COMPLETE = "exhibits_complete";
@@ -55,7 +59,13 @@ public class DisplayExhibitActivity extends FragmentActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
+		
+		// Following line is for testing when there is no bottom nav-bar.
+		getWindow().getDecorView()
+        .setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+		
 		setContentView(R.layout.activity_display_exhibit);
+		setCorrectSpacing(); // Corrects based on existence of nav-bar.
 		GridData.setupTables(getApplicationContext());
 		
 		//get exhibit title and display corresponding image
@@ -159,6 +169,25 @@ public class DisplayExhibitActivity extends FragmentActivity
 	    }
 	}
 	
+	@SuppressLint("NewApi")
+	public void setCorrectSpacing() {
+		DisplayMetrics metrics = new DisplayMetrics();
+		ImageView exhibitTitle = (ImageView) findViewById(R.id.exhibit_title);
+		GridView actualGrid = (GridView) findViewById(R.id.gridview);
+		GridView overlay = (GridView) findViewById(R.id.overlay);
+		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		if (initialPaddingBottom == -1 && initialVerticalSpacing == 0){
+			initialVerticalSpacing = actualGrid.getVerticalSpacing();
+			initialPaddingBottom = exhibitTitle.getPaddingBottom();
+		}
+		if (metrics.heightPixels == 1184){
+			// XHDPI device; no nav-bar
+			exhibitTitle.setPadding(0, 0, 0, initialPaddingBottom + 35);
+			actualGrid.setVerticalSpacing(initialVerticalSpacing + 29);
+			overlay.setVerticalSpacing(initialVerticalSpacing + 29);
+		}
+	}
+	
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog, String input) {
 		String correct = image_names[pos];
@@ -253,7 +282,7 @@ public class DisplayExhibitActivity extends FragmentActivity
 	}
 	
 	public void showHelp(){
-		dialog = DisplayTutorialDialogFragment.newInstance(R.drawable.tutorial_exhibit);
+		dialog = DisplayTutorialDialogFragment.newInstance(R.drawable.tutorial_final);
 		FragmentManager fm = getSupportFragmentManager();
 		dialog.show(fm, "tutorial");
 	}

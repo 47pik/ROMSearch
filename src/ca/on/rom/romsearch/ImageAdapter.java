@@ -1,11 +1,17 @@
 package ca.on.rom.romsearch;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 /*for implementing the exhibit grid display*/
@@ -36,9 +42,11 @@ public class ImageAdapter extends BaseAdapter {
 		return 0;
 	}
 	
+	@SuppressLint("NewApi")
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView imageView;
 		if (convertView == null) {
+			// To determine if there is a nav-bar.
 			imageView = new ImageView(mContext);
 			// Really need to figure out a function to do this instead...
 			// Nexus 4 / Extra-High Density Phones
