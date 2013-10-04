@@ -61,8 +61,8 @@ public class DisplayExhibitActivity extends FragmentActivity
 		Intent intent = getIntent();
 		
 		// Following line is for testing when there is no bottom nav-bar.
-		getWindow().getDecorView()
-        .setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+		//getWindow().getDecorView()
+        //.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 		
 		setContentView(R.layout.activity_display_exhibit);
 		setCorrectSpacing(); // Corrects based on existence of nav-bar.
@@ -175,16 +175,18 @@ public class DisplayExhibitActivity extends FragmentActivity
 		ImageView exhibitTitle = (ImageView) findViewById(R.id.exhibit_title);
 		GridView actualGrid = (GridView) findViewById(R.id.gridview);
 		GridView overlay = (GridView) findViewById(R.id.overlay);
+		TextView completion = (TextView) findViewById(R.id.completion_display);
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		if (initialPaddingBottom == -1 && initialVerticalSpacing == 0){
 			initialVerticalSpacing = actualGrid.getVerticalSpacing();
 			initialPaddingBottom = exhibitTitle.getPaddingBottom();
 		}
-		if (metrics.heightPixels == 1184){
+		if (metrics.heightPixels == 1280){
 			// XHDPI device; no nav-bar
-			exhibitTitle.setPadding(0, 0, 0, initialPaddingBottom + 35);
-			actualGrid.setVerticalSpacing(initialVerticalSpacing + 29);
-			overlay.setVerticalSpacing(initialVerticalSpacing + 29);
+			exhibitTitle.setPadding(0, 0, 0, initialPaddingBottom + 26);
+			completion.setPadding(0, initialPaddingBottom + 101, 0, 0);
+			actualGrid.setVerticalSpacing(initialVerticalSpacing + 23);
+			overlay.setVerticalSpacing(initialVerticalSpacing + 23);
 		}
 	}
 	
