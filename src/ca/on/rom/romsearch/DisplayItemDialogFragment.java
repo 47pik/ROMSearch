@@ -42,9 +42,9 @@ public class DisplayItemDialogFragment extends DialogFragment {
 		
 		ImageView iv = (ImageView) v.findViewById(R.id.selected_item);
 		iv.setImageResource(img);
+		
 		TextView tv = (TextView) v.findViewById(R.id.item_name);
 		tv.setText(TextMatcher.format(name));
-		
 		//Create the AlertDialog object and return it
 		return builder.create();
 

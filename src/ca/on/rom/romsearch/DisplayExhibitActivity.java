@@ -183,10 +183,10 @@ public class DisplayExhibitActivity extends FragmentActivity
 		}
 		if (metrics.heightPixels == 1280){
 			// XHDPI device; no nav-bar
-			exhibitTitle.setPadding(0, 0, 0, initialPaddingBottom + 26);
+			exhibitTitle.setPadding(0, 0, 0, initialPaddingBottom + 20);
 			completion.setPadding(0, initialPaddingBottom + 101, 0, 0);
-			actualGrid.setVerticalSpacing(initialVerticalSpacing + 23);
-			overlay.setVerticalSpacing(initialVerticalSpacing + 23);
+			actualGrid.setVerticalSpacing(initialVerticalSpacing + 5);
+			overlay.setVerticalSpacing(initialVerticalSpacing + 5);
 		}
 	}
 	

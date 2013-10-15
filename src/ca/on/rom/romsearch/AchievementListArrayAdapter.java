@@ -59,7 +59,12 @@ public class AchievementListArrayAdapter extends ArrayAdapter<Achievement> {
 			completion.setText(items_complete + "/" + achievement.getRequirement());
 			progress.setProgress(items_complete);
 		} else if (achievement.getType().equals("ne")) {
-			desc = "Complete " + Integer.toString(achievement.getRequirement()) + " galleries";
+			//special case for ROM Master
+			if (achievement.getRequirement() == 24) {
+				desc = "Complete all galleries";
+			} else {
+				desc = "Complete " + Integer.toString(achievement.getRequirement()) + " galleries";
+			}
 			completion.setText(exhibits_complete + "/" + achievement.getRequirement());
 			progress.setProgress(exhibits_complete);
 		} else {

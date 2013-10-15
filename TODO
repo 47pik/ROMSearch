@@ -4,15 +4,9 @@
 	- add more achievements (with names and images)
 	- add a background to achievement_unlocked.xml
 
--Improve the activity_achievement_list.xml layout
-	- ensure works on all devices
-
-- Improve the activity_main.xml layout
-	- ensure works on all devices
 
 - Improve the activity_choose_exhibit.xml layout
 	- vertically center the cover images for all exhibits
-	- ensure works on all devices
 
 - Misc.
 	- Make the "OKAY" button "press" on the tutorial
@@ -21,8 +15,8 @@
 	- Determine if want to have AchievementList popups or not
 
 - Fix bugs
-	- retake dinosaurs8
-	- dinosaur title
+	- retake mideast 5
+	- retake japan 3
 
 -Future ideas
 	- My Collection - list showing all items user has found

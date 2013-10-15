@@ -55,7 +55,7 @@ public class AchievementData {
 				new Achievement("Collector", R.drawable.achievement_item_50, "i", 50),
 				new Achievement("Historian", R.drawable.achievement_item_75, "i", 75),
 				new Achievement("The Big 100", R.drawable.achievement_item_100, "i", 100),
-				new Achievement("Curator", R.drawable.achievement_item_200, "i", 200),
+				new Achievement("Curator", R.drawable.achievement_item_200, "i", 200)
 				};
 		AchievementData.item_achievements = item_achievements;
 		
@@ -65,7 +65,8 @@ public class AchievementData {
 				new Achievement("Scholar", R.drawable.achievement_exhibit_7, "ne", 7),
 				new Achievement("Explorer", R.drawable.achievement_exhibit_10, "ne", 10),
 				new Achievement("World Traveller", R.drawable.achievement_exhibit_15, "ne", 15),
-				new Achievement("Master Explorer", R.drawable.achievement_exhibit_20, "ne", 20)
+				new Achievement("Master Explorer", R.drawable.achievement_exhibit_20, "ne", 20),
+				new Achievement("ROM Master", R.drawable.placeholder, "ne", 24)
 				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
@@ -104,19 +105,19 @@ public class AchievementData {
 		exhibit_achievements.put(c.getString(R.string.euro_themes),
 				new Achievement("Specialist", R.drawable.achievement_euro_themes, "e", c.getString(R.string.euro_themes)));
 		exhibit_achievements.put(c.getString(R.string.canada),
-				new Achievement("O Canada", R.drawable.placeholder_s, "e", c.getString(R.string.canada)));
+				new Achievement("O Canada", R.drawable.achievement_canada, "e", c.getString(R.string.canada)));
 		exhibit_achievements.put(c.getString(R.string.first_peoples),
-				new Achievement("First!", R.drawable.placeholder_s, "e", c.getString(R.string.first_peoples)));
+				new Achievement("First!", R.drawable.achievement_first_peoples, "e", c.getString(R.string.first_peoples)));
 		exhibit_achievements.put(c.getString(R.string.earths_treasures),
-				new Achievement("Rock and Roll", R.drawable.placeholder_s, "e", c.getString(R.string.earths_treasures)));
+				new Achievement("Rock and Roll", R.drawable.achievement_earths_treasures, "e", c.getString(R.string.earths_treasures)));
 		exhibit_achievements.put(c.getString(R.string.biodiversity),
-				new Achievement("Crisis Alert!", R.drawable.placeholder_s, "e", c.getString(R.string.biodiversity)));
+				new Achievement("Crisis Alert!", R.drawable.achievement_biodiversity, "e", c.getString(R.string.biodiversity)));
 		exhibit_achievements.put(c.getString(R.string.birds),
-				new Achievement("I Believe I Can Fly", R.drawable.placeholder_s, "e", c.getString(R.string.birds)));
+				new Achievement("I Believe I Can Fly", R.drawable.achievement_birds, "e", c.getString(R.string.birds)));
 		exhibit_achievements.put(c.getString(R.string.dinosaurs),
-				new Achievement("Rawr!", R.drawable.placeholder_s, "e", c.getString(R.string.dinosaurs)));
+				new Achievement("Rawr!", R.drawable.achievement_dinosaurs, "e", c.getString(R.string.dinosaurs)));
 		exhibit_achievements.put(c.getString(R.string.mammals),
-				new Achievement("Rise of the Mammals", R.drawable.placeholder_s, "e", c.getString(R.string.mammals)));
+				new Achievement("Rise of the Mammals", R.drawable.achievement_mammals, "e", c.getString(R.string.mammals)));
 		exhibit_achievements.put(c.getString(R.string.textiles),
 				new Achievement("Style Endures", R.drawable.placeholder_s, "e", c.getString(R.string.textiles)));
 	}
