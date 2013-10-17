@@ -1,16 +1,23 @@
 package ca.on.rom.romsearch;
 
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
-public class MainActivity extends Activity{
+public class MainActivity extends FragmentActivity {
 	
 	private int initialPaddingTop = 0;
+	
+	ProgressBar loading;
 	
 	@SuppressLint({ "NewApi", "InlinedApi" })
 	@Override
@@ -28,9 +35,28 @@ public class MainActivity extends Activity{
 		super.onResume();
 		//reload the save in case new savedata has been written
 		setCorrectSpacing();
+		//make progress bar invisible and give it colour
+		loading = (ProgressBar) findViewById(R.id.loading);
+		loading.getIndeterminateDrawable().setColorFilter(0xFFCDAD00, android.graphics.PorterDuff.Mode.MULTIPLY);
+		loading.setVisibility(View.INVISIBLE);
 	}
 	
 	public void goToExhibits(View view) {
+		//if the first time running, add words to dictionary
+		SharedPreferences sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+		boolean firstrun = sharedPref.getBoolean("firstrun_choose", true);
+		if (firstrun) {
+			//set up the loading async task
+			String[] exhibitArray = getResources().getStringArray(R.array.exhibit_array);
+			Locale current = getResources().getConfiguration().locale;
+			//display the progressbar
+			new Loading(loading, exhibitArray, current,
+					getApplicationContext()).execute();
+			//toggle off firstrun
+			SharedPreferences.Editor editor = sharedPref.edit();
+			editor.putBoolean("firstrun_choose", false);
+			editor.commit();
+		}
 		startActivity(new Intent(this, ChooseExhibitActivity.class));
 	}
 	
@@ -52,4 +78,5 @@ public class MainActivity extends Activity{
 	public void goToAchievements(View view) {
 		startActivity(new Intent(this, AchievementListActivity.class));	
 	}
+	
 }

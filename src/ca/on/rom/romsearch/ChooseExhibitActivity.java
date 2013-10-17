@@ -1,7 +1,6 @@
 package ca.on.rom.romsearch;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.UserDictionary;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -75,16 +73,16 @@ public class ChooseExhibitActivity extends FragmentActivity {
 		loadSave();
 		onCreateListView();
 		
-		//if the first time running, display the help and add words to dictionary
-		SharedPreferences sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-		boolean firstrun = sharedPref.getBoolean("firstrun_choose", true);
-		if (firstrun) {
-			addDictionaryWords();
-			//showHelp()
-			SharedPreferences.Editor editor = sharedPref.edit();
-			editor.putBoolean("firstrun_choose", false);
-			editor.commit();
-		}
+//		//if the first time running, add words to dictionary
+//		SharedPreferences sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+//		boolean firstrun = sharedPref.getBoolean("firstrun_choose", true);
+//		if (firstrun) {
+//			addDictionaryWords();
+//			//showHelp()
+//			SharedPreferences.Editor editor = sharedPref.edit();
+//			editor.putBoolean("firstrun_choose", false);
+//			editor.commit();
+//		}
 	}
 
 	public void chooseExhibit(String exhibit) {
@@ -146,15 +144,5 @@ public class ChooseExhibitActivity extends FragmentActivity {
 		FragmentManager fm = getSupportFragmentManager();
 		dialog.show(fm, "app info");
 		
-	}
-	
-	public void addDictionaryWords() {
-		for (String exhibit : exhibitArray) {
-			String[] words = GridData.getDictWords(exhibit);
-			for (String word : words) {
-				Locale current = getResources().getConfiguration().locale;
-				UserDictionary.Words.addWord(getApplicationContext(), word, 1, null, current);
-			}
-		}
 	}
 }

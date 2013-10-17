@@ -1,45 +1,64 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:background="@drawable/mainbkground">
-
-    
-    <LinearLayout
-        android:id="@+id/mainmenu"
-        android:paddingTop="300dp"
-        android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:gravity="center_horizontal"
-    	android:orientation="horizontal"
-    	android:paddingBottom="15dp">
-    
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_custom"
-        android:onClick="goToExhibits"
-        android:text="@string/button_exhibits"
-        android:textSize="20sp"
-        />
-   		
-   		
-   		</LinearLayout>
-  	
-    <Button
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_custom"
-        android:onClick="goToAchievements"
-        android:text="@string/button_achievements"
-        android:textSize="15sp" />
-    
-</LinearLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/main_frame"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" >	
+	
+	<RelativeLayout 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+		
+		<LinearLayout 
+		    android:id="@+id/main_viewgroup"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:paddingBottom="@dimen/activity_vertical_margin"
+		    android:paddingLeft="@dimen/activity_horizontal_margin"
+		    android:paddingRight="@dimen/activity_horizontal_margin"
+		    android:paddingTop="@dimen/activity_vertical_margin"
+		    tools:context=".MainActivity"
+		    android:background="@drawable/mainbkground">
+		
+		    
+		    <LinearLayout
+		        android:id="@+id/mainmenu"
+		        android:paddingTop="300dp"
+		        android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:gravity="center_horizontal"
+		    	android:orientation="horizontal"
+		    	android:paddingBottom="15dp">
+		    
+		        <Button
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:background="@drawable/button_custom"
+		        android:onClick="goToExhibits"
+		        android:text="@string/button_exhibits"
+		        android:textSize="20sp"
+		        />
+		    		
+		   	</LinearLayout>
+		  	
+		    <Button
+		        android:layout_width="162dp"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:background="@drawable/button_custom"
+		        android:onClick="goToAchievements"
+		        android:text="@string/button_achievements"
+		        android:textSize="15sp" />
+		    
+		</LinearLayout>
+		
+		<ProgressBar
+		    android:id="@+id/loading"
+		    android:layout_width="100dp"
+		    android:layout_height="100dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_centerVertical="true" />
+	
+	</RelativeLayout>
+</FrameLayout>

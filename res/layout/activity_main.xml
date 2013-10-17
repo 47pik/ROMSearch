@@ -1,85 +1,58 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-    
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/rom"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+	
+	<LinearLayout 
+	    android:id="@+id/main_viewgroup"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin"
+	    tools:context=".MainActivity"
+	    android:background="@drawable/mainbkground">
+	
+	    
+	    <LinearLayout
+	        android:id="@+id/mainmenu"
+	        android:paddingTop="300dp"
+	        android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:gravity="center_horizontal"
+	    	android:orientation="horizontal"
+	    	android:paddingBottom="15dp">
+	    
+	        <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:background="@drawable/button_custom"
+	        android:onClick="goToExhibits"
+	        android:text="@string/button_exhibits"
+	        android:textSize="20sp"
+	        />
+	    		
+	   	</LinearLayout>
+	  	
+	    <Button
+	        android:layout_width="162dp"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:background="@drawable/button_custom"
+	        android:onClick="goToAchievements"
+	        android:text="@string/button_achievements"
+	        android:textSize="15sp" />
+	    
+	</LinearLayout>
+	
+	<ProgressBar
+	    android:id="@+id/loading"
+	    android:layout_width="100dp"
+	    android:layout_height="100dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/welcome"
-        android:textSize="25sp" />
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/choose_exhibit"
-        android:textSize="15sp" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:layout_width="1143dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-            
-            <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:adjustViewBounds="true"
-		        android:src="@drawable/egyptmain2a"     
-		        android:onClick="gotoEgypt"
-		        />
-            
-            <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:adjustViewBounds="true"
-		        android:src="@drawable/greecemain3"
-		        android:onClick="gotoGreece"
-		        />
-            
-            <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:adjustViewBounds="true"
-		        android:src="@drawable/placeholder"
-		        android:onClick="gotoSouthAsia"
-		        />
-            
-            <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:adjustViewBounds="true"
-		        android:src="@drawable/placeholder"
-		        android:onClick="gotoMiddleEast"
-		        />
-            
-        </LinearLayout>
-    </HorizontalScrollView>
-    
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_achievements"
-        />
-
-</LinearLayout>
+</RelativeLayout>

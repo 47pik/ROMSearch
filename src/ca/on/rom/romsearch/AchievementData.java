@@ -66,7 +66,7 @@ public class AchievementData {
 				new Achievement("Explorer", R.drawable.achievement_exhibit_10, "ne", 10),
 				new Achievement("World Traveller", R.drawable.achievement_exhibit_15, "ne", 15),
 				new Achievement("Master Explorer", R.drawable.achievement_exhibit_20, "ne", 20),
-				new Achievement("ROM Master", R.drawable.placeholder, "ne", 24)
+				new Achievement("ROM Master", R.drawable.achievement_exhibit_24, "ne", 24)
 				};
 		AchievementData.exhibittotal_achievements = exhibittotal_achievements;
 		
