@@ -2,7 +2,9 @@ package ca.on.rom.romsearch;
 
 import java.util.Locale;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.provider.UserDictionary;
 import android.view.View;
@@ -14,12 +16,14 @@ public class Loading extends AsyncTask<Void, Void, Void> {
 	String[] exhibitArray;
 	Locale locale;
 	Context context;
+	Activity activity;
 	
-	public Loading(ProgressBar progress, String[] exhibitArray, Locale locale, Context context) {
+	public Loading(ProgressBar progress, String[] exhibitArray, Locale locale, Context context, Activity activity) {
 		this.progress = progress;
 		this.exhibitArray = exhibitArray;
 		this.locale = locale;
 		this.context = context;
+		this.activity = activity;
 	}
 	
 	public void onPreExecute() {
@@ -39,6 +43,7 @@ public class Loading extends AsyncTask<Void, Void, Void> {
 	
 	public void onPostExecute(Void unused) {
 		progress.setVisibility(View.INVISIBLE);
+		activity.startActivity(new Intent(activity, ChooseExhibitActivity.class));
 	}
 	
 

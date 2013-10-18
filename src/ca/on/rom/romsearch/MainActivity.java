@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -39,6 +38,8 @@ public class MainActivity extends FragmentActivity {
 		loading = (ProgressBar) findViewById(R.id.loading);
 		loading.getIndeterminateDrawable().setColorFilter(0xFFCDAD00, android.graphics.PorterDuff.Mode.MULTIPLY);
 		loading.setVisibility(View.INVISIBLE);
+		//enable buttons
+		enableButtons(true);
 	}
 	
 	public void goToExhibits(View view) {
@@ -46,18 +47,21 @@ public class MainActivity extends FragmentActivity {
 		SharedPreferences sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 		boolean firstrun = sharedPref.getBoolean("firstrun_choose", true);
 		if (firstrun) {
+			//disable buttons while loading
+			enableButtons(false);
 			//set up the loading async task
 			String[] exhibitArray = getResources().getStringArray(R.array.exhibit_array);
 			Locale current = getResources().getConfiguration().locale;
-			//display the progressbar
+			//display the progressbar and load new activity
 			new Loading(loading, exhibitArray, current,
-					getApplicationContext()).execute();
+					getApplicationContext(), this).execute();
 			//toggle off firstrun
 			SharedPreferences.Editor editor = sharedPref.edit();
 			editor.putBoolean("firstrun_choose", false);
 			editor.commit();
+		} else {
+			startActivity(new Intent(this, ChooseExhibitActivity.class));
 		}
-		startActivity(new Intent(this, ChooseExhibitActivity.class));
 	}
 	
 	public void setCorrectSpacing() {
@@ -79,4 +83,10 @@ public class MainActivity extends FragmentActivity {
 		startActivity(new Intent(this, AchievementListActivity.class));	
 	}
 	
+	public void enableButtons(boolean enable) {
+		View button1 = findViewById(R.id.exhibit_button);
+		View button2 = findViewById(R.id.achievement_button);
+		button1.setEnabled(enable);
+		button2.setEnabled(enable);
+	}
 }
