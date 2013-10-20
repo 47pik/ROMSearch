@@ -424,7 +424,7 @@ public class GridData {
 				"Cassowary"
 				};
 		String[] dinosaurs = {"Ornithomimus (edmontonicus)", "Archelon ischyodus/giant_sea_turtle",
-				"Junvenile (diplodocid) sauropod", "Cycas revoluta", "Ichthyosaurs", "Teudopsis subcosta",
+				"Junvenile (diplodocid) sauropod", "Cycas revoluta", "Temnodontosaurus (platyodon)", "Arietites brookei",
 				"Deinonychus (antirrhopus)", "Rhamphorhynchus muensteri", "Parasaurolophus (walkeri)"
 				};
 		String[] mammals = {"Teloceras fossiger", "Onychonycteris finneyi", "Choloepus didactylus",
@@ -542,7 +542,7 @@ public class GridData {
 		String[] birds = {"Hoatzin", "Frogmouth"
 			};
 		String[] dinosaurs = {"Ornithomimus", "edmontonicus", "Archelon", "ischyodus", "diplodocid",
-				"sauropod", "Cycas", "revoluta", "Ichthyosaurs", "Teudopsis subcosta", "Deinonychus",
+				"sauropod", "Cycas", "revoluta", "Temnodontosaurus", "platyodon", "Arietites brookei", "Deinonychus",
 				"antirrhopus", "Rhamphorhynchus", "muensteri", "Parasaurolophus", "walkeri"
 			};
 		String[] mammals = {"Teloceras", "fossiger", "Onychonycteris", "finneyi", "Choloepus",

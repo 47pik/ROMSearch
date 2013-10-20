@@ -1,22 +1,11 @@
 ----LIST OF THINGS NEEDING TO BE DONE----
 
-- Implement a visual representation of save data
-	- add a background to achievement_unlocked.xml?
-
-
-- Improve the activity_choose_exhibit.xml layout
+- Improve layout compatibility
 	- vertically center the cover images for all exhibits
+	- Adjust AchievementListArrayAdapter for xxhdpi devices
 
 - Misc.
 	- Make the "OKAY" button "press" on the tutorial
-	- Consider popup for finding an item.
-	- Improve performance app wide, and reduce any unnecessarily 		large files
-	- Determine if want to have AchievementList popups or not
-
-- Fix bugs
-	- retake mideast 5
-	- retake japan 3
-	- Check dinosaur names
 
 -Future ideas
 	- My Collection - list showing all items user has found
